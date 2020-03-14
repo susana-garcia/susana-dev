@@ -5,16 +5,52 @@ date: '2020-03-13T13:00:00.000Z'
 tags: ['hello', 'world']
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+# H1
 
-```JavaScript
-const name = "blog"
-console.log(name)
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+**bold text**
+
+_italicized text_
+
+~~The world is flat.~~
+
+1. First ordered list item
+2. Another item
+   ⋅⋅\* Unordered sub-list.
+3. Actual numbers don't matter, just that it's a number
+   ⋅⋅1. Ordered sub-list
+4. And another item.
+
+- Unordered list can use asterisks
+- Or pluses
+
+[I'm an inline-style link](https://www.google.com)
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+Inline `code` has `back-ticks around` it.
+
+```javascript
+const s = 'JavaScript syntax highlighting'
+console.log(s)
 ```
 
-## Something else
+```swift
+let a = "Swift lang"
+print("logging: \(a)")
+```
 
-- first
-- second
+> This is a very long line that will still be quoted properly when it wraps.
 
-Lorem ipsum dolor sit `amet`.
+![video](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)

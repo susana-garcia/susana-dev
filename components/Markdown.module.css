@@ -1,0 +1,95 @@
+.markdown {
+  h1 {
+    @apply font-black;
+    @apply text-5xl;
+    @apply my-5;
+  }
+
+  h2 {
+    @apply font-black;
+    @apply text-4xl;
+    @apply my-4;
+  }
+
+  h3 {
+    @apply font-black;
+    @apply text-3xl;
+    @apply my-4;
+  }
+
+  h4 {
+    @apply font-black;
+    @apply text-2xl;
+    @apply my-2;
+  }
+
+  h5 {
+    @apply font-black;
+    @apply text-xl;
+    @apply my-1;
+  }
+
+  h6 {
+    @apply font-black;
+    @apply my-1;
+  }
+
+  hr {
+    @apply my-6;
+  }
+
+  ol {
+    @apply list-inside;
+    @apply list-decimal;
+    @apply my-4;
+  }
+
+  ul {
+    @apply list-inside;
+    @apply list-disc;
+    @apply my-4;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  code {
+    @apply bg-gray-800;
+    @apply py-1 px-2;
+    @apply text-gray-200;
+    @apply rounded-sm;
+    @apply my-4;
+    @apply text-xs italic;
+  }
+
+  pre {
+    @apply bg-gray-800;
+    @apply text-gray-200;
+    @apply p-4;
+    @apply rounded-sm;
+    @apply leading-8;
+    @apply my-4;
+    code {
+      @apply p-0;
+      @apply bg-transparent;
+      @apply text-gray-200;
+      @apply text-base not-italic;
+    }
+  }
+
+  blockquote {
+    @apply rounded-sm;
+    @apply border-l-4 border-gray-800;
+    @apply pl-4;
+    @apply font-thin text-xl italic;
+  }
+
+  a {
+    @apply text-blue-800;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+}

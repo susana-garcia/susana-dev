@@ -2,9 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import marked from 'marked'
-import hljs from 'highlight.js'
 import format from 'date-fns/format'
+import Markdown from '../../components/Markdown'
 import {
   loadAllPosts,
   loadPostBySlug,
@@ -31,63 +30,56 @@ export const getStaticProps: GetStaticProps = async context => {
 
   return {
     props: {
-      title: post.title,
-      date: post.date,
-      contentHTML: marked(post.content, {
-        highlight: (code, lang) => hljs.highlight(lang, code).value,
-      }),
+      post,
       morePosts,
     },
   }
 }
 
 type PostPageProps = {
-  title: string
-  date: string
-  contentHTML: string
+  post: Post
   morePosts: Post[]
 }
 
-const PostPage: NextPage<PostPageProps> = ({
-  title,
-  date,
-  contentHTML,
-  morePosts,
-}) => (
-  <>
-    <Head>
-      <title>{title}</title>
-    </Head>
-    <article>
-      <header>
-        <h1>{title}</h1>
-        <div>
-          <time dateTime={date} itemProp="datePublished">
-            {format(new Date(date), 'MMM d, yyyy')}
-          </time>
-        </div>
-      </header>
-      <div dangerouslySetInnerHTML={{ __html: contentHTML }} />
-      <footer>
+const PostPage: NextPage<PostPageProps> = ({ post, morePosts }) => {
+  const { title, date, content } = post
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <article>
+        <header>
+          <h1 className="text-4xl font-black">{title}</h1>
+          <div className="text-sm text-gray-600">
+            <time dateTime={date} itemProp="datePublished">
+              {format(new Date(date), 'MMM d, yyyy')}
+            </time>
+          </div>
+        </header>
         <hr className="my-6" />
-        <h3 className="text-md font-thin mb-4">More Posts</h3>
-        <ul>
-          {morePosts.map(post => (
-            <li key={post.slug}>
-              <Link
-                href={{ pathname: '/post', query: { slug: post.slug } }}
-                as={`/post/${post.slug}`}
-              >
-                <a>
-                  <h3 className="text-xl font-black my-1">{post.title}</h3>
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </footer>
-    </article>
-  </>
-)
+        <Markdown content={content} />
+        <hr className="my-6" />
+        <footer>
+          <h3 className="text-md font-thin mb-4">More Posts</h3>
+          <ul>
+            {morePosts.map(post => (
+              <li key={post.slug}>
+                <Link
+                  href={{ pathname: '/post', query: { slug: post.slug } }}
+                  as={`/post/${post.slug}`}
+                >
+                  <a>
+                    <h3 className="text-xl font-black my-1">{post.title}</h3>
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </footer>
+      </article>
+    </>
+  )
+}
 
 export default PostPage

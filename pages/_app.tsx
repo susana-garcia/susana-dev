@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import Link from 'next/link'
 
 import '../styles/tailwind.css'
+import 'highlight.js/styles/atom-one-dark-reasonable.css'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <div>
