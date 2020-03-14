@@ -4,6 +4,11 @@ module.exports = {
     container: {
       center: true,
     },
+    extend: {
+      maxWidth: {
+        screen: '100vw',
+      },
+    },
   },
   variants: {
     backgroundColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],

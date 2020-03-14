@@ -15,7 +15,7 @@ class Document extends NextDocument {
 
   render() {
     return (
-      <Html>
+      <Html className="overflow-x-hidden">
         <Head>
           <meta charSet="utf-8" />
           <meta
@@ -23,7 +23,7 @@ class Document extends NextDocument {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <body>
+        <body className="max-w-screen overflow-hidden">
           <div className="bg-gray-100 dark:bg-gray-900 transition duration-500 ease-in-out">
             <script
               dangerouslySetInnerHTML={{

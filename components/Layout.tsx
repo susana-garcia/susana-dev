@@ -15,8 +15,8 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="container max-w-3xl flex-grow">{children}</main>
-        <footer className="text-xs text-center text-gray-600 py-4 px-3 mt-10">
+        <main className="container px-3 max-w-3xl flex-grow">{children}</main>
+        <footer className="text-xs text-center text-gray-600 py-4  mt-10">
           Made with ♥ by{' '}
           <a href="https://www.twitter.com/lailo_ch">@lailo_ch</a>
         </footer>
