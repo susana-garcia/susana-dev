@@ -58,35 +58,35 @@ const PostPage: NextPage<PostPageProps> = ({
     <Head>
       <title>{title}</title>
     </Head>
-    <main>
-      <article>
-        <header>
-          <h1>{title}</h1>
-          <div>
-            <time dateTime={date} itemProp='datePublished'>
-              {format(new Date(date), 'MMM d, yyyy')}
-            </time>
-          </div>
-        </header>
-        <div dangerouslySetInnerHTML={{ __html: contentHTML }} />
-        <footer>
-          <ul>
-            {morePosts.map(post => (
-              <li key={post.slug}>
-                <Link
-                  href={{ pathname: '/post', query: { slug: post.slug } }}
-                  as={`/post/${post.slug}`}
-                >
-                  <a>
-                    <h3>{post.title}</h3>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </footer>
-      </article>
-    </main>
+    <article>
+      <header>
+        <h1>{title}</h1>
+        <div>
+          <time dateTime={date} itemProp="datePublished">
+            {format(new Date(date), 'MMM d, yyyy')}
+          </time>
+        </div>
+      </header>
+      <div dangerouslySetInnerHTML={{ __html: contentHTML }} />
+      <footer>
+        <hr className="my-6" />
+        <h3 className="text-md font-thin mb-4">More Posts</h3>
+        <ul>
+          {morePosts.map(post => (
+            <li key={post.slug}>
+              <Link
+                href={{ pathname: '/post', query: { slug: post.slug } }}
+                as={`/post/${post.slug}`}
+              >
+                <a>
+                  <h3 className="text-xl font-black my-1">{post.title}</h3>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </footer>
+    </article>
   </>
 )
 

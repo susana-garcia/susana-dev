@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/lailo-ch/nextjs-tailwindcss-blog#readme",
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
     "@types/highlight.js": "^9.12.3",
     "@types/marked": "^0.7.3",
     "date-fns": "^2.11.0",
@@ -33,8 +34,10 @@
     "highlight.js": "^9.18.1",
     "marked": "^0.8.0",
     "next": "^9.3.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^13.9.1",

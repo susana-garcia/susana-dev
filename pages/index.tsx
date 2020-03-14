@@ -19,33 +19,38 @@ const IndexPage: NextPage<IndexPageProps> = ({ posts }) => (
     <Head>
       <title>My Blog</title>
     </Head>
-    <main>
-      <div>
-        <h1>My Blog</h1>
-        <h2>Posts</h2>
-        {posts.map(post => (
-          <article key={post.slug}>
-            <time dateTime={post.date} itemProp='datePublished'>
-              {format(new Date(post.date), 'MMM d, yyyy')}
-            </time>
-            <Link
-              href={{ pathname: '/post', query: { slug: post.slug } }}
-              as={`/post/${post.slug}`}
-            >
-              <a>
-                <h3>{post.title}</h3>
-              </a>
-            </Link>
+    <ul>
+      {posts.map(post => (
+        <li key={post.slug} className="mb-10">
+          <time
+            dateTime={post.date}
+            itemProp="datePublished"
+            className="text-xs text-gray-700"
+          >
+            {format(new Date(post.date), 'MMM d, yyyy')}
+          </time>
+          <Link
+            href={{ pathname: '/post', query: { slug: post.slug } }}
+            as={`/post/${post.slug}`}
+          >
+            <a>
+              <h3 className="text-xl font-black my-1">{post.title}</h3>
+            </a>
+          </Link>
 
-            <ul>
-              {post.tags.map(tag => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </main>
+          <ul className="flex">
+            {post.tags.map(tag => (
+              <li
+                key={tag}
+                className="mr-1 text-xs text-gray-600 px-2 border border-gray-400 rounded-full"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
   </>
 )
 
