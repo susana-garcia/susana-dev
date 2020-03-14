@@ -88,6 +88,10 @@
   a {
     @apply text-blue-800;
 
+    :global(.dark-mode) & {
+      @apply text-blue-300;
+    }
+
     &:hover {
       @apply underline;
     }

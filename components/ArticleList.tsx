@@ -14,7 +14,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
       {articles.map(article => (
         <article
           key={article.slug}
-          className="flex flex-col bg-white rounded shadow hover:shadow-lg"
+          className="flex flex-col bg-white dark:bg-gray-800 border dark:border-gray-800 rounded shadow hover:shadow-lg overflow-auto"
         >
           <Link
             href={{ pathname: '/articles', query: { slug: article.slug } }}
@@ -24,7 +24,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
               <time
                 dateTime={article.date}
                 itemProp="datePublished"
-                className="text-xs text-gray-700"
+                className="text-xs text-gray-700 dark:text-gray-500"
               >
                 {format(new Date(article.date), 'MMM d, yyyy')}
               </time>
@@ -32,7 +32,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
               <h2 className="text-xl font-black my-1">{article.title}</h2>
             </a>
           </Link>
-          <div className="block px-6 py-2 bg-gray-100 border-t border-gray-200">
+          <div className="block px-6 py-2 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
             <TagList tags={article.tags} />
           </div>
         </article>
