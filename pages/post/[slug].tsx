@@ -4,29 +4,18 @@ import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import format from 'date-fns/format'
 import Markdown from '../../components/Markdown'
-import {
-  loadAllPosts,
-  loadPostBySlug,
-  loadMorePostsForSlug,
-  Post,
-} from '../../utils/posts'
+import { loadPosts, loadPost, loadMorePosts, Post } from '../../utils/posts'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: loadAllPosts().map(p => `/post/${p.slug}`),
+  paths: loadPosts().map(post => `/post/${post.slug}`),
   fallback: false,
 })
-
-type GetStaticProps2 = {
-  params: {
-    slug: string
-  }
-}
 
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params as { slug: string }
 
-  const post = loadPostBySlug(slug)
-  const morePosts = loadMorePostsForSlug(slug)
+  const post = loadPost(slug)
+  const morePosts = loadMorePosts(slug)
 
   return {
     props: {

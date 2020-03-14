@@ -3,15 +3,18 @@ module.exports = {
     'tailwindcss',
     ...(process.env.NODE_ENV === 'production'
       ? [
-          '@fullhuman/postcss-purgecss',
-          {
-            content: [
-              './pages/**/*.{js,jsx,ts,tsx}',
-              './components/**/*.{js,jsx,ts,tsx}',
-            ],
-            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-            whitelist: ['markdown'],
-          },
+          [
+            '@fullhuman/postcss-purgecss',
+            {
+              content: [
+                './pages/**/*.{js,jsx,ts,tsx}',
+                './components/**/*.{js,jsx,ts,tsx}',
+              ],
+              defaultExtractor: content =>
+                content.match(/[\w-/:]+(?<!:)/g) || [],
+              whitelist: ['markdown'],
+            },
+          ],
         ]
       : []),
     'postcss-preset-env',

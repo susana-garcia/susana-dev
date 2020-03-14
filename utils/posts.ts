@@ -12,7 +12,7 @@ export type Post = {
   content: string
 }
 
-export function loadAllPosts(): Post[] {
+export function loadPosts(): Post[] {
   const postFiles = fs.readdirSync(POSTS_DIR)
 
   return postFiles.map(fileName => {
@@ -26,12 +26,12 @@ export function loadAllPosts(): Post[] {
   })
 }
 
-export function loadPostBySlug(slug: string): Post {
-  return loadAllPosts().find(post => post.slug === slug)
+export function loadPost(slug: string): Post {
+  return loadPosts().find(post => post.slug === slug)
 }
 
-export function loadMorePostsForSlug(slug: string): Post[] {
-  return loadAllPosts()
+export function loadMorePosts(slug: string) {
+  return loadPosts()
     .filter(post => post.slug !== slug)
     .slice(0, 3)
 }

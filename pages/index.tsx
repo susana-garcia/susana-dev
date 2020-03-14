@@ -3,10 +3,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { NextPage, GetStaticProps } from 'next'
 import format from 'date-fns/format'
-import { loadAllPosts, Post } from '../utils/posts'
+import { loadPosts, Post } from '../utils/posts'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = loadAllPosts().sort((a, b) => a.date.localeCompare(b.date))
+  const posts = loadPosts().sort((a, b) => a.date.localeCompare(b.date))
   return { props: { posts } }
 }
 
@@ -44,7 +44,12 @@ const IndexPage: NextPage<IndexPageProps> = ({ posts }) => (
                 key={tag}
                 className="mr-1 text-xs text-gray-600 px-2 border border-gray-400 rounded-full"
               >
-                {tag}
+                <Link
+                  href={{ pathname: '/tags', query: { tag } }}
+                  as={`/tags/${tag}`}
+                >
+                  <a>{tag}</a>
+                </Link>
               </li>
             ))}
           </ul>
