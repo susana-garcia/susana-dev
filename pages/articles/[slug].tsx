@@ -4,34 +4,39 @@ import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import format from 'date-fns/format'
 import Markdown from '../../components/Markdown'
-import { loadPosts, loadPost, loadMorePosts, Post } from '../../utils/posts'
+import {
+  loadArticles,
+  loadArticle,
+  loadMorePosts,
+  Article,
+} from '../../utils/articles'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: loadPosts().map(post => `/post/${post.slug}`),
+  paths: loadArticles().map(post => `/articles/${post.slug}`),
   fallback: false,
 })
 
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params as { slug: string }
 
-  const post = loadPost(slug)
-  const morePosts = loadMorePosts(slug)
+  const article = loadArticle(slug)
+  const moreArticles = loadMorePosts(slug)
 
   return {
     props: {
-      post,
-      morePosts,
+      article,
+      moreArticles,
     },
   }
 }
 
-type PostPageProps = {
-  post: Post
-  morePosts: Post[]
+type ArticlePageProps = {
+  article: Article
+  moreArticles: Article[]
 }
 
-const PostPage: NextPage<PostPageProps> = ({ post, morePosts }) => {
-  const { title, date, content } = post
+const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
+  const { title, date, content } = article
   return (
     <>
       <Head>
@@ -52,14 +57,17 @@ const PostPage: NextPage<PostPageProps> = ({ post, morePosts }) => {
         <footer>
           <h3 className="text-md font-thin mb-4">More Posts</h3>
           <ul>
-            {morePosts.map(post => (
-              <li key={post.slug}>
+            {moreArticles.map(article => (
+              <li key={article.slug}>
                 <Link
-                  href={{ pathname: '/post', query: { slug: post.slug } }}
-                  as={`/post/${post.slug}`}
+                  href={{
+                    pathname: '/articles',
+                    query: { slug: article.slug },
+                  }}
+                  as={`/articles/${article.slug}`}
                 >
                   <a>
-                    <h3 className="text-xl font-black my-1">{post.title}</h3>
+                    <h3 className="text-xl font-black my-1">{article.title}</h3>
                   </a>
                 </Link>
               </li>
@@ -71,4 +79,4 @@ const PostPage: NextPage<PostPageProps> = ({ post, morePosts }) => {
   )
 }
 
-export default PostPage
+export default ArticlePage

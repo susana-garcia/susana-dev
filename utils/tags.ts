@@ -1,12 +1,12 @@
-import { loadPosts } from './posts'
+import { loadArticles } from './articles'
 
 export function loadTags() {
-  return loadPosts()
+  return loadArticles()
     .map(post => post.tags)
     .flat()
     .filter((tag, index, tags) => tags.indexOf(tag) == index)
 }
 
-export function loadTagPosts(tag: string) {
-  return loadPosts().filter(post => post.tags.includes(tag))
+export function loadTagArticles(tag: string) {
+  return loadArticles().filter(post => post.tags.includes(tag))
 }

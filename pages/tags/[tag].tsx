@@ -2,8 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import { loadTags, loadTagPosts } from '../../utils/tags'
-import { Post } from '../../utils/posts'
+import { loadTags, loadTagArticles } from '../../utils/tags'
+import { Article } from '../../utils/articles'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -13,12 +13,12 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 export const getStaticProps: GetStaticProps = async context => {
   const { tag } = context.params as { tag: string }
 
-  const posts = loadTagPosts(tag)
+  const articles = loadTagArticles(tag)
   const tags = loadTags()
 
   return {
     props: {
-      posts,
+      articles,
       tags,
       tag,
     },
@@ -28,22 +28,22 @@ export const getStaticProps: GetStaticProps = async context => {
 type TagPageProps = {
   tag: string
   tags: string[]
-  posts: Post[]
+  articles: Article[]
 }
 
-const TagPage: NextPage<TagPageProps> = ({ posts, tag, tags }) => {
+const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => {
   return (
     <>
       <Head>
-        <title>{tag}</title>
+        <title>Tag: {tag}</title>
       </Head>
-      <h1 className="text-4xl font-black mb-8">{tag}</h1>
+      <h1 className="text-4xl font-black mb-8">Tag: {tag}</h1>
       <ul>
-        {posts.map(post => (
+        {articles.map(post => (
           <li key={post.slug} className="mb-8">
             <Link
-              href={{ pathname: '/post', query: { slug: post.slug } }}
-              as={`/post/${post.slug}`}
+              href={{ pathname: '/articles', query: { slug: post.slug } }}
+              as={`/articles/${post.slug}`}
             >
               <a>
                 <h3 className="text-xl font-black my-1">{post.title}</h3>
