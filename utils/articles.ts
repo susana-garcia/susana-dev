@@ -1,8 +1,5 @@
-import fs from 'fs'
-import matter from 'gray-matter'
 import path from 'path'
-
-const ARTICLES_DIR = path.resolve(process.cwd(), 'content/articles')
+import { loadFiles } from './fileLoader'
 
 export type Article = {
   slug: string
@@ -13,15 +10,13 @@ export type Article = {
 }
 
 export function loadArticles(): Article[] {
-  const articleFiles = fs.readdirSync(ARTICLES_DIR)
+  const articleFiles = loadFiles('articles')
 
-  const articles = articleFiles.map(fileName => {
-    const filePath = path.join(ARTICLES_DIR, fileName)
-    const fileData = fs.readFileSync(filePath, 'utf8')
+  const articles = articleFiles.map(fileData => {
     const {
       data: { slug, title, date, tags },
       content,
-    } = matter(fileData)
+    } = fileData
     return { slug, title, date, content, tags }
   })
 
