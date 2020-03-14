@@ -1,0 +1,38 @@
+{
+  "name": "nextjs-tailwindcss-blog",
+  "version": "1.0.0",
+  "description": "A NextJS SSG Markdown files blog styled with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lailo-ch/nextjs-tailwindcss-blog.git"
+  },
+  "keywords": [
+    "nexjts",
+    "tailwindcss",
+    "markdown",
+    "blog",
+    "static"
+  ],
+  "author": "Lailo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lailo-ch/nextjs-tailwindcss-blog/issues"
+  },
+  "homepage": "https://github.com/lailo-ch/nextjs-tailwindcss-blog#readme",
+  "dependencies": {
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "typescript": "^3.8.3"
+  }
+}
