@@ -25,3 +25,13 @@ export function loadAllPosts(): Post[] {
     return { slug, title, date, content, tags }
   })
 }
+
+export function loadPostBySlug(slug: string): Post {
+  return loadAllPosts().find(post => post.slug === slug)
+}
+
+export function loadMorePostsForSlug(slug: string): Post[] {
+  return loadAllPosts()
+    .filter(post => post.slug !== slug)
+    .slice(0, 3)
+}

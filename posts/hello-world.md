@@ -5,8 +5,6 @@ date: '2020-03-13T13:00:00.000Z'
 tags: ['hello', 'world']
 ---
 
-# Hello world
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 ```JavaScript
