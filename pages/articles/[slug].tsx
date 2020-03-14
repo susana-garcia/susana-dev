@@ -5,6 +5,7 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import format from 'date-fns/format'
 import Markdown from '../../components/Markdown'
 import Layout from '../../components/Layout'
+import TagList from '../../components/TagList'
 import {
   loadArticles,
   loadArticle,
@@ -37,7 +38,7 @@ type ArticlePageProps = {
 }
 
 const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
-  const { title, date, content } = article
+  const { title, date, content, tags } = article
   return (
     <Layout title={title}>
       <article>
@@ -47,6 +48,9 @@ const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
             <time dateTime={date} itemProp="datePublished">
               {format(new Date(date), 'MMM d, yyyy')}
             </time>
+          </div>
+          <div>
+            <TagList tags={tags} />
           </div>
         </header>
         <hr className="my-6" />

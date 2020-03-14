@@ -5,6 +5,7 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import { loadTags, loadTagArticles } from '../../utils/tags'
 import { Article } from '../../utils/articles'
 import Layout from '../../components/Layout'
+import TagList from '../../components/TagList'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -52,21 +53,7 @@ const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => {
       </ul>
       <hr className="my-10" />
       <h4 className="font-light text-gray-600 mb-4">More Tags</h4>
-      <ul className="flex">
-        {tags.map(tag => (
-          <li
-            key={tag}
-            className="mr-1 text-xs text-gray-600 px-2 border border-gray-400 rounded-full"
-          >
-            <Link
-              href={{ pathname: '/tags', query: { tag } }}
-              as={`/tags/${tag}`}
-            >
-              <a>{tag}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <TagList tags={tags} />
     </Layout>
   )
 }

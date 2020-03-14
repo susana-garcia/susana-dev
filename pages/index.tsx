@@ -5,6 +5,7 @@ import { NextPage, GetStaticProps } from 'next'
 import format from 'date-fns/format'
 import { loadArticles, Article } from '../utils/articles'
 import Layout from '../components/Layout'
+import TagList from '../components/TagList'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
@@ -35,22 +36,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
               <h3 className="text-xl font-black my-1">{article.title}</h3>
             </a>
           </Link>
-
-          <ul className="flex">
-            {article.tags.map(tag => (
-              <li
-                key={tag}
-                className="mr-1 text-xs text-gray-600 px-2 border border-gray-400 rounded-full"
-              >
-                <Link
-                  href={{ pathname: '/tags', query: { tag } }}
-                  as={`/tags/${tag}`}
-                >
-                  <a>{tag}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <TagList tags={article.tags} />
         </li>
       ))}
     </ul>
