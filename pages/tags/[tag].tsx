@@ -6,6 +6,7 @@ import { loadTags, loadTagArticles } from '../../utils/tags'
 import { Article } from '../../utils/articles'
 import Layout from '../../components/Layout'
 import TagList from '../../components/TagList'
+import ArticleList from '../../components/ArticleList'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -37,20 +38,7 @@ const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => {
   return (
     <Layout title={tag}>
       <h1 className="text-4xl font-black mb-8">Tag: {tag}</h1>
-      <ul>
-        {articles.map(post => (
-          <li key={post.slug} className="mb-8">
-            <Link
-              href={{ pathname: '/articles', query: { slug: post.slug } }}
-              as={`/articles/${post.slug}`}
-            >
-              <a>
-                <h3 className="text-xl font-black my-1">{post.title}</h3>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <ArticleList articles={articles} />
       <hr className="my-10" />
       <h4 className="font-light text-gray-600 mb-4">More Tags</h4>
       <TagList tags={tags} />
