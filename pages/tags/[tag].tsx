@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import { loadTags, loadTagArticles } from '../../utils/tags'
 import { Article } from '../../utils/articles'
+import Layout from '../../components/Layout'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -33,10 +34,7 @@ type TagPageProps = {
 
 const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => {
   return (
-    <>
-      <Head>
-        <title>Tag: {tag}</title>
-      </Head>
+    <Layout title={tag}>
       <h1 className="text-4xl font-black mb-8">Tag: {tag}</h1>
       <ul>
         {articles.map(post => (
@@ -69,7 +67,7 @@ const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => {
           </li>
         ))}
       </ul>
-    </>
+    </Layout>
   )
 }
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import format from 'date-fns/format'
 import Markdown from '../../components/Markdown'
+import Layout from '../../components/Layout'
 import {
   loadArticles,
   loadArticle,
@@ -38,10 +39,7 @@ type ArticlePageProps = {
 const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
   const { title, date, content } = article
   return (
-    <>
-      <Head>
-        <title>{title}</title>
-      </Head>
+    <Layout title={title}>
       <article>
         <header>
           <h1 className="text-4xl font-black">{title}</h1>
@@ -75,7 +73,7 @@ const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
           </ul>
         </footer>
       </article>
-    </>
+    </Layout>
   )
 }
 

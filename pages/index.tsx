@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { NextPage, GetStaticProps } from 'next'
 import format from 'date-fns/format'
 import { loadArticles, Article } from '../utils/articles'
+import Layout from '../components/Layout'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
@@ -15,10 +16,7 @@ interface IndexPageProps {
 }
 
 const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
-  <>
-    <Head>
-      <title>My Blog</title>
-    </Head>
+  <Layout>
     <ul>
       {articles.map(article => (
         <li key={article.slug} className="mb-10">
@@ -56,7 +54,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
         </li>
       ))}
     </ul>
-  </>
+  </Layout>
 )
 
 export default IndexPage
