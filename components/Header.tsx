@@ -1,6 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import DarkModeToggle from './DarkModeToggle'
+import dynamic from 'next/dynamic'
+
+const DarkModeToggle = dynamic(() => import('./DarkModeToggle'), {
+  ssr: false,
+})
 
 const Header = () => (
   <header className="flex items-center justify-center p-4 mb-4">

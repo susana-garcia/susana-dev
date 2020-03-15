@@ -14,19 +14,18 @@ class Document extends NextDocument {
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <body className="max-w-screen overflow-hidden">
-          <div className="bg-gray-100 dark:bg-gray-900 transition duration-500 ease-in-out">
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+        <body className="max-w-screen overflow-hiddenbg-gray-100 dark:bg-gray-900 transition duration-500 ease-in-out">
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
                 (function() {
                   var storageKey = 'darkMode';
                   var classNameDark = 'dark-mode';
                   var classNameLight = 'light-mode';
                 
-                  function setClassOnDocumentBody(darkMode) {
-                    document.body.classList.add(darkMode ? classNameDark : classNameLight);
-                    document.body.classList.remove(darkMode ? classNameLight : classNameDark);
+                  function setClassOnDocument(darkMode) {
+                    document.documentElement.classList.add(darkMode ? classNameDark : classNameLight);
+                    document.documentElement.classList.remove(darkMode ? classNameLight : classNameDark);
                   }
                   
                   var preferDarkQuery = '(prefers-color-scheme: dark)';
@@ -44,21 +43,20 @@ class Document extends NextDocument {
                   }
                 
                   if (localStorageExists) {
-                    setClassOnDocumentBody(localStorageTheme);
+                    setClassOnDocument(localStorageTheme);
                   } else if (supportsColorSchemeQuery) {
-                    setClassOnDocumentBody(mql.matches);
+                    setClassOnDocument(mql.matches);
                     localStorage.setItem(storageKey, mql.matches);
                   } else {
-                    var isDarkMode = document.body.classList.contains(classNameDark);
+                    var isDarkMode = document.documentElement.classList.contains(classNameDark);
                     localStorage.setItem(storageKey, JSON.stringify(isDarkMode));
                   }
                 })();
               `,
-              }}
-            />
-            <Main />
-            <NextScript />
-          </div>
+            }}
+          />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )

@@ -89,7 +89,7 @@
     @apply text-blue-800;
 
     :global(.dark-mode) & {
-      @apply text-blue-300;
+      @apply text-primary;
     }
 
     &:hover {
