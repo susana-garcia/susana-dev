@@ -14,7 +14,7 @@ class Document extends NextDocument {
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <body className="max-w-screen overflow-hiddenbg-gray-100 dark:bg-gray-900 transition duration-500 ease-in-out">
+        <body className="max-w-screen overflow-hidden bg-gray-100 dark:bg-gray-900 transition duration-500 ease-in-out">
           <script
             dangerouslySetInnerHTML={{
               __html: `
