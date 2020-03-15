@@ -9,3 +9,10 @@ html {
     @apply text-white;
   }
 }
+
+a {
+  @apply text-primary;
+  &:hover {
+    @apply text-primary-dark underline;
+  }
+}

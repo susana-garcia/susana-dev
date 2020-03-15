@@ -18,9 +18,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
             href={{ pathname: '/articles', query: { slug: article.slug } }}
             as={`/articles/${article.slug}`}
           >
-            <a className="text-3xl font-black text-primary hover:text-primary-dark hover:underline">
-              {article.title}
-            </a>
+            <a className="text-3xl font-black">{article.title}</a>
           </Link>
         </header>
         <p className="text-lg font-light text-gray-700 dark:text-gray-300">{article.excerpt}</p>

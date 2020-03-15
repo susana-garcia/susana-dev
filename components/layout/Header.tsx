@@ -12,7 +12,7 @@ const Header = () => (
     <Container size="fluid" grid className="grid-cols-2">
       <div>
         <Link href="/">
-          <a className="font-black">
+          <a className="font-black text-black dark:text-white hover:no-underline">
             B<span className="font-light">log</span>
           </a>
         </Link>
