@@ -41,27 +41,27 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
             </div>
           </header>
           <Markdown content={content} />
-          <footer className="mt-16 grid grid-cols-2 font-bold text-primary">
+          <footer className="mt-16 grid grid-cols-2 font-bold">
             <div>
               {prev && (
                 <Link
                   href={{ pathname: '/articles', query: { slug: prev.slug } }}
                   as={`/articles/${prev.slug}`}
                 >
-                  <a className="hover:text-primary-dark hover:underline">
+                  <a>
                     <FiArrowLeft className="mr-1" />
                     {prev.title}
                   </a>
                 </Link>
               )}
             </div>
-            <div className="hover:text-primary-dark text-right">
+            <div className="text-right">
               {next && (
                 <Link
                   href={{ pathname: '/articles', query: { slug: next.slug } }}
                   as={`/articles/${next.slug}`}
                 >
-                  <a className="hover:underline">
+                  <a>
                     {next.title}
                     <FiArrowRight className="ml-1" />
                   </a>

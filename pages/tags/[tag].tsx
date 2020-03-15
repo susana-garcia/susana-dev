@@ -6,6 +6,7 @@ import Layout from '../../components/layout/Layout'
 import TagList from '../../components/TagList'
 import ArticleList from '../../components/ArticleList'
 import Container from '../../components/layout/Container'
+import { FiHash } from 'react-icons/fi'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -21,7 +22,7 @@ export const getStaticProps: GetStaticProps = async context => {
   return {
     props: {
       articles,
-      tags,
+      tags: tags.filter(t => t !== tag),
       tag,
     },
   }
@@ -34,13 +35,18 @@ type TagPageProps = {
 }
 
 const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
-  <Layout title={tag}>
+  <Layout title={`#${tag}`}>
     <Container size="small">
-      <h1 className="col-span-2 text-4xl font-black mb-8">Tag: {tag}</h1>
+      <div className="mb-10">
+        <h1 className="col-span-2 text-4xl font-black">
+          <FiHash />
+          {tag}
+        </h1>
+        <div className="text-xs text-gray-700">
+          <TagList tags={tags} />
+        </div>
+      </div>
       <ArticleList articles={articles} />
-      <hr className="mb-8" />
-      <h4 className="font-light text-gray-600 mb-4">More Tags</h4>
-      <TagList tags={tags} />
     </Container>
   </Layout>
 )
