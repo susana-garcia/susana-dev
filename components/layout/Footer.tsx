@@ -14,7 +14,10 @@ const Footer = () => {
         {isIndexPage && <Bio />}
         {!isIndexPage && (
           <div className="text-xs text-center text-gray-600">
-            Made with <FiHeart /> by <a href="https://www.twitter.com/lailo_ch">@lailo_ch</a>
+            Made with <FiHeart /> by{' '}
+            <a title="Twitter account" href="https://www.twitter.com/lailo_ch">
+              @lailo_ch
+            </a>
           </div>
         )}
       </Container>

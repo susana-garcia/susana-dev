@@ -9,6 +9,8 @@ const DarkModeToggle = () => {
     <button
       className="hover:bg-primary hover:text-white dark:text-white rounded-full w-8 h-8"
       onClick={darkMode.toggle}
+      role="switch"
+      aria-checked={darkMode.value ? 'true' : 'false'}
     >
       {darkMode.value ? <FiSun /> : <FiMoon />}
     </button>

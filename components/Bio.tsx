@@ -7,7 +7,7 @@ interface BioProps {
 }
 
 const Bio: React.FC<BioProps> = ({ className }) => (
-  <div className={clsx('flex flex-col md:flex-row md:items-center', className)}>
+  <aside className={clsx('flex flex-col md:flex-row md:items-center', className)}>
     <div className="block mb-4 md:mb-0 mr-4 min-h-24 min-w-24">
       <img
         className="block h-24 w-24 rounded-full"
@@ -21,17 +21,17 @@ const Bio: React.FC<BioProps> = ({ className }) => (
         Swift, TypeScript and Golang.
       </p>
       <div className="mt-1">
-        <a href="" className="mr-4">
+        <a href="https://twitter.com/lailo_ch/" title="Twitter account" className="mr-4">
           <FiTwitter className="mr-1" />
           Twitter
         </a>
-        <a href="" className="mr-4">
+        <a href="github.com/lailo-ch/" title="Github account" className="mr-4">
           <FiGithub className="mr-1" />
           Github
         </a>
       </div>
     </div>
-  </div>
+  </aside>
 )
 
 export default Bio
