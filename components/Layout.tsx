@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import Header from './Header'
 import clsx from 'clsx'
+import Header from './Header'
+import Footer from './Footer'
 
 interface LayoutProps {
   title?: string
@@ -22,9 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ title, centered = false, children }) =>
       >
         {children}
       </main>
-      <footer className="text-xs text-center text-gray-600 py-4  mt-10">
-        Made with ♥ by <a href="https://www.twitter.com/lailo_ch">@lailo_ch</a>
-      </footer>
+      <Footer />
     </div>
   </>
 )
