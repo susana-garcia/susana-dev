@@ -22,6 +22,12 @@ module.exports = {
           default: colors.blue[600],
           dark: colors.blue[700],
         },
+        gray: {
+          ...colors.gray,
+          '975': '#08090B',
+          '950': '#111419',
+          '925': '',
+        },
       },
     },
   },

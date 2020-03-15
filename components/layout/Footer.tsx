@@ -9,7 +9,7 @@ const Footer = () => {
   const isIndexPage = router.pathname !== '/'
 
   return (
-    <footer className="bg-white dark:bg-black border-t border-gray-300 dark:border-gray-800 py-10 mt-8">
+    <footer className="bg-white dark:bg-gray-975 border-t border-gray-300 dark:border-gray-900 py-10 mt-8">
       <Container size="small">
         {isIndexPage && <Bio />}
         {!isIndexPage && (

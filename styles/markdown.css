@@ -70,7 +70,7 @@
   }
 
   pre {
-    @apply bg-gray-800;
+    @apply bg-gray-900;
     @apply text-gray-200;
     @apply p-4 my-12;
     @apply rounded-lg;
