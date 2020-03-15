@@ -32,14 +32,12 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
     <Layout title={title}>
       <Container size="small">
         <article>
-          <header>
-            <div className="flex justify-between">
-              <PublishedAt date={article.date} />
-              <ReadingTime readingTime={article.readingTime} />
-            </div>
-            <h1 className="text-4xl font-black">{title}</h1>
-            <div className="mb-6">
-              <TagList tags={tags} />
+          <header className="mb-12">
+            <h1 className="text-5xl font-black">{title}</h1>
+            <div className="text-gray-600 dark:text-gray-500">
+              <PublishedAt date={article.date} className="mr-3" />
+              <ReadingTime readingTime={article.readingTime} className="mr-2" />
+              <TagList tags={article.tags} />
             </div>
           </header>
           <Markdown content={content} />

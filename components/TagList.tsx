@@ -11,7 +11,7 @@ const TagList: React.FC<TagListProps> = ({ tags }) => (
     {tags.map(tag => (
       <li key={tag}>
         <Link href={{ pathname: '/tags', query: { tag } }} as={`/tags/${tag}`}>
-          <a className="text-xs px-1 hover:bg-primary hover:text-white rounded-full">
+          <a className="text-xs text-primary hover:underline px-1">
             <FiHash />
             {tag}
           </a>

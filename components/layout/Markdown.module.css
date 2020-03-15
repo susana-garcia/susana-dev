@@ -52,6 +52,10 @@
 
   p {
     @apply mb-4;
+    @apply text-lg leading-relaxed text-gray-800;
+    :global(.dark-mode) & {
+      @apply text-gray-200;
+    }
   }
 
   code {
@@ -66,10 +70,10 @@
   pre {
     @apply bg-gray-800;
     @apply text-gray-200;
-    @apply p-4;
-    @apply rounded-sm;
+    @apply p-4 my-12;
+    @apply rounded-lg;
     @apply leading-8;
-    @apply my-4;
+    @apply border-l-8 border-primary;
     code {
       @apply p-0;
       @apply bg-transparent;
@@ -80,9 +84,33 @@
 
   blockquote {
     @apply rounded-sm;
-    @apply border-l-4 border-gray-800;
-    @apply pl-4;
-    @apply font-thin text-xl italic;
+    @apply relative;
+    @apply p-6 my-12;
+    &::before,
+    &::after {
+      content: '';
+      @apply h-2;
+      @apply bg-primary;
+      @apply absolute;
+      @apply rounded-full;
+    }
+
+    &::before {
+      @apply top-0;
+      width: 100px;
+      left: calc(50% - 50px);
+    }
+
+    &::after {
+      @apply bottom-0;
+      width: 60px;
+      left: calc(50% - 30px);
+    }
+
+    p {
+      @apply font-thin text-2xl italic text-center;
+      @apply mb-0;
+    }
   }
 
   a {
