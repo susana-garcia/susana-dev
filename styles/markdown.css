@@ -76,6 +76,7 @@
     @apply rounded-lg;
     @apply leading-8;
     @apply border-l-8 border-primary;
+    @apply overflow-x-auto;
     code {
       @apply p-0;
       @apply bg-transparent;
