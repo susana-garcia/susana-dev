@@ -22,11 +22,6 @@ module.exports = {
           default: colors.blue[600],
           dark: colors.blue[700],
         },
-        secondary: {
-          lighter: colors.teal[400],
-          default: colors.teal[500],
-          dark: colors.teal[600],
-        },
       },
     },
   },
