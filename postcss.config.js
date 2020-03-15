@@ -6,9 +6,9 @@ module.exports = {
           [
             '@fullhuman/postcss-purgecss',
             {
-              content: ['./pages/**/*.{css,ts,tsx}', './components/**/*.{css,ts,tsx}'],
+              content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
               defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-              whitelist: ['html', 'body', 'dark-mode'],
+              whitelist: ['html', 'body'],
             },
           ],
         ]

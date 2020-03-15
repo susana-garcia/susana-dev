@@ -1,0 +1,18 @@
+/* purgecss start ignore */
+
+body {
+  @apply text-black;
+
+  .dark-mode & {
+    @apply text-white;
+  }
+}
+
+a {
+  @apply text-primary;
+  &:hover {
+    @apply text-primary-dark underline;
+  }
+}
+
+/* purgecss end ignore */

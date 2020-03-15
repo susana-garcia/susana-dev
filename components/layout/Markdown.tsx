@@ -1,7 +1,6 @@
 import React from 'react'
 import marked from 'marked'
 import hljs from 'highlight.js'
-import styles from './Markdown.module.css'
 
 interface MarkdownProps {
   content: string
@@ -9,7 +8,7 @@ interface MarkdownProps {
 
 const Markdown: React.FC<MarkdownProps> = ({ content }) => (
   <div
-    className={styles.markdown}
+    className="markdown"
     dangerouslySetInnerHTML={{
       __html: marked(content, {
         highlight: (code, lang) => hljs.highlight(lang, code).value,

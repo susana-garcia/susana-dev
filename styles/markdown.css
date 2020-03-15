@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 .markdown {
   h1 {
     @apply font-black;
@@ -52,8 +54,8 @@
 
   p {
     @apply mb-4;
-    @apply text-lg leading-relaxed text-gray-800;
-    :global(.dark-mode) & {
+    @apply text-lg font-light leading-relaxed text-gray-800;
+    .dark-mode & {
       @apply text-gray-200;
     }
   }
@@ -112,16 +114,6 @@
       @apply mb-0;
     }
   }
-
-  a {
-    @apply text-blue-800;
-
-    :global(.dark-mode) & {
-      @apply text-primary;
-    }
-
-    &:hover {
-      @apply underline;
-    }
-  }
 }
+
+/* purgecss end ignore */

@@ -1,18 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html {
-  @apply text-black;
-
-  &.dark-mode {
-    @apply text-white;
-  }
-}
-
-a {
-  @apply text-primary;
-  &:hover {
-    @apply text-primary-dark underline;
-  }
-}
