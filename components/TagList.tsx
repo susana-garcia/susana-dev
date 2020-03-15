@@ -6,7 +6,7 @@ interface TagListProps {
 }
 
 const TagList: React.FC<TagListProps> = ({ tags }) => (
-  <ul className="flex">
+  <ul className="inline-flex">
     {tags.map(tag => (
       <li key={tag} className="mr-1">
         <span className="text-xs text-gray-600 dark:text-gray-500 px-2 border border-gray-400 dark:border-gray-700 rounded-full">

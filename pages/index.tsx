@@ -16,7 +16,7 @@ interface IndexPageProps {
 
 const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
   <Layout>
-    <Container grid className="grid-cols-1 md:grid-cols-2">
+    <Container size="small">
       <ArticleList articles={articles} />
     </Container>
   </Layout>

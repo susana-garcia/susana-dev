@@ -42,7 +42,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
             </div>
           </header>
           <Markdown content={content} />
-          <footer className="mt-16 grid grid-cols-2 font-bold">
+          <footer className="mt-16 grid grid-cols-2 font-bold text-primary hover:text-primary-dark hover:underline">
             <div>
               {prev && (
                 <Link

@@ -35,11 +35,9 @@ type TagPageProps = {
 
 const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
   <Layout title={tag}>
-    <Container grid className="grid-cols-1 md:grid-cols-2">
+    <Container size="small">
       <h1 className="col-span-2 text-4xl font-black mb-8">Tag: {tag}</h1>
       <ArticleList articles={articles} />
-    </Container>
-    <Container>
       <hr className="mb-8" />
       <h4 className="font-light text-gray-600 mb-4">More Tags</h4>
       <TagList tags={tags} />
