@@ -13,7 +13,9 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
-  <IconContext.Provider value={{ className: 'inline', style: { marginTop: '-0.18em' } }}>
+  <IconContext.Provider
+    value={{ className: 'inline align-middle', style: { marginTop: '-0.18em' } }}
+  >
     <Component {...pageProps} />
   </IconContext.Provider>
 )
