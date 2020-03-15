@@ -30,7 +30,7 @@ export function loadArticles(): Article[] {
     return { slug, title, date, content, tags, excerpt, readingTime: readingTime(content) }
   })
 
-  return articles.sort((a, b) => a.date.localeCompare(b.date))
+  return articles.sort((a, b) => b.date.localeCompare(a.date))
 }
 
 export interface ArticleMap {
