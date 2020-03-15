@@ -4,6 +4,7 @@ import { loadArticles, Article } from '../utils/articles'
 import Layout from '../components/layout/Layout'
 import ArticleList from '../components/ArticleList'
 import Container from '../components/layout/Container'
+import Bio from '../components/Bio'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
@@ -17,6 +18,8 @@ interface IndexPageProps {
 const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
   <Layout>
     <Container size="small">
+      <Bio />
+      <hr className="my-10 w-64 border-gray-400 dark:border-gray-700" />
       <ArticleList articles={articles} />
     </Container>
   </Layout>

@@ -10,6 +10,12 @@ module.exports = {
       maxWidth: {
         screen: '100vw',
       },
+      minWidth: {
+        '24': '6rem',
+      },
+      minHeight: {
+        '24': '6rem',
+      },
       colors: {
         primary: {
           lighter: colors.blue[500],
