@@ -5,6 +5,7 @@ import Layout from '../components/layout/Layout'
 import ArticleList from '../components/ArticleList'
 import Container from '../components/layout/Container'
 import Bio from '../components/Bio'
+import Divider from '../components/Divider'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
@@ -19,7 +20,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
   <Layout>
     <Container size="small">
       <Bio />
-      <hr className="my-10 w-64 border-gray-400 dark:border-gray-700" />
+      <Divider className="my-10" />
       <ArticleList articles={articles} />
     </Container>
   </Layout>

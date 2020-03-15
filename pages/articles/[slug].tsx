@@ -8,6 +8,7 @@ import TagList from '../../components/TagList'
 import Container from '../../components/layout/Container'
 import ReadingTime from '../../components/ReadingTime'
 import PublishedAt from '../../components/PublishedAt'
+import Divider from '../../components/Divider'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
@@ -40,7 +41,9 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
               <TagList tags={article.tags} />
             </div>
           </header>
+          <Divider className="my-10" />
           <Markdown content={content} />
+          <Divider className="my-10" />
           <footer className="mt-16 grid grid-cols-2 font-bold">
             <div>
               {prev && (
