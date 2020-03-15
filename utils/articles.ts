@@ -48,6 +48,14 @@ export function loadArticle(slug: string): ArticleMap {
     article: articles[index],
   }
 
+  if (articleMap.article.excerpt) {
+    const excerptSeparator = '---'
+    const endOfExcerptIndex = articleMap.article.content.indexOf(excerptSeparator)
+    articleMap.article.content = articleMap.article.content.slice(
+      endOfExcerptIndex + excerptSeparator.length
+    )
+  }
+
   if (index > 0) articleMap.prev = articles[index - 1]
   if (index < articles.length - 1) articleMap.next = articles[index + 1]
 

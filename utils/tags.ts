@@ -8,5 +8,5 @@ export function loadTags() {
 }
 
 export function loadTagArticles(tag: string) {
-  return loadArticles().filter(post => post.tags.includes(tag))
+  return loadArticles().filter(article => article.tags.includes(tag))
 }
