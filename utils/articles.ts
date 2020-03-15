@@ -1,4 +1,3 @@
-import path from 'path'
 import { loadFiles } from './fileLoader'
 
 export type Article = {
@@ -7,6 +6,7 @@ export type Article = {
   date: string
   tags: string[]
   content: string
+  excerpt: string
 }
 
 export function loadArticles(): Article[] {
@@ -16,8 +16,9 @@ export function loadArticles(): Article[] {
     const {
       data: { slug, title, date, tags },
       content,
+      excerpt,
     } = fileData
-    return { slug, title, date, content, tags }
+    return { slug, title, date, content, tags, excerpt }
   })
 
   return articles.sort((a, b) => a.date.localeCompare(b.date))

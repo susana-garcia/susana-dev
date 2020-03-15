@@ -29,6 +29,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
             </time>
 
             <h2 className="text-xl font-black my-1">{article.title}</h2>
+            <p className="font-light text-gray-700 dark:text-gray-300">{article.excerpt}</p>
           </a>
         </Link>
         <div className="block px-6 py-2 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">

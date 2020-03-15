@@ -5,6 +5,10 @@ date: '2020-03-13T13:00:00.000Z'
 tags: ['hello', 'world']
 ---
 
+Hello world, this is an excerpt of the article.
+
+---
+
 # H1
 
 ## H2

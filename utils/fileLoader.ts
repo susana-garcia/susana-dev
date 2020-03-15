@@ -1,6 +1,6 @@
 import fs from 'fs'
-import matter from 'gray-matter'
 import path from 'path'
+import matter from 'gray-matter'
 
 export function loadFiles(dir: string) {
   const filesPath = path.resolve(process.cwd(), 'content', dir)
@@ -9,6 +9,6 @@ export function loadFiles(dir: string) {
   return files.map(fileName => {
     const filePath = path.join(filesPath, fileName)
     const fileData = fs.readFileSync(filePath, 'utf8')
-    return matter(fileData)
+    return matter(fileData, { excerpt: true })
   })
 }
