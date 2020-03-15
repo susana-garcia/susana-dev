@@ -24,12 +24,10 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
           </Link>
         </header>
         <p className="text-lg font-light text-gray-700 dark:text-gray-300">{article.excerpt}</p>
-        <div>
+        <div className="text-gray-600 dark:text-gray-500">
+          <PublishedAt date={article.date} className="mr-3" />
+          <ReadingTime readingTime={article.readingTime} className="mr-2" />
           <TagList tags={article.tags} />
-          {'  '}
-          <PublishedAt date={article.date} />
-          {' · '}
-          <ReadingTime readingTime={article.readingTime} />
         </div>
       </article>
     ))}

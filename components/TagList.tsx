@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { FiHash } from 'react-icons/fi'
 
 interface TagListProps {
   tags: string[]
@@ -8,12 +9,13 @@ interface TagListProps {
 const TagList: React.FC<TagListProps> = ({ tags }) => (
   <ul className="inline-flex">
     {tags.map(tag => (
-      <li key={tag} className="mr-1">
-        <span className="text-xs text-gray-600 dark:text-gray-500 px-2 border border-gray-400 dark:border-gray-700 rounded-full">
-          <Link href={{ pathname: '/tags', query: { tag } }} as={`/tags/${tag}`}>
-            <a>{tag}</a>
-          </Link>
-        </span>
+      <li key={tag}>
+        <Link href={{ pathname: '/tags', query: { tag } }} as={`/tags/${tag}`}>
+          <a className="text-xs px-1 hover:bg-primary hover:text-white rounded-full">
+            <FiHash />
+            {tag}
+          </a>
+        </Link>
       </li>
     ))}
   </ul>

@@ -1,16 +1,16 @@
 import React from 'react'
 import format from 'date-fns/format'
+import { FiCalendar } from 'react-icons/fi'
+import clsx from 'clsx'
 
 interface PublishedAtProps {
   date: string
+  className?: string
 }
 
-const PublishedAt: React.FC<PublishedAtProps> = ({ date }) => (
-  <time
-    dateTime={date}
-    itemProp="datePublished"
-    className="text-xs text-gray-700 dark:text-gray-500"
-  >
+const PublishedAt: React.FC<PublishedAtProps> = ({ date, className }) => (
+  <time dateTime={date} itemProp="datePublished" className={clsx('text-xs', className)}>
+    <FiCalendar className="mr-1" />
     {format(new Date(date), 'MMM d, yyyy')}
   </time>
 )
