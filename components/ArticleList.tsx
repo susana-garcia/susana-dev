@@ -3,6 +3,7 @@ import Link from 'next/link'
 import format from 'date-fns/format'
 import { Article } from '../utils/articles'
 import TagList from './TagList'
+import ReadingTime from './ReadingTime'
 
 interface ArticleListProps {
   articles: Article[]
@@ -20,14 +21,16 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
           as={`/articles/${article.slug}`}
         >
           <a className="block p-6 flex-grow">
-            <time
-              dateTime={article.date}
-              itemProp="datePublished"
-              className="text-xs text-gray-700 dark:text-gray-500"
-            >
-              {format(new Date(article.date), 'MMM d, yyyy')}
-            </time>
-
+            <div className="flex">
+              <time
+                dateTime={article.date}
+                itemProp="datePublished"
+                className="text-xs text-gray-700 dark:text-gray-500 mr-auto"
+              >
+                {format(new Date(article.date), 'MMM d, yyyy')}
+              </time>
+              <ReadingTime readingTime={article.readingTime} />
+            </div>
             <h2 className="text-xl font-black my-1">{article.title}</h2>
             <p className="font-light text-gray-700 dark:text-gray-300">{article.excerpt}</p>
           </a>
