@@ -1,11 +1,5 @@
 import * as React from 'react'
-import NextDocument, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
 class Document extends NextDocument {
   static async getInitialProps(context: DocumentContext) {
@@ -18,10 +12,7 @@ class Document extends NextDocument {
       <Html className="overflow-x-hidden">
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <body className="max-w-screen overflow-hidden">
           <div className="bg-gray-100 dark:bg-gray-900 transition duration-500 ease-in-out">

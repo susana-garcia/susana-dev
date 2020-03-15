@@ -1,14 +1,7 @@
 import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import format from 'date-fns/format'
-import {
-  loadArticles,
-  loadArticle,
-  loadMorePosts,
-  Article,
-} from '../../utils/articles'
+import { loadArticles, loadArticle, loadMorePosts, Article } from '../../utils/articles'
 import ArticleList from '../../components/ArticleList'
 import Markdown from '../../components/Markdown'
 import Layout from '../../components/Layout'

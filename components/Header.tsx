@@ -10,7 +10,7 @@ const Header = () => {
       <div className="mr-auto">
         <Link href="/">
           <a className="font-black">
-            Lai<span className="font-light">log</span>
+            B<span className="font-light">log</span>
           </a>
         </Link>
       </div>
