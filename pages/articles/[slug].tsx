@@ -1,12 +1,13 @@
 import React from 'react'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import format from 'date-fns/format'
 import { loadArticles, loadArticle, loadMorePosts, Article } from '../../utils/articles'
 import ArticleList from '../../components/ArticleList'
 import Markdown from '../../components/layout/Markdown'
 import Layout from '../../components/layout/Layout'
 import TagList from '../../components/TagList'
 import Container from '../../components/layout/Container'
+import ReadingTime from '../../components/ReadingTime'
+import PublishedAt from '../../components/PublishedAt'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),
@@ -41,12 +42,12 @@ const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
       <article>
         <Container size="small">
           <header>
-            <h1 className="text-4xl font-black">{title}</h1>
-            <div className="text-sm text-gray-600">
-              <time dateTime={date} itemProp="datePublished">
-                {format(new Date(date), 'MMM d, yyyy')}
-              </time>
+            <div className="flex justify-between">
+              <PublishedAt date={article.date} />
+              <ReadingTime readingTime={article.readingTime} />
             </div>
+            <h1 className="text-4xl font-black">{title}</h1>
+
             <div className="mb-6">
               <TagList tags={tags} />
             </div>
