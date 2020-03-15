@@ -33,12 +33,23 @@ export function loadArticles(): Article[] {
   return articles.sort((a, b) => a.date.localeCompare(b.date))
 }
 
-export function loadArticle(slug: string): Article {
-  return loadArticles().find(post => post.slug === slug)
+export interface ArticleMap {
+  article: Article
+  next?: Article
+  prev?: Article
 }
 
-export function loadMorePosts(slug: string) {
-  return loadArticles()
-    .filter(post => post.slug !== slug)
-    .slice(0, 3)
+export function loadArticle(slug: string): ArticleMap {
+  const articles = loadArticles()
+
+  const index = articles.findIndex(article => article.slug == slug)
+
+  const articleMap: ArticleMap = {
+    article: articles[index],
+  }
+
+  if (index > 0) articleMap.prev = articles[index - 1]
+  if (index < articles.length - 1) articleMap.next = articles[index + 1]
+
+  return articleMap
 }

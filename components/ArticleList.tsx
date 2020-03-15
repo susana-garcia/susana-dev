@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import format from 'date-fns/format'
 import { Article } from '../utils/articles'
 import TagList from './TagList'
 import ReadingTime from './ReadingTime'

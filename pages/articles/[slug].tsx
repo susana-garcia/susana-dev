@@ -1,7 +1,7 @@
 import React from 'react'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import { loadArticles, loadArticle, loadMorePosts, Article } from '../../utils/articles'
-import ArticleList from '../../components/ArticleList'
+import { loadArticles, loadArticle, ArticleMap } from '../../utils/articles'
+import Link from 'next/link'
 import Markdown from '../../components/layout/Markdown'
 import Layout from '../../components/layout/Layout'
 import TagList from '../../components/TagList'
@@ -17,52 +17,55 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params as { slug: string }
 
-  const article = loadArticle(slug)
-  const moreArticles = loadMorePosts(slug)
+  const articleMap = loadArticle(slug)
 
   return {
-    props: {
-      article,
-      moreArticles,
-    },
+    props: articleMap,
   }
 }
 
-type ArticlePageProps = {
-  article: Article
-  moreArticles: Article[]
-}
-
-const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
+const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
   const { title, date, content, tags } = article
-  const hasMoreArticles = moreArticles.length > 0
 
   return (
     <Layout title={title}>
-      <article>
-        <Container size="small">
+      <Container size="small">
+        <article>
           <header>
             <div className="flex justify-between">
               <PublishedAt date={article.date} />
               <ReadingTime readingTime={article.readingTime} />
             </div>
             <h1 className="text-4xl font-black">{title}</h1>
-
             <div className="mb-6">
               <TagList tags={tags} />
             </div>
           </header>
           <Markdown content={content} />
-        </Container>
-        {hasMoreArticles && (
-          <footer>
-            <Container grid size="small">
-              <hr className="my-6" />
-              <ArticleList articles={moreArticles} />
-            </Container>
+          <footer className="mt-16 grid grid-cols-2 font-bold">
+            <div>
+              {prev && (
+                <Link
+                  href={{ pathname: '/articles', query: { slug: prev.slug } }}
+                  as={`/articles/${prev.slug}`}
+                >
+                  <a>← {prev.title}</a>
+                </Link>
+              )}
+            </div>
+            <div className="text-right">
+              {next && (
+                <Link
+                  href={{ pathname: '/articles', query: { slug: next.slug } }}
+                  as={`/articles/${next.slug}`}
+                >
+                  <a>{next.title} →</a>
+                </Link>
+              )}
+            </div>
           </footer>
-        )}
-      </article>
+        </article>
+      </Container>
     </Layout>
   )
 }
