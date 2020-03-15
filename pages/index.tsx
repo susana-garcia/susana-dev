@@ -1,9 +1,9 @@
 import React from 'react'
 import { NextPage, GetStaticProps } from 'next'
 import { loadArticles, Article } from '../utils/articles'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import ArticleList from '../components/ArticleList'
-import Container from '../components/Container'
+import Container from '../components/layout/Container'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()

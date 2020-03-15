@@ -3,10 +3,10 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import format from 'date-fns/format'
 import { loadArticles, loadArticle, loadMorePosts, Article } from '../../utils/articles'
 import ArticleList from '../../components/ArticleList'
-import Markdown from '../../components/Markdown'
-import Layout from '../../components/Layout'
+import Markdown from '../../components/layout/Markdown'
+import Layout from '../../components/layout/Layout'
 import TagList from '../../components/TagList'
-import Container from '../../components/Container'
+import Container from '../../components/layout/Container'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),

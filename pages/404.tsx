@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 
 const Error = () => (
   <Layout title="Page Not Found" centered>

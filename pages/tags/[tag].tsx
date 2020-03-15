@@ -2,10 +2,10 @@ import React from 'react'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import { loadTags, loadTagArticles } from '../../utils/tags'
 import { Article } from '../../utils/articles'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout/Layout'
 import TagList from '../../components/TagList'
 import ArticleList from '../../components/ArticleList'
-import Container from '../../components/Container'
+import Container from '../../components/layout/Container'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),

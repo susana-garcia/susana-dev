@@ -3,7 +3,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import Container from './Container'
 
-const DarkModeToggle = dynamic(() => import('./DarkModeToggle'), {
+const DarkModeToggle = dynamic(() => import('../DarkModeToggle'), {
   ssr: false,
 })
 
