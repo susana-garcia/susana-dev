@@ -25,7 +25,7 @@ const Bio: React.FC<BioProps> = ({ className }) => (
           <FiTwitter className="mr-1" />
           Twitter
         </a>
-        <a href="github.com/lailo-ch/" title="Github account" className="mr-4">
+        <a href="https://github.com/lailo-ch/" title="Github account" className="mr-4">
           <FiGithub className="mr-1" />
           Github
         </a>
