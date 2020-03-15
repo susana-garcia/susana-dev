@@ -5,6 +5,7 @@ import { Article } from '../../utils/articles'
 import Layout from '../../components/Layout'
 import TagList from '../../components/TagList'
 import ArticleList from '../../components/ArticleList'
+import Container from '../../components/Container'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -34,11 +35,15 @@ type TagPageProps = {
 
 const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
   <Layout title={tag}>
-    <h1 className="text-4xl font-black mb-8">Tag: {tag}</h1>
-    <ArticleList articles={articles} />
-    <hr className="my-10" />
-    <h4 className="font-light text-gray-600 mb-4">More Tags</h4>
-    <TagList tags={tags} />
+    <Container grid className="grid-cols-1 md:grid-cols-2">
+      <h1 className="col-span-2 text-4xl font-black mb-8">Tag: {tag}</h1>
+      <ArticleList articles={articles} />
+    </Container>
+    <Container>
+      <hr className="mb-8" />
+      <h4 className="font-light text-gray-600 mb-4">More Tags</h4>
+      <TagList tags={tags} />
+    </Container>
   </Layout>
 )
 

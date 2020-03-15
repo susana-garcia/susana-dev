@@ -3,6 +3,7 @@ import { NextPage, GetStaticProps } from 'next'
 import { loadArticles, Article } from '../utils/articles'
 import Layout from '../components/Layout'
 import ArticleList from '../components/ArticleList'
+import Container from '../components/Container'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
@@ -15,7 +16,9 @@ interface IndexPageProps {
 
 const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
   <Layout>
-    <ArticleList articles={articles} />
+    <Container grid className="grid-cols-1 md:grid-cols-2">
+      <ArticleList articles={articles} />
+    </Container>
   </Layout>
 )
 

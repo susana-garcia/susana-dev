@@ -9,7 +9,7 @@ interface ArticleListProps {
 }
 
 const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
-  <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+  <>
     {articles.map(article => (
       <article
         key={article.slug}
@@ -37,7 +37,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
         </div>
       </article>
     ))}
-  </div>
+  </>
 )
 
 export default ArticleList

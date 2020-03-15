@@ -6,6 +6,7 @@ import ArticleList from '../../components/ArticleList'
 import Markdown from '../../components/Markdown'
 import Layout from '../../components/Layout'
 import TagList from '../../components/TagList'
+import Container from '../../components/Container'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),
@@ -38,23 +39,26 @@ const ArticlePage: NextPage<ArticlePageProps> = ({ article, moreArticles }) => {
   return (
     <Layout title={title}>
       <article>
-        <header>
-          <h1 className="text-4xl font-black">{title}</h1>
-          <div className="text-sm text-gray-600">
-            <time dateTime={date} itemProp="datePublished">
-              {format(new Date(date), 'MMM d, yyyy')}
-            </time>
-          </div>
-          <div>
-            <TagList tags={tags} />
-          </div>
-        </header>
-        <hr className="my-6" />
-        <Markdown content={content} />
-        <hr className="my-6" />
+        <Container size="small">
+          <header>
+            <h1 className="text-4xl font-black">{title}</h1>
+            <div className="text-sm text-gray-600">
+              <time dateTime={date} itemProp="datePublished">
+                {format(new Date(date), 'MMM d, yyyy')}
+              </time>
+            </div>
+            <div className="mb-6">
+              <TagList tags={tags} />
+            </div>
+          </header>
+          <Markdown content={content} />
+        </Container>
         {hasMoreArticles && (
           <footer>
-            <ArticleList articles={moreArticles} />
+            <Container grid size="small">
+              <hr className="my-6" />
+              <ArticleList articles={moreArticles} />
+            </Container>
           </footer>
         )}
       </article>

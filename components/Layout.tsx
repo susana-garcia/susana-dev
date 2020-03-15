@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ title, centered = false, children }) =>
     <div className="min-h-screen flex flex-col">
       <Header />
       <main
-        className={clsx('container px-3 max-w-3xl', 'flex-grow', {
+        className={clsx('flex-grow', {
           'flex flex-col items-center justify-center': centered,
         })}
       >
