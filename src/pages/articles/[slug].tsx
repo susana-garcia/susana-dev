@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
-  const { title, date, content, tags } = article
+  const { title, date, content, tags, readingTime } = article
 
   return (
     <Layout title={title}>
@@ -36,9 +36,9 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
           <header className="mb-12">
             <h1 className="text-5xl font-black">{title}</h1>
             <div className="text-gray-600 dark:text-gray-500">
-              <PublishedAt date={article.date} className="mr-3" />
-              <ReadingTime readingTime={article.readingTime} className="mr-2" />
-              <TagList tags={article.tags} />
+              <PublishedAt date={date} className="mr-3" />
+              <ReadingTime readingTime={readingTime} className="mr-2" />
+              <TagList tags={tags} />
             </div>
           </header>
           <Divider className="my-10" />
