@@ -8,7 +8,6 @@ import 'styles/tailwind.css'
 import 'styles/main.css'
 import 'styles/markdown.css'
 import 'styles/nprogress.css'
-import 'highlight.js/styles/atom-one-dark-reasonable.css'
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
