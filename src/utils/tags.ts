@@ -1,4 +1,4 @@
-import { loadArticles } from './articles'
+import { loadArticles } from 'utils/articles'
 
 export function loadTags() {
   return loadArticles()

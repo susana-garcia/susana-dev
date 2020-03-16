@@ -1,5 +1,5 @@
 import readingTime from 'reading-time'
-import { loadFiles } from './fileLoader'
+import { loadFiles } from 'utils/fileLoader'
 
 export interface ReadingTime {
   text: string

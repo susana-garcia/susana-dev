@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import Container from './Container'
+import Container from 'components/layout/Container'
 
-const DarkModeToggle = dynamic(() => import('../DarkModeToggle'), {
+const DarkModeToggle = dynamic(() => import('components/DarkModeToggle'), {
   ssr: false,
 })
 

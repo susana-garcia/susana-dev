@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiCoffee } from 'react-icons/fi'
 import clsx from 'clsx'
-import { ReadingTime as ReadingTimeType } from '../utils/articles'
+import { ReadingTime as ReadingTimeType } from 'utils/articles'
 
 interface ReadingTimeProps {
   readingTime: ReadingTimeType

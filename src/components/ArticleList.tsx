@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { Article } from '../utils/articles'
-import TagList from './TagList'
-import ReadingTime from './ReadingTime'
-import PublishedAt from './PublishedAt'
+import { Article } from 'utils/articles'
+import TagList from 'components/TagList'
+import ReadingTime from 'components/ReadingTime'
+import PublishedAt from 'components/PublishedAt'
 
 interface ArticleListProps {
   articles: Article[]

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { FiHeart } from 'react-icons/fi'
-import Container from './Container'
-import Bio from '../Bio'
+import Container from 'components/layout/Container'
+import Bio from 'components/Bio'
 
 const Footer = () => {
   const router = useRouter()
