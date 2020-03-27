@@ -30,20 +30,23 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
   const { title, date, content, tags, readingTime } = article
 
   return (
-    <Layout title={title}>
+    <Layout
+      title={title}
+      subheader={
+        <header className="mb-12">
+          <h1 className="text-5xl font-black text-white leading-tight mb-2">{title}</h1>
+          <div className="text-gray-200">
+            <PublishedAt date={date} className="mr-3" />
+            <ReadingTime readingTime={readingTime} className="mr-2" />
+            <TagList tags={tags} light />
+          </div>
+        </header>
+      }
+    >
       <Container size="small">
         <article>
-          <header className="mb-12">
-            <h1 className="text-5xl font-black">{title}</h1>
-            <div className="text-gray-600 dark:text-gray-500">
-              <PublishedAt date={date} className="mr-3" />
-              <ReadingTime readingTime={readingTime} className="mr-2" />
-              <TagList tags={tags} />
-            </div>
-          </header>
-          <Divider className="my-10" />
+          <h1 className="hidden">{title}</h1>
           <Markdown content={content} />
-          <Divider className="my-10" />
           <footer className="mt-16 grid grid-cols-2 font-bold">
             <div>
               {prev && (
