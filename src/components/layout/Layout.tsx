@@ -7,17 +7,18 @@ import Footer from 'components/layout/Footer'
 interface LayoutProps {
   title?: string
   centered?: boolean
+  subheader?: React.ReactElement
 }
 
-const Layout: React.FC<LayoutProps> = ({ title, centered = false, children }) => (
+const Layout: React.FC<LayoutProps> = ({ title, centered = false, subheader, children }) => (
   <>
     <Head>
       <title>{`Blog ${title ? ` | ${title}` : ''}`}</title>
     </Head>
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header>{subheader}</Header>
       <main
-        className={clsx('flex-grow', {
+        className={clsx('flex-grow py-8', {
           'flex flex-col items-center justify-center': centered,
         })}
       >

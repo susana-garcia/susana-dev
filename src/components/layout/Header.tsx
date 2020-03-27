@@ -7,12 +7,15 @@ const DarkModeToggle = dynamic(() => import('components/DarkModeToggle'), {
   ssr: false,
 })
 
-const Header = () => (
-  <header>
-    <Container size="fluid" grid className="grid-cols-2">
+const Header: React.FC = ({ children }) => (
+  <header className="bg-primary">
+    <Container size="fluid" grid className="h-12 bg-primary grid-cols-2 py-0 items-center">
       <div>
         <Link href="/">
-          <a title="Back home" className="font-black text-black dark:text-white hover:no-underline">
+          <a
+            title="Back home"
+            className="font-black text-white hover:text-white hover:no-underline"
+          >
             B<span className="font-light">log</span>
           </a>
         </Link>
@@ -21,6 +24,7 @@ const Header = () => (
         <DarkModeToggle />
       </div>
     </Container>
+    {children && <Container size="small">{children}</Container>}
   </header>
 )
 

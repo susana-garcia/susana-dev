@@ -16,7 +16,7 @@ const Container: React.FC<ContainerProps> = ({
   <div
     className={clsx(
       'container',
-      'px-4 py-4',
+      'px-4 py-2',
       {
         'grid gap-4': grid,
       },
