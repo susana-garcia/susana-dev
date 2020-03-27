@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lailo-ch/nextjs-tailwindcss-blog.git"
+    "url": "git+https://github.com/lailo/nextjs-tailwindcss-blog.git"
   },
   "keywords": [
     "nextjs",
@@ -25,9 +25,9 @@
   "author": "Lailo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lailo-ch/nextjs-tailwindcss-blog/issues"
+    "url": "https://github.com/lailo/nextjs-tailwindcss-blog/issues"
   },
-  "homepage": "https://github.com/lailo-ch/nextjs-tailwindcss-blog#readme",
+  "homepage": "https://github.com/lailo/nextjs-tailwindcss-blog#readme",
   "dependencies": {
     "clsx": "^1.1.0",
     "date-fns": "^2.11.0",

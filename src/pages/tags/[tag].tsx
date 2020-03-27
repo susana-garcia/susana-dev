@@ -6,7 +6,6 @@ import Layout from 'components/layout/Layout'
 import TagList from 'components/TagList'
 import ArticleList from 'components/ArticleList'
 import Container from 'components/layout/Container'
-import Divider from 'components/Divider'
 import { FiHash } from 'react-icons/fi'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
@@ -36,18 +35,21 @@ type TagPageProps = {
 }
 
 const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
-  <Layout title={`#${tag}`}>
-    <Container size="small">
-      <div className="mb-10">
-        <h1 className="col-span-2 text-4xl font-black">
+  <Layout
+    title={`#${tag}`}
+    subheader={
+      <Container size="small" className="mb-6">
+        <h1 className="col-span-2 text-4xl font-black text-white">
           <FiHash />
           {tag}
         </h1>
-        <div className="text-xs text-gray-700">
-          <TagList tags={tags} />
+        <div className="text-xs text-white hover:text-gray-200">
+          <TagList tags={tags} light />
         </div>
-      </div>
-      <Divider className="my-10" />
+      </Container>
+    }
+  >
+    <Container size="small">
       <ArticleList articles={articles} />
     </Container>
   </Layout>
