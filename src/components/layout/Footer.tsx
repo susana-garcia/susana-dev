@@ -8,8 +8,8 @@ const Footer = () => {
       <Container size="small" className="grid grid-cols-2 gap-4">
         <div className="text-xs text-gray-600">
           Made with <FiHeart className="text-red-600" /> by{' '}
-          <a title="Twitter account" href="https://www.twitter.com/lailo_ch">
-            @lailo_ch
+          <a title="Twitter account" href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}>
+            @{process.env.TWITTER_USERNAME}
           </a>
         </div>
         <div className="text-xs text-center text-gray-600">

@@ -18,16 +18,16 @@ export function generateRSS(articles: Article[]) {
     language: 'en',
     categories: tags,
     // eslint-disable-next-line @typescript-eslint/camelcase
-    feed_url: `${process.env.BLOG_URL}/rss.xml`,
+    feed_url: `${process.env.SITE_URL}/rss.xml`,
     // eslint-disable-next-line @typescript-eslint/camelcase
-    site_url: process.env.BLOG_URL,
+    site_url: process.env.SITE_URL,
   })
 
   articles.forEach(article => {
     feed.item({
       title: article.title,
       description: article.excerpt,
-      url: `${process.env.BLOG_URL}/posts/${article.slug}`,
+      url: `${process.env.SITE_URL}/posts/${article.slug}`,
       guid: article.slug,
       categories: article.tags,
       author: 'Lailo',

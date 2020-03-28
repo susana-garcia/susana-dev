@@ -7,6 +7,7 @@ import TagList from 'components/TagList'
 import ArticleList from 'components/ArticleList'
 import Container from 'components/layout/Container'
 import { FiHash } from 'react-icons/fi'
+import { NextSeo } from 'next-seo'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => `/tags/${tag}`),
@@ -35,24 +36,26 @@ type TagPageProps = {
 }
 
 const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
-  <Layout
-    title={`#${tag}`}
-    subheader={
-      <Container size="small" className="mb-6">
-        <h1 className="col-span-2 text-4xl font-black text-white">
-          <FiHash />
-          {tag}
-        </h1>
-        <div className="text-xs text-white hover:text-gray-200">
-          <TagList tags={tags} light />
-        </div>
+  <>
+    <NextSeo title={`Tag #${tag}`} />
+    <Layout
+      subheader={
+        <Container size="small" className="mb-6">
+          <h1 className="col-span-2 text-4xl font-black text-white">
+            <FiHash />
+            {tag}
+          </h1>
+          <div className="text-xs text-white hover:text-gray-200">
+            <TagList tags={tags} light />
+          </div>
+        </Container>
+      }
+    >
+      <Container size="small">
+        <ArticleList articles={articles} />
       </Container>
-    }
-  >
-    <Container size="small">
-      <ArticleList articles={articles} />
-    </Container>
-  </Layout>
+    </Layout>
+  </>
 )
 
 export default TagPage

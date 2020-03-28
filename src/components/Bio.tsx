@@ -11,10 +11,7 @@ const Bio: React.FC<BioProps> = ({ className }) => (
   <aside className={clsx('my-8', className)}>
     <Container size="small" className="text-center">
       <div className="min-h-24 min-w-24 mb-4">
-        <img
-          className="inline h-24 w-24 rounded-full"
-          src="https://www.gravatar.com/avatar/a2d6b99998cc640643196c2ebc7e94b6?s=256"
-        />
+        <img className="inline h-24 w-24 rounded-full" src={process.env.PROFILE_IMAGE} />
       </div>
       <div className="text-lg font-bold text-white mb-2">👋 I'm Lailo</div>
       <p className="text font-light text-gray-200 dark:text-gray-300 max-w-md mx-auto">
@@ -24,14 +21,14 @@ const Bio: React.FC<BioProps> = ({ className }) => (
       </p>
       <div className="mt-3">
         <a
-          href="https://twitter.com/lailo_ch/"
+          href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}
           title="Twitter account"
           className="hover:bg-primary-dark text-white hover:text-white rounded-full px-2 py-1 mx-1"
         >
           <FiTwitter />
         </a>
         <a
-          href="https://github.com/lailo/"
+          href={`https://github.com/${process.env.GITHUB_USERNAME}`}
           title="Github account"
           className="hover:bg-primary-dark text-white hover:text-white rounded-full px-2 py-1 mx-1"
         >

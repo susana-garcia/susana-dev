@@ -8,8 +8,8 @@ import TagList from 'components/TagList'
 import Container from 'components/layout/Container'
 import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'
-import Divider from 'components/Divider'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+import { NextSeo } from 'next-seo'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),
@@ -27,57 +27,72 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
-  const { title, date, content, tags, readingTime } = article
+  const { slug, excerpt, title, date, content, tags, readingTime } = article
 
   return (
-    <Layout
-      title={title}
-      subheader={
-        <header className="mb-12">
-          <h1 className="text-5xl font-black text-white leading-tight mb-2">{title}</h1>
-          <div className="text-gray-200">
-            <PublishedAt date={date} className="mr-3" />
-            <ReadingTime readingTime={readingTime} className="mr-2" />
-            <TagList tags={tags} light />
-          </div>
-        </header>
-      }
-    >
-      <Container size="small">
-        <article>
-          <h1 className="hidden">{title}</h1>
-          <Markdown content={content} />
-          <footer className="mt-16 grid grid-cols-2 font-bold">
-            <div>
-              {prev && (
-                <Link
-                  href={{ pathname: '/articles', query: { slug: prev.slug } }}
-                  as={`/articles/${prev.slug}`}
-                >
-                  <a>
-                    <FiArrowLeft className="mr-1" />
-                    {prev.title}
-                  </a>
-                </Link>
-              )}
+    <>
+      <NextSeo
+        title={title}
+        description={excerpt}
+        openGraph={{
+          title,
+          description: excerpt,
+          url: `${process.env.SITE_URL}/articles/${slug}`,
+          type: 'article',
+          article: {
+            publishedTime: date,
+            tags: tags,
+          },
+        }}
+      />
+      <Layout
+        subheader={
+          <header className="mb-12">
+            <h1 className="text-5xl font-black text-white leading-tight mb-2">{title}</h1>
+            <div className="text-gray-200">
+              <PublishedAt date={date} className="mr-3" />
+              <ReadingTime readingTime={readingTime} className="mr-2" />
+              <TagList tags={tags} light />
             </div>
-            <div className="text-right">
-              {next && (
-                <Link
-                  href={{ pathname: '/articles', query: { slug: next.slug } }}
-                  as={`/articles/${next.slug}`}
-                >
-                  <a>
-                    {next.title}
-                    <FiArrowRight className="ml-1" />
-                  </a>
-                </Link>
-              )}
-            </div>
-          </footer>
-        </article>
-      </Container>
-    </Layout>
+          </header>
+        }
+      >
+        <Container size="small">
+          <article>
+            <h1 className="hidden">{title}</h1>
+            <Markdown content={content} />
+            <footer className="mt-16 grid grid-cols-2 font-bold">
+              <div>
+                {prev && (
+                  <Link
+                    href={{ pathname: '/articles', query: { slug: prev.slug } }}
+                    as={`/articles/${prev.slug}`}
+                  >
+                    <a>
+                      <FiArrowLeft className="mr-1" />
+                      {prev.title}
+                    </a>
+                  </Link>
+                )}
+              </div>
+              <div className="text-right">
+                {next && (
+                  <Link
+                    href={{ pathname: '/articles', query: { slug: next.slug } }}
+                    as={`/articles/${next.slug}`}
+                  >
+                    <a>
+                      {next.title}
+                      <FiArrowRight className="ml-1" />
+                    </a>
+                  </Link>
+                )}
+              </div>
+            </footer>
+          </article>
+        </Container>
+      </Layout>
+    </>
   )
 }
 
