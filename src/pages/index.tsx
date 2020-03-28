@@ -5,9 +5,15 @@ import Layout from 'components/layout/Layout'
 import ArticleList from 'components/ArticleList'
 import Container from 'components/layout/Container'
 import Bio from 'components/Bio'
+import { generateRSS } from 'utils/generateRSS'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
+
+  if (process.env.GENERATE_RSS) {
+    generateRSS(articles)
+  }
+
   return { props: { articles } }
 }
 

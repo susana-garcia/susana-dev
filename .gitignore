@@ -60,3 +60,4 @@ typings/
 # Next.js build output
 .next
 out
+public/rss.xml
