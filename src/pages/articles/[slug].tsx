@@ -10,6 +10,7 @@ import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
+import ArticleMetaInfos from 'components/ArticleMetaInfos'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),
@@ -27,7 +28,7 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
-  const { slug, excerpt, title, date, content, tags, readingTime } = article
+  const { slug, excerpt, title, date, content, tags } = article
 
   return (
     <>
@@ -47,18 +48,10 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
       />
       <Layout
         subheader={
-          <Container size="small" className="mt-12 mb-8">
+          <div className="mt-12 mb-8">
             <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-            <div className="text-gray-800 dark:text-gray-200 grid grid-cols-1 md:grid-cols-2 items-center">
-              <div>
-                <PublishedAt date={date} className="mr-3" />
-                <ReadingTime readingTime={readingTime} />
-              </div>
-              <div className="md:text-right">
-                <TagList tags={tags} />
-              </div>
-            </div>
-          </Container>
+            <ArticleMetaInfos article={article} />
+          </div>
         }
       >
         <Container size="small">
