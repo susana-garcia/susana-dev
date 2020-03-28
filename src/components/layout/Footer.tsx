@@ -1,22 +1,48 @@
 import React from 'react'
-import { FiHeart, FiRss } from 'react-icons/fi'
+import { FiRss, FiGithub, FiTwitter } from 'react-icons/fi'
 import Container from 'components/layout/Container'
 
 const Footer = () => {
   return (
-    <footer className="py-2">
-      <Container size="small" className="grid grid-cols-2 gap-4">
-        <div className="text-xs text-gray-600">
-          Made with <FiHeart className="text-red-600" /> by{' '}
-          <a title="Twitter account" href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}>
-            @{process.env.TWITTER_USERNAME}
-          </a>
+    <footer className="py-6 mt-6">
+      <Container size="small" className="grid gap-6 grid-cols-1 md:grid-cols-none">
+        <hr className="md:col-span-2 border-gray-400 dark:border-gray-800 pb-4" />
+        <div className="max-w-sm">
+          <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">About</h4>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {process.env.SITE_ABOUT}
+          </p>
         </div>
-        <div className="text-xs text-center text-gray-600">
-          <a title="RSS" href="/rss.xml">
-            <FiRss className="mr-1" />
-            RSS
-          </a>
+        <div>
+          <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">More</h4>
+          <ul>
+            <li className="">
+              <a
+                className="text-sm"
+                href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}
+                title="Twitter account"
+              >
+                <FiTwitter className="mr-1" />
+                Twitter
+              </a>
+            </li>
+            <li className="">
+              <a
+                className="text-sm"
+                href={`https://github.com/${process.env.GITHUB_USERNAME}`}
+                title="Github account"
+              >
+                <FiGithub className="mr-1" />
+                GitHub
+              </a>
+            </li>
+            <li className="">
+              <a className="text-sm" title="RSS" href="/rss.xml">
+                <FiRss className="mr-1" />
+                RSS feed
+              </a>
+            </li>
+          </ul>
         </div>
       </Container>
     </footer>
