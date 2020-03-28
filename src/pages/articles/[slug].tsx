@@ -47,14 +47,18 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
       />
       <Layout
         subheader={
-          <header className="mb-12">
-            <h1 className="text-5xl font-black text-white leading-tight mb-2">{title}</h1>
-            <div className="text-gray-200">
-              <PublishedAt date={date} className="mr-3" />
-              <ReadingTime readingTime={readingTime} className="mr-2" />
-              <TagList tags={tags} light />
+          <Container size="small" className="mt-12 mb-8">
+            <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
+            <div className="text-gray-800 dark:text-gray-200 grid grid-cols-1 md:grid-cols-2 items-center">
+              <div>
+                <PublishedAt date={date} className="mr-3" />
+                <ReadingTime readingTime={readingTime} />
+              </div>
+              <div className="md:text-right">
+                <TagList tags={tags} />
+              </div>
             </div>
-          </header>
+          </Container>
         }
       >
         <Container size="small">

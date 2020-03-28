@@ -40,13 +40,13 @@ const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
     <NextSeo title={`Tag #${tag}`} />
     <Layout
       subheader={
-        <Container size="small" className="mb-6">
-          <h1 className="col-span-2 text-4xl font-black text-white">
+        <Container size="small" className="mt-12 mb-8">
+          <h1 className="col-span-2 text-4xl font-black">
             <FiHash />
             {tag}
           </h1>
           <div className="text-xs text-white hover:text-gray-200">
-            <TagList tags={tags} light />
+            <TagList tags={tags} />
           </div>
         </Container>
       }
