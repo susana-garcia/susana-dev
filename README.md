@@ -1,3 +1,3 @@
-# nextjs-tailwindcss-blog
+# Lailo's Blog
 
-A NextJS SSG Markdown files blog styled with Tailwind CSS.
+This is my personal blog based on Next.js and Markdown, styled with TailwindCSS and Static-Site-Generation (SSG).

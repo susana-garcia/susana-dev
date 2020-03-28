@@ -20,9 +20,12 @@ const Header: React.FC = ({ children }) => (
         <Link href="/">
           <a
             title="Back home"
-            className="font-black text-black dark:text-white hover:text-primary hover:no-underline"
+            className="font-black text-black dark:text-white hover:text-primary hover:no-underline flex"
           >
-            B<span className="font-light">log</span>
+            <div>Lai</div>
+            <div className="text-primary font-thin">B</div>
+            <div className="border-b border-primary">lo</div>
+            <div className="text-primary font-thin">g</div>
           </a>
         </Link>
       </div>
