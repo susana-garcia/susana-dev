@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { Article } from 'utils/articles'
 import ArticleMetaInfos from 'components/ArticleMetaInfos'
-import { FiRss } from 'react-icons/fi'
 
 interface ArticleListProps {
   articles: Article[]
@@ -32,7 +31,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
     {articles.map(article => (
       <article
         key={article.slug}
-        className="mb-4 p-4 rounded hover:bg-white dark-hover:bg-gray-900 hover:shadow-md"
+        className="mb-4 p-4 -mx-4 rounded hover:bg-white dark-hover:bg-gray-900 hover:shadow-md"
       >
         <header>
           <Link
