@@ -26,7 +26,7 @@ export function generateRSS(articles: Article[]) {
   articles.forEach(article => {
     feed.item({
       title: article.title,
-      description: article.excerpt,
+      description: article.content,
       url: `${process.env.SITE_URL}/articles/${article.slug}`,
       guid: article.slug,
       categories: article.tags,
