@@ -12,7 +12,7 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
   return (
     <div
       className={clsx(
-        'p-6 text-center',
+        'p-4 md:p-6 text-center',
         'bg-white dark:bg-gray-900 rounded border-gray-200 shadow overflow-hidden',
         className
       )}
@@ -21,7 +21,7 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
       <p className="text-gray-700">Get new content directly to your - Don't miss out.</p>
       <TinyLetter list={process.env.TINY_LETTER_ID} className="mt-3">
         <input
-          className="border border-primary px-2 py-1 rounded-tl rounded-bl bg-transparent"
+          className="border border-primary px-2 py-1 rounded-tl rounded-bl bg-transparent w-40"
           type="email"
           placeholder="your@email.com"
         />
