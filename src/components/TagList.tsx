@@ -7,9 +7,9 @@ interface TagListProps {
 }
 
 const TagList: React.FC<TagListProps> = ({ tags }) => (
-  <ul className="inline-flex -mx-1">
+  <ul className="-mx-1">
     {tags.map(tag => (
-      <li key={tag}>
+      <li key={tag} className="inline">
         <Link href={{ pathname: '/tags', query: { tag } }} as={`/tags/${tag}`}>
           <a
             className="text-xs hover:bg-primary hover:text-white hover:no-underline italic px-1 rounded-sm whitespace-no-wrap"

@@ -24,7 +24,9 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
             </a>
           </Link>
         </header>
-        <p className="text-lg font-light text-gray-700 dark:text-gray-300">{article.excerpt}</p>
+        <p className="text-lg font-light text-gray-700 dark:text-gray-300 mb-2">
+          {article.excerpt}
+        </p>
         <ArticleMetaInfos article={article} />
       </article>
     ))}

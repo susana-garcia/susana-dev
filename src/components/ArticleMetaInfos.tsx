@@ -9,12 +9,12 @@ interface ArticleMetaInfosProps {
 }
 
 const ArticleMetaInfos: React.FC<ArticleMetaInfosProps> = ({ article }) => (
-  <div className="text-gray-800 dark:text-gray-200 grid grid-cols-1 md:grid-cols-2 items-center">
+  <div className="text-gray-800 dark:text-gray-200 flex flex-col sm:flex-row sm:justify-between">
     <div>
       <PublishedAt date={article.date} className="mr-3" />
       <ReadingTime readingTime={article.readingTime} />
     </div>
-    <div className="md:text-right">
+    <div className="sm:text-right">
       <TagList tags={article.tags} />
     </div>
   </div>
