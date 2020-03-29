@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Article } from 'utils/articles'
 import ArticleMetaInfos from 'components/ArticleMetaInfos'
+import { FiRss } from 'react-icons/fi'
 
 interface ArticleListProps {
   articles: Article[]
@@ -9,6 +10,25 @@ interface ArticleListProps {
 
 const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
   <>
+    {articles.length === 0 && (
+      <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+        There aren't any posts yet. <br />
+        Subscribe to my{' '}
+        <a className="text-sm" title="RSS" href="/rss.xml">
+          {' '}
+          RSS feed
+        </a>{' '}
+        or follow me on{' '}
+        <a
+          className="text-sm"
+          href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}
+          title="Twitter account"
+        >
+          Twitter
+        </a>{' '}
+        to not miss out.
+      </p>
+    )}
     {articles.map(article => (
       <article
         key={article.slug}
