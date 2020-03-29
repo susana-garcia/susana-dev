@@ -14,6 +14,7 @@ module.exports = {
     SITE_LOCALE: 'en',
     TWITTER_USERNAME: 'lailo_ch',
     GITHUB_USERNAME: 'lailo',
+    TINY_LETTER_ID: 'laiblog',
   },
   webpack(config) {
     config.resolve.modules.push(path.resolve(__dirname, 'src'))

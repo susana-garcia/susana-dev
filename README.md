@@ -16,6 +16,10 @@ This is my personal blog based on Next.js and Markdown, styled with TailwindCSS 
 
 Update all values inside the `env` key in the `next.config.js` file to match your profile.
 
+#### Newsletter
+
+If you don't want to have a [Tinyletter](https://tinyletter.com/) newsletter, just leave the key `TINY_LETTER_ID` empty and the component will be excluded automatically.
+
 ### 2. Choose Your Color
 
 Change the primary color by update the `primary` key inside the `tailwind.config.js` file. You can choose any color hash (e.g. `#FF7A00`) or use one out of [Tailwind CSS colors](https://tailwindcss.com/docs/customizing-colors/#default-color-palette) default color palette.
