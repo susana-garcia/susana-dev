@@ -3,37 +3,32 @@
 .markdown {
   h1 {
     @apply font-black;
-    @apply text-5xl;
-    @apply my-5;
+    @apply text-4xl;
+    @apply mb-4 mt-8;
   }
 
   h2 {
     @apply font-black;
-    @apply text-4xl;
-    @apply my-4;
+    @apply text-3xl;
+    @apply mb-3 mt-6;
   }
 
   h3 {
     @apply font-black;
-    @apply text-3xl;
-    @apply my-4;
+    @apply text-2xl;
+    @apply mb-2 mt-4;
   }
 
   h4 {
     @apply font-black;
-    @apply text-2xl;
-    @apply my-2;
-  }
-
-  h5 {
-    @apply font-black;
     @apply text-xl;
-    @apply my-1;
+    @apply mb-1 mt-2;
   }
 
+  h5,
   h6 {
     @apply font-black;
-    @apply my-1;
+    @apply mb-1 mt-2;
   }
 
   hr {
