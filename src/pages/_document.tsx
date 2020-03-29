@@ -16,7 +16,7 @@ class Document extends NextDocument {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="Lailo's blog about code and design."
+            title={process.env.SITE_TITLE}
             href="/rss.xml"
           />
           <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=v1" />

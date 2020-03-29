@@ -10,12 +10,12 @@ export function generateRSS(articles: Article[]) {
   const year = new Date().getFullYear()
 
   const feed = new RSS({
-    title: 'My blog',
-    description: 'All about code and design.',
-    managingEditor: 'Lailo',
-    webMaster: 'Lailo',
-    copyright: `${year} Lailo`,
-    language: 'en',
+    title: process.env.SITE_TITLE,
+    description: process.env.SITE_DESCRIPTION,
+    managingEditor: process.env.AUTHORS_NAME,
+    webMaster: process.env.AUTHORS_NAME,
+    copyright: `${year} ${process.env.AUTHORS_NAME}`,
+    language: process.env.SITE_LOCALE,
     categories: tags,
     // eslint-disable-next-line @typescript-eslint/camelcase
     feed_url: `${process.env.SITE_URL}/rss.xml`,
@@ -27,10 +27,10 @@ export function generateRSS(articles: Article[]) {
     feed.item({
       title: article.title,
       description: article.excerpt,
-      url: `${process.env.SITE_URL}/posts/${article.slug}`,
+      url: `${process.env.SITE_URL}/articles/${article.slug}`,
       guid: article.slug,
       categories: article.tags,
-      author: 'Lailo',
+      author: process.env.SITE_LOCALE,
       date: article.date,
     })
   })

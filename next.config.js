@@ -6,6 +6,7 @@ module.exports = {
     GENERATE_RSS: PHASE_PRODUCTION_BUILD,
     SITE_URL: PHASE_PRODUCTION_BUILD ? 'https://www.lailo.ch' : 'http://localhost:3000',
     PROFILE_IMAGE: 'https://www.gravatar.com/avatar/a2d6b99998cc640643196c2ebc7e94b6?s=256',
+    AUTHORS_NAME: 'Lailo',
     SITE_NAME: 'Lailo',
     SITE_TITLE: "Lailo's Blog",
     SITE_DESCRIPTION: 'Passionate about simplicity in code and design.',
