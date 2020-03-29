@@ -1,6 +1,8 @@
 /* purgecss start ignore */
 
 .markdown {
+  font-size: 16px;
+
   h1 {
     @apply font-black;
     @apply text-4xl;
@@ -66,7 +68,7 @@
 
   pre {
     @apply bg-gray-900;
-    @apply text-gray-200;
+    @apply text-base text-gray-200;
     @apply p-4 my-12;
     @apply rounded-lg;
     @apply leading-8;
@@ -112,9 +114,8 @@
   }
 
   .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
+    @apply block overflow-x-auto;
+    @apply p-2;
     @apply bg-gray-900;
     @apply text-gray-200;
   }
