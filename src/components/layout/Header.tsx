@@ -23,9 +23,9 @@ const Header: React.FC = ({ children }) => (
             className="font-black text-black dark:text-white hover:text-primary hover:no-underline flex"
           >
             <div>Lai</div>
-            <div className="text-primary font-thin">B</div>
-            <div className="border-b border-primary">lo</div>
-            <div className="text-primary font-thin">g</div>
+            <div className="text-primary">B</div>
+            <div className="underline border-primary">lo</div>
+            <div className="text-primary">g</div>
           </a>
         </Link>
       </div>
