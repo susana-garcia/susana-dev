@@ -55,34 +55,36 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
           <article>
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
-            <footer className="mt-16 grid grid-cols-2 font-bold">
-              <div>
-                {prev && (
-                  <Link
-                    href={{ pathname: '/articles', query: { slug: prev.slug } }}
-                    as={`/articles/${prev.slug}`}
-                  >
-                    <a>
-                      <FiArrowLeft className="mr-1" />
-                      {prev.title}
-                    </a>
-                  </Link>
-                )}
-              </div>
-              <div className="text-right">
-                {next && (
-                  <Link
-                    href={{ pathname: '/articles', query: { slug: next.slug } }}
-                    as={`/articles/${next.slug}`}
-                  >
-                    <a>
-                      {next.title}
-                      <FiArrowRight className="ml-1" />
-                    </a>
-                  </Link>
-                )}
-              </div>
-            </footer>
+            {(prev || next) && (
+              <footer className="mt-16 grid grid-cols-2 font-bold">
+                <div>
+                  {prev && (
+                    <Link
+                      href={{ pathname: '/articles', query: { slug: prev.slug } }}
+                      as={`/articles/${prev.slug}`}
+                    >
+                      <a>
+                        <FiArrowLeft className="mr-1" />
+                        {prev.title}
+                      </a>
+                    </Link>
+                  )}
+                </div>
+                <div className="text-right">
+                  {next && (
+                    <Link
+                      href={{ pathname: '/articles', query: { slug: next.slug } }}
+                      as={`/articles/${next.slug}`}
+                    >
+                      <a>
+                        {next.title}
+                        <FiArrowRight className="ml-1" />
+                      </a>
+                    </Link>
+                  )}
+                </div>
+              </footer>
+            )}
           </article>
         </Container>
       </Layout>

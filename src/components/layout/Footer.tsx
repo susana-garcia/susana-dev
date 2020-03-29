@@ -5,9 +5,9 @@ import Newsletter from 'components/Newsletter'
 
 const Footer = () => {
   return (
-    <footer className="py-6 mt-6">
+    <footer className="py-8">
       <Container className="grid gap-6 grid-cols-1 sm:grid-cols-none">
-        <Newsletter className="col-span-2 my-6" />
+        <Newsletter className="col-span-2" />
         <hr className="col-span-2 border-gray-400 dark:border-gray-800 pb-4" />
         <div className="max-w-sm col-span-2 sm:col-auto">
           <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">About</h4>
