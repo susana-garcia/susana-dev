@@ -6,7 +6,7 @@ import Newsletter from 'components/Newsletter'
 const Footer = () => {
   return (
     <footer className="py-6 mt-6">
-      <Container size="small" className="grid gap-6 grid-cols-1 sm:grid-cols-none">
+      <Container className="grid gap-6 grid-cols-1 sm:grid-cols-none">
         <Newsletter className="col-span-2 my-6" />
         <hr className="col-span-2 border-gray-400 dark:border-gray-800 pb-4" />
         <div className="max-w-sm col-span-2 sm:col-auto">

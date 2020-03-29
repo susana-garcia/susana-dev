@@ -51,7 +51,7 @@ const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
         </div>
       }
     >
-      <Container size="small">
+      <Container>
         <ArticleList articles={articles} />
       </Container>
     </Layout>

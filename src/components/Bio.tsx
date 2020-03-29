@@ -9,7 +9,7 @@ interface BioProps {
 
 const Bio: React.FC<BioProps> = ({ className }) => (
   <aside className={clsx('my-8', className)}>
-    <Container size="small" className="text-center">
+    <Container className="text-center">
       <div className="min-h-24 min-w-24 mb-4">
         <img className="inline h-24 w-24 rounded-full" src={process.env.PROFILE_IMAGE} />
       </div>

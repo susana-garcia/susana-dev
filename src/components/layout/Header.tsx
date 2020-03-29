@@ -33,7 +33,7 @@ const Header: React.FC = ({ children }) => (
         <DarkModeToggle />
       </div>
     </Container>
-    {children && <Container size="small">{children}</Container>}
+    {children && <Container>{children}</Container>}
   </header>
 )
 

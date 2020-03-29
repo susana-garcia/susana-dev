@@ -51,7 +51,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
           </div>
         }
       >
-        <Container size="small">
+        <Container>
           <article>
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
