@@ -1,8 +1,9 @@
 ---
 slug: 'this-blog-is-open-source'
 title: 'This Blog Is Open Source'
-date: '2020-03-29'
+date: '2020-03-29T19:14:12.215Z'
 tags: ['opensource', 'web', 'react', 'nextjs', 'tailwindcss']
+type: 'article'
 published: true
 ---
 

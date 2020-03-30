@@ -3,6 +3,7 @@ slug: this-is-why-we-have-built-pitchcard-io
 title: This Is Why We Have Built Pitchcard.Io
 date: '2016-05-08T07:07:37.915Z'
 tags: ['pitch', 'idea', 'web']
+type: 'article'
 published: false
 ---
 

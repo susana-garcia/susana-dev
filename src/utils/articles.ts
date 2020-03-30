@@ -13,6 +13,7 @@ export interface Article {
   published: boolean
   title: string
   date: string
+  type: 'article' | 'tip'
   tags: string[]
   content: string
   excerpt: string
@@ -24,7 +25,7 @@ export function loadArticles(): Article[] {
 
   const articles = articleFiles.map(fileData => {
     const {
-      data: { slug, title, date, tags, published },
+      data: { slug, title, date, tags, published, type },
       content,
       excerpt,
     } = fileData
@@ -35,6 +36,7 @@ export function loadArticles(): Article[] {
       date,
       content,
       tags,
+      type,
       excerpt,
       readingTime: readingTime(content),
     }

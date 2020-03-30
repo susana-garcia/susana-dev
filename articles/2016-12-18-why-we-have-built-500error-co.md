@@ -3,6 +3,7 @@ slug: why-we-have-built-500error-co
 title: Why We Have Built 500error.co
 date: '2016-12-18T20:47:11.000Z'
 tags: ['error', 'projects', 'server', 'web']
+type: 'article'
 published: false
 ---
 
