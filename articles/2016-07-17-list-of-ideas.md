@@ -1,5 +1,4 @@
 ---
-slug: list-of-ideas-and-unfinished-projects
 title: List of Ideas and Unfinished Projects
 tags: ['pitch', 'idea', 'projects']
 type: 'article'

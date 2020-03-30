@@ -1,5 +1,4 @@
 ---
-slug: 'this-blog-is-open-source'
 title: 'This Blog Is Open Source'
 tags: ['opensource', 'web', 'react', 'nextjs', 'tailwindcss']
 type: 'article'

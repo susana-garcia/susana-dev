@@ -1,6 +1,5 @@
 ---
-slug: this-is-why-we-have-built-pitchcard-io
-title: This Is Why We Have Built Pitchcard.Io
+title: This Is Why We Have Built Pitchcard
 tags: ['pitch', 'idea', 'web']
 type: 'article'
 publishedAt: '2016-05-08T07:07:37.915Z'

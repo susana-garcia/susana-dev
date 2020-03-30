@@ -1,5 +1,4 @@
 ---
-slug: 'how-to-export-your-medium-articles-into-markdown-files'
 title: 'How to Export Your Medium Articles into Markdown Files'
 tags: ['medium', 'export', 'markdown']
 type: 'tip'

@@ -1,4 +1,5 @@
 import readingTime from 'reading-time'
+import slugify from 'slugify'
 import { loadFiles } from 'utils/fileLoader'
 
 export interface ReadingTime {
@@ -25,10 +26,13 @@ export function loadArticles(): Article[] {
 
   const articles = articleFiles.map(fileData => {
     const {
-      data: { slug, title, tags, publishedAt, updatedAt, type },
+      data: { title, tags, publishedAt, updatedAt, type },
       content,
       excerpt,
     } = fileData
+
+    const slug = slugify(title, { lower: true })
+
     return {
       updatedAt,
       publishedAt,

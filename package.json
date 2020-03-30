@@ -41,6 +41,7 @@
     "react-icons": "^3.9.0",
     "react-tinyletter": "^0.3.2",
     "reading-time": "^1.2.0",
+    "slugify": "^1.4.0",
     "tailwindcss": "^1.2.0",
     "use-dark-mode": "^2.3.1"
   },
