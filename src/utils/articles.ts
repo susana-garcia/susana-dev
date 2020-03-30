@@ -10,9 +10,9 @@ export interface ReadingTime {
 
 export interface Article {
   slug: string
-  published: boolean
+  publishedAt: string
+  updatedAt: string
   title: string
-  date: string
   type: 'article' | 'tip'
   tags: string[]
   content: string
@@ -25,15 +25,15 @@ export function loadArticles(): Article[] {
 
   const articles = articleFiles.map(fileData => {
     const {
-      data: { slug, title, date, tags, published, type },
+      data: { slug, title, tags, publishedAt, updatedAt, type },
       content,
       excerpt,
     } = fileData
     return {
-      published,
+      updatedAt,
+      publishedAt,
       slug,
       title,
-      date,
       content,
       tags,
       type,
@@ -43,8 +43,8 @@ export function loadArticles(): Article[] {
   })
 
   return articles
-    .filter(article => article.published || process.env.NODE_ENV === 'development')
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .filter(article => article.publishedAt || process.env.NODE_ENV === 'development')
+    .sort((a, b) => b.updatedAt.localeCompare(a.publishedAt))
 }
 
 export interface ArticleMap {

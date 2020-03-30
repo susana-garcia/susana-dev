@@ -1,10 +1,10 @@
 ---
 slug: list-of-ideas-and-unfinished-projects
 title: List of Ideas and Unfinished Projects
-date: '2016-07-17T09:14:05.215Z'
 tags: ['pitch', 'idea', 'projects']
 type: 'article'
-published: false
+publishedAt: '2016-07-17T09:14:05.215Z'
+updatedAt: '2016-07-17T09:14:05.215Z'
 ---
 
 This is a story of my huge list of ideas and a folder full of unfinished

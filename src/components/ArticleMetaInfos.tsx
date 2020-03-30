@@ -11,7 +11,7 @@ interface ArticleMetaInfosProps {
 const ArticleMetaInfos: React.FC<ArticleMetaInfosProps> = ({ article }) => (
   <div className="text-gray-800 dark:text-gray-200 flex flex-col sm:flex-row sm:justify-between">
     <div>
-      <PublishedAt date={article.date} className="mr-3" />
+      <PublishedAt date={article.publishedAt} className="mr-3" />
       <ReadingTime readingTime={article.readingTime} />
     </div>
     <div className="sm:text-right">

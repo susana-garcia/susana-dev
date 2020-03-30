@@ -1,10 +1,10 @@
 ---
 slug: why-we-have-built-500error-co
 title: Why We Have Built 500error.co
-date: '2016-12-18T20:47:11.000Z'
 tags: ['error', 'projects', 'server', 'web']
 type: 'article'
-published: false
+publishedAt: '2016-12-18T20:47:11.000Z'
+updatedAt: '2016-12-18T20:47:11.000Z'
 ---
 
 We built 500error.co because we had to solve one of our own problems.
@@ -17,7 +17,7 @@ We built [500error.co](https://www.500error.co) because we had to solve one of o
 
 # How It Started
 
-We ([susu\_\_garcia](https://medium.com/u/269da56383d4) and I) like to build things. We don’t like to talk about how cool it would be to do this and that — we just do it. The outcome is that we have a lot of projects simultaneously.
+We [Susana Garcia](https://susana.dev) and I) like to build things. We don’t like to talk about how cool it would be to do this and that — we just do it. The outcome is that we have a lot of projects simultaneously.
 
 As we all know, servers can crash and “oooh boy they do”. And you know what, they crash at the worst time. They crash while your release and you lose important leads. Or they crash while you sleep and we really like to sleep 💤. We decided to fix this problem.
 

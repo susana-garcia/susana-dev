@@ -35,7 +35,7 @@ export function generateRSS(articles: Article[]) {
       guid: article.slug,
       categories: article.tags,
       author: process.env.SITE_LOCALE,
-      date: article.date,
+      date: article.publishedAt,
     })
   })
 

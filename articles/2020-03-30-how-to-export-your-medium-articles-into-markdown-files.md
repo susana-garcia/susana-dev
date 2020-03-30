@@ -1,10 +1,10 @@
 ---
 slug: 'how-to-export-your-medium-articles-into-markdown-files'
 title: 'How to Export Your Medium Articles into Markdown Files'
-date: '2020-03-29T19:49:12.215Z'
 tags: ['medium', 'export', 'markdown']
 type: 'tip'
-published: true
+publishedAt: '2020-03-29T19:49:12.215Z'
+updatedAt: '2020-03-29T19:49:12.215Z'
 ---
 
 How to export your articles from medium.com into Markdown files.

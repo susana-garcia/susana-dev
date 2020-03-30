@@ -1,10 +1,10 @@
 ---
 slug: this-is-why-we-have-built-pitchcard-io
 title: This Is Why We Have Built Pitchcard.Io
-date: '2016-05-08T07:07:37.915Z'
 tags: ['pitch', 'idea', 'web']
 type: 'article'
-published: false
+publishedAt: '2016-05-08T07:07:37.915Z'
+updatedAt: '2016-05-08T07:07:37.915Z'
 ---
 
 Since the iPhone released and the following AppStore boom, a lot of people
@@ -49,7 +49,3 @@ You can share your _Pitchcard_ with close friends via WhatsApp and email, or wit
 Another important point of _Pitchcard_ is, that we consequently set a **200 chars limit on the description** of the idea**.** As we already mentioned before, we want that people get to the point.
 
 We hope you like our product and wish you good luck with your next billion dollar idea. 😜
-
-Please give us feedback adding a comment here or via Twitter [@pitchcard](https://twitter.com/pitchcard). You can also contact us directly via our twitter accounts: [@susu\_\_garcia](https://twitter.com/susu__garcia) and [@lailo_ch](https://twitter.com/lailo_ch).
-
-Thanks for reading.

@@ -8,6 +8,7 @@ import Container from 'components/layout/Container'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
 import ArticleMetaInfos from 'components/ArticleMetaInfos'
+import format from 'date-fns/format'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),
@@ -25,7 +26,7 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
-  const { slug, excerpt, title, date, content, tags } = article
+  const { slug, excerpt, title, publishedAt, updatedAt, content, tags } = article
 
   return (
     <>
@@ -38,7 +39,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
           url: `${process.env.SITE_URL}/articles/${slug}`,
           type: 'article',
           article: {
-            publishedTime: date,
+            publishedTime: publishedAt,
             tags: tags,
           },
         }}
@@ -52,6 +53,11 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
         }
       >
         <Container>
+          {publishedAt !== updatedAt && (
+            <p className="mb-8 text-xs text-gray-500">
+              Edited at {format(new Date(updatedAt), 'MMM d, yyyy')}
+            </p>
+          )}
           <article>
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
