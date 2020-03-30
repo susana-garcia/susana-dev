@@ -1,7 +1,9 @@
 const path = require('path')
+const withPlugins = require('next-compose-plugins')
+const withReactSvg = require('next-react-svg')
 const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 
-module.exports = {
+const nextConfig = {
   env: {
     GENERATE_RSS: PHASE_PRODUCTION_BUILD,
     SITE_URL: PHASE_PRODUCTION_BUILD ? 'https://www.lailo.ch' : 'http://localhost:3000',
@@ -22,3 +24,15 @@ module.exports = {
     return config
   },
 }
+
+module.exports = withPlugins(
+  [
+    [
+      withReactSvg,
+      {
+        include: path.resolve(__dirname, 'src/assets/svg'),
+      },
+    ],
+  ],
+  nextConfig
+)
