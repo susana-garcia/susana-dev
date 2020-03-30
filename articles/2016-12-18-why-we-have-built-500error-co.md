@@ -1,0 +1,49 @@
+---
+slug: why-we-have-built-500error-co
+title: Why We Have Built 500error.co
+date: '2016-12-18T20:47:11.000Z'
+tags: ['error', 'projects', 'server', 'web']
+published: false
+---
+
+We built 500error.co because we had to solve one of our own problems.
+
+---
+
+<small>Co-Written by [Susana Garcia](https://susana.dev)</small>
+
+We built [500error.co](https://www.500error.co) because we had to solve one of our problems. The idea was first pitched on [Pitchcard.io](https://www.pitchcard.io) and got a lot of traction. So we decided to built it, and we did it in less than two weeks.
+
+# How It Started
+
+We ([susu\_\_garcia](https://medium.com/u/269da56383d4) and I) like to build things. We don’t like to talk about how cool it would be to do this and that — we just do it. The outcome is that we have a lot of projects simultaneously.
+
+As we all know, servers can crash and “oooh boy they do”. And you know what, they crash at the worst time. They crash while your release and you lose important leads. Or they crash while you sleep and we really like to sleep 💤. We decided to fix this problem.
+
+# Developing in Bratislava
+
+We’re digital nomads and we moved to a new city every other month, but that’s another story. For this month, we’re in Bratislava.
+
+We used our very first day in Bratislava to collect all feedback from Pitchcard.io, friends and other developers. We picked the most important features for a MVP.
+
+We used the second day to choose the right tools to built this, and ended up using NodeJS with Express for the backend and React for the front end, as we had already positive experiences with these tools building [Pitchcard.io](https://www.pitchcard.io).
+
+From day three up to day seven, we built the MVP and send some invite emails to the investors of [Pitchcard.io](https://www.pitchcard.io). They liked the simplicity and gave us really good feedback, what we could improve and what they were missing.
+
+We used the second week to improve the UI for mobile, tablet and desktop. We also added a simple subscription with [Stripe](https://medium.com/u/3ecae35d6d66) (we really like Stripe). And we added better documentation of how to integrate it into Heroku, GitHub Pages and more.
+
+# Customize Your Page
+
+Our beta users like the way they could customize their error pages. They like it because it’s simple and funny. Here is what some things you can customize:
+
+- Add your own brand color
+- Choose one of the funny GIFs or just add your own Logo
+- Define your title and description so it sounds like you
+
+# The Result
+
+We’re happy that our beta users liked the first version and we’re proud of what we could built in less than two weeks.
+
+Now we can sleep at night without worrying about a crash on all these projects. If a server crash happens, we can fix it the day after and notify the new subscribed users. It’s simple as that.
+
+Do you want to be able to sleep at night without worrying about your server? [Visit **500error.co**](https://www.500error.co), create your own error page, integrate it into your existing projects and have one less thing to worry about.
