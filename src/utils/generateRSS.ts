@@ -1,5 +1,7 @@
 import fs from 'fs'
 import RSS from 'rss'
+import marked from 'marked'
+import hljs from 'highlight.js'
 import { loadTags } from 'utils/tags'
 import { Article } from './articles'
 
@@ -26,7 +28,9 @@ export function generateRSS(articles: Article[]) {
   articles.forEach(article => {
     feed.item({
       title: article.title,
-      description: article.content,
+      description: marked(article.content, {
+        highlight: (code, lang) => hljs.highlight(lang, code).value,
+      }),
       url: `${process.env.SITE_URL}/articles/${article.slug}`,
       guid: article.slug,
       categories: article.tags,
