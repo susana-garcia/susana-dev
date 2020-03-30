@@ -44,7 +44,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
           </Link>
         </header>
         <p className="text-lg font-light text-gray-700 dark:text-gray-300 mb-2">
-          {article.excerpt}
+          {article.description}
         </p>
         <ArticleMetaInfos article={article} />
       </article>

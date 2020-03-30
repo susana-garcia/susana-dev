@@ -1,14 +1,10 @@
 ---
-title: This Is Why We Have Built Pitchcard
+title: 'This Is Why We Have Built Pitchcard'
+description: 'Since the iPhone released and the following AppStore boom, a lot of people around us began to have amazing ideas: "Hey, I have a app idea".'
 tags: ['pitch', 'idea', 'web']
 type: 'article'
 publishedAt: '2016-05-08T07:07:37.915Z'
 updatedAt: '2016-05-08T07:07:37.915Z'
----
-
-Since the iPhone released and the following AppStore boom, a lot of people
-around us began to have amazing ideas: “Hey, I have a app idea”.
-
 ---
 
 <small>Co-Written by [Susana Garcia](https://susana.dev)</small>
@@ -31,7 +27,7 @@ Another important thing is, what for you might be a pretty good idea, others wou
 
 # Quick Feedback
 
-That’s why we’ve built [_Pitchcard.io_](https://www.pitchcard.io/) to get quick feedback. We’ve picked this name because of the elevator pitch.
+That’s why we’ve built [Pitchcard.io](https://www.pitchcard.io/) to get quick feedback. We’ve picked this name because of the elevator pitch.
 
 > [“\[..\] the idea that it should be possible to deliver the summary in the time span of an elevator ride, or approximately thirty seconds \[..\]”.](https://en.wikipedia.org/wiki/Elevator_pitch)
 

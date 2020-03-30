@@ -17,7 +17,7 @@ export interface Article {
   type: 'article' | 'tip'
   tags: string[]
   content: string
-  excerpt: string
+  description: string
   readingTime: ReadingTime
 }
 
@@ -26,9 +26,8 @@ export function loadArticles(): Article[] {
 
   const articles = articleFiles.map(fileData => {
     const {
-      data: { title, tags, publishedAt, updatedAt, type },
+      data: { title, description, tags, publishedAt, updatedAt, type },
       content,
-      excerpt,
     } = fileData
 
     const slug = slugify(title, { lower: true })
@@ -38,17 +37,17 @@ export function loadArticles(): Article[] {
       publishedAt,
       slug,
       title,
+      description,
       content,
       tags,
       type,
-      excerpt,
       readingTime: readingTime(content),
     }
   })
 
   return articles
     .filter(article => article.publishedAt || process.env.NODE_ENV === 'development')
-    .sort((a, b) => b.updatedAt.localeCompare(a.publishedAt))
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
 }
 
 export interface ArticleMap {
@@ -64,14 +63,6 @@ export function loadArticle(slug: string): ArticleMap {
 
   const articleMap: ArticleMap = {
     article: articles[index],
-  }
-
-  if (articleMap.article.excerpt) {
-    const excerptSeparator = '---'
-    const endOfExcerptIndex = articleMap.article.content.indexOf(excerptSeparator)
-    articleMap.article.content = articleMap.article.content.slice(
-      endOfExcerptIndex + excerptSeparator.length
-    )
   }
 
   if (index > 0) articleMap.prev = articles[index - 1]

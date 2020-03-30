@@ -1,13 +1,10 @@
 ---
-title: 'How to Export Your Medium Articles into Markdown Files'
+title: 'Export Your Medium Articles'
+description: 'How to export your articles from medium.com into Markdown files.'
 tags: ['medium', 'export', 'markdown']
 type: 'tip'
-publishedAt: '2020-03-29T19:49:12.215Z'
-updatedAt: '2020-03-29T19:49:12.215Z'
----
-
-How to export your articles from medium.com into Markdown files.
-
+publishedAt: '2020-03-30T19:49:12.215Z'
+updatedAt: '2020-03-30T20:54:12.215Z'
 ---
 
 # Export to HTML

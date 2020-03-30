@@ -26,16 +26,16 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
-  const { slug, excerpt, title, publishedAt, updatedAt, content, tags } = article
+  const { slug, description, title, publishedAt, updatedAt, content, tags } = article
 
   return (
     <>
       <NextSeo
         title={title}
-        description={excerpt}
+        description={description}
         openGraph={{
           title,
-          description: excerpt,
+          description: description,
           url: `${process.env.SITE_URL}/articles/${slug}`,
           type: 'article',
           article: {

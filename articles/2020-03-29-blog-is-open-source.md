@@ -1,14 +1,10 @@
 ---
 title: 'This Blog Is Open Source'
-tags: ['opensource', 'web', 'react', 'nextjs', 'tailwindcss']
+description: 'Use this blog to start your own. Be online within minutes by add your data, choose your favorite color and write your first article.'
+tags: ['open-source', 'web', 'react', 'nextjs', 'tailwindcss']
 type: 'article'
 publishedAt: '2020-03-29T19:14:12.215Z'
-updatedAt: '2020-03-30T20:35:12.215Z'
----
-
-Use this blog to start your own.
-Be online within minutes by add your data, choose your favorite color and write your first article.
-
+updatedAt: '2020-03-30T20:52:12.215Z'
 ---
 
 This blog is built with [Next.js](https://nextjs.org) using [Tailwind CSS](https://tailwindcss.com) for styling.
@@ -23,19 +19,15 @@ You can find a step-by-step instruction in the [README.md ](https://github.com/l
 
 Adding new posts is as simple as creating a new Markdown file inside the `/articles` folder and pushing it to GitHub's `master` branch.
 
-## Head Data
+## Meta Data
 
-It's important that you keep the head data at the top of the file.
-
-Keep in mind that the variable `publishedAt: '2020-03-29T19:14:12.215Z'` must have a value to publish your article.
-
-If it's set to like this `published: ''`, your article will only be visible in development.
+It's important that you keep the meta data at the top of the file.
 
 ```yml
 ---
-slug: 'this-blog-is-open-source'
 title: 'This Blog Is Open Source'
-tags: ['opensource', 'web', 'react', 'nextjs', 'tailwindcss']
+description: 'Use this blog to ....'
+tags: ['open-source', 'web', 'react', 'nextjs', 'tailwind-css']
 type: 'article'
 publishedAt: '2020-03-29T19:14:12.215Z'
 updatedAt: '2020-03-29T19:14:12.215Z'
@@ -43,19 +35,9 @@ updatedAt: '2020-03-29T19:14:12.215Z'
 
 ```
 
-## Excerpt
+Keep in mind that the variable `publishedAt: '2020-03-29T19:14:12.215Z'` must have a value to publish your article.
 
-Right after the head data, follows the excerpt, which is a short introduction of the article.
-It's used for the article list and for sharing on social media.
-
-```yml
-publishedAt: '2020-03-29T19:14:12.215Z'
-updatedAt: '2020-03-29T19:14:12.215Z'
----
-This the excerpt...
----
-
-```
+If it's set to `published: ''`, your article will only be visible in development.
 
 # Hosting
 
