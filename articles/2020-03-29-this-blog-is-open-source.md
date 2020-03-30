@@ -4,7 +4,7 @@ title: 'This Blog Is Open Source'
 tags: ['opensource', 'web', 'react', 'nextjs', 'tailwindcss']
 type: 'article'
 publishedAt: '2020-03-29T19:14:12.215Z'
-updatedAt: '2020-03-29T19:14:12.215Z'
+updatedAt: '2020-03-30T20:35:12.215Z'
 ---
 
 Use this blog to start your own.
@@ -27,16 +27,19 @@ Adding new posts is as simple as creating a new Markdown file inside the `/artic
 ## Head Data
 
 It's important that you keep the head data at the top of the file.
-Keep in mind that the last variable `published: true` must be set to true to publish your article.
-If it's set to `published: false`, your article will only be visible in development.
+
+Keep in mind that the variable `publishedAt: '2020-03-29T19:14:12.215Z'` must have a value to publish your article.
+
+If it's set to like this `published: ''`, your article will only be visible in development.
 
 ```yml
 ---
-slug: 'this-is-open-source'
-title: 'This is Open Source'
-date: '2020-03-29'
+slug: 'this-blog-is-open-source'
+title: 'This Blog Is Open Source'
 tags: ['opensource', 'web', 'react', 'nextjs', 'tailwindcss']
-published: true
+type: 'article'
+publishedAt: '2020-03-29T19:14:12.215Z'
+updatedAt: '2020-03-29T19:14:12.215Z'
 ---
 
 ```
@@ -47,7 +50,8 @@ Right after the head data, follows the excerpt, which is a short introduction of
 It's used for the article list and for sharing on social media.
 
 ```yml
-published: true
+publishedAt: '2020-03-29T19:14:12.215Z'
+updatedAt: '2020-03-29T19:14:12.215Z'
 ---
 This the excerpt...
 ---
