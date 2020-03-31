@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import Link from 'components/Link'
 import dynamic from 'next/dynamic'
 import Container from 'components/layout/Container'
 import clsx from 'clsx'
@@ -18,17 +19,11 @@ const Header: React.FC = ({ children }) => (
   >
     <Container size="fluid" grid className="h-12 grid-cols-2 py-0 items-center">
       <div>
-        <Link {...Routes.home()}>
-          <a
-            title="Back home"
-            className="font-black text-black dark:text-white hover:text-primary hover:no-underline flex"
-          >
-            <div>Lai</div>
-            <div className="text-primary">B</div>
-            <div className="underline border-primary">lo</div>
-            <div className="text-primary">g</div>
-          </a>
-        </Link>
+        <NextLink {...Routes.home()}>
+          <Link title="Back home" className="font-black text-black">
+            Lailo
+          </Link>
+        </NextLink>
       </div>
       <div className="text-right">
         <DarkModeToggle />

@@ -1,7 +1,8 @@
 import React from 'react'
 import clsx from 'clsx'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
-import Container from './layout/Container'
+import Container from 'components/layout/Container'
+import Link from 'components/Link'
 
 interface BioProps {
   className?: string
@@ -22,20 +23,20 @@ const Bio: React.FC<BioProps> = ({ className }) => (
         and <span className="font-serif font-bold underline">design</span>.
       </p>
       <div className="mt-3">
-        <a
+        <Link
           href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}
           title="Twitter account"
           className="hover:bg-primary hover:text-white rounded-full px-2 py-1 mx-1"
         >
           <FiTwitter />
-        </a>
-        <a
+        </Link>
+        <Link
           href={`https://github.com/${process.env.GITHUB_USERNAME}`}
           title="Github account"
           className="hover:bg-primary hover:text-white rounded-full px-2 py-1 mx-1"
         >
           <FiGithub />
-        </a>
+        </Link>
       </div>
     </Container>
   </aside>
