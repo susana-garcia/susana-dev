@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Article } from 'utils/articles'
 import ArticleMetaInfos from 'components/ArticleMetaInfos'
+import { Routes } from 'utils/routes'
 
 interface ArticleListProps {
   articles: Article[]
@@ -34,10 +35,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => (
         className="mb-4 p-4 -mx-4 rounded hover:bg-white dark-hover:bg-gray-900 hover:shadow-md"
       >
         <header>
-          <Link
-            href={{ pathname: '/articles', query: { slug: article.slug } }}
-            as={`/articles/${article.slug}`}
-          >
+          <Link {...Routes.article(article.slug)}>
             <a title={article.title} className="text-3xl font-black">
               {article.title}
             </a>

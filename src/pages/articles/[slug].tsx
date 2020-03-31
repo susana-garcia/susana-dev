@@ -9,6 +9,7 @@ import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
 import ArticleMetaInfos from 'components/ArticleMetaInfos'
 import format from 'date-fns/format'
+import { Routes } from 'utils/routes'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(post => `/articles/${post.slug}`),
@@ -65,10 +66,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
               <footer className="mt-16 grid grid-cols-2 font-bold">
                 <div>
                   {prev && (
-                    <Link
-                      href={{ pathname: '/articles', query: { slug: prev.slug } }}
-                      as={`/articles/${prev.slug}`}
-                    >
+                    <Link {...Routes.article(prev.slug)}>
                       <a>
                         <FiArrowLeft className="mr-1" />
                         {prev.title}
@@ -78,10 +76,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
                 </div>
                 <div className="text-right">
                   {next && (
-                    <Link
-                      href={{ pathname: '/articles', query: { slug: next.slug } }}
-                      as={`/articles/${next.slug}`}
-                    >
+                    <Link {...Routes.article(next.slug)}>
                       <a>
                         {next.title}
                         <FiArrowRight className="ml-1" />
