@@ -20,7 +20,7 @@ const Header: React.FC = ({ children }) => (
     <Container size="fluid" grid className="h-12 grid-cols-2 py-0 items-center">
       <div>
         <NextLink {...Routes.home()}>
-          <Link title="Back home" className="font-black text-black">
+          <Link title="Back home" className="font-black text-black dark:text-white">
             Lailo
           </Link>
         </NextLink>
