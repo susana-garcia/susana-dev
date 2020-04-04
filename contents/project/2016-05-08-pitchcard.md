@@ -2,7 +2,6 @@
 title: 'Pitchcard'
 description: 'Since the iPhone released and the following AppStore boom, a lot of people around us began to have amazing ideas: "Hey, I have a app idea".'
 tags: ['pitch', 'idea', 'web']
-type: 'project'
 publishedAt: '2016-05-08T07:07:37.915Z'
 updatedAt: '2016-05-08T07:07:37.915Z'
 ---

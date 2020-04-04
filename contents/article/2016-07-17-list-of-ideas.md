@@ -2,7 +2,6 @@
 title: 'List of Ideas and Unfinished Projects'
 description: 'This is a story of my huge list of ideas and a folder full of unfinished projects. I fought it with Pitchcard.io.'
 tags: ['pitch', 'idea', 'projects']
-type: 'article'
 publishedAt: '2016-07-17T09:14:05.215Z'
 updatedAt: '2016-07-17T09:14:05.215Z'
 ---

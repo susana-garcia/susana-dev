@@ -2,7 +2,6 @@
 title: 'This Blog Is Open Source'
 description: 'Use this blog to start your own. Be online within minutes by add your data, choose your favorite color and write your first article.'
 tags: ['open-source', 'web', 'react', 'nextjs', 'tailwindcss']
-type: 'article'
 publishedAt: '2020-03-29T19:14:12.215Z'
 updatedAt: '2020-03-30T20:52:12.215Z'
 ---

@@ -26,9 +26,14 @@ export interface Content {
 }
 
 export function loadContents(type?: ContentType) {
-  const articles = loadedContentOfType('article')
-  const tips = loadedContentOfType('tip')
-  const projects = loadedContentOfType('project')
+  const articles = loadedContentOfType('article').map(article =>
+    addTContentType(article, 'article')
+  )
+  const projects = loadedContentOfType('project').map(project =>
+    addTContentType(project, 'project')
+  )
+  const tips = loadedContentOfType('tip').map(tip => addTContentType(tip, 'tip'))
+
   const contentsFiles = [...articles, ...tips, ...projects]
 
   const files = contentsFiles
@@ -69,4 +74,10 @@ function loadedContentOfType(type: ContentType) {
     const filePath = path.join(contentsPath, fileName)
     return matter(fs.readFileSync(filePath, 'utf8'))
   })
+}
+
+function addTContentType(file: matter.GrayMatterFile<string>, type: ContentType) {
+  const updatedFile = { ...file }
+  updatedFile.data.type = type
+  return updatedFile
 }
