@@ -3,11 +3,11 @@ import RSS from 'rss'
 import marked from 'marked'
 import hljs from 'highlight.js'
 import { loadTags } from 'utils/contents/tags'
-import { Article } from '.utils/contents/articles'
+import { Content } from './contents'
 
 const RSS_PATH = 'public/rss.xml'
 
-export function generateRSS(articles: Article[]) {
+export function generateRSS(articles: Content[]) {
   const tags = loadTags()
   const year = new Date().getFullYear()
 

@@ -52,6 +52,7 @@ export function loadContents(type?: ContentType) {
       return contentFile
     })
     .filter(article => article.publishedAt || process.env.NODE_ENV === 'development')
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
 
   if (type) {
     return files.filter(file => file.type === type)
