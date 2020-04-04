@@ -9,7 +9,7 @@ interface PublishedAtProps {
 }
 
 const PublishedAt: React.FC<PublishedAtProps> = ({ date, className }) => (
-  <time dateTime={date} itemProp="datePublished" className={clsx('text-xs', className)}>
+  <time dateTime={date} itemProp="datePublished" className={clsx(className)}>
     <FiCalendar className="mr-1" />
     {format(new Date(date), 'MMM d, yyyy')}
   </time>

@@ -1,6 +1,5 @@
 import React from 'react'
 import TagList from 'components/TagList'
-import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'
 import CategoryLabel from 'components/CategoryLabel'
 import { ReadingTime as ReadingTimeType } from 'utils/contents/articles'
@@ -27,9 +26,11 @@ const MetaInfos: React.FC<MetaInfosProps> = ({
       'sm:flex-row sm:justify-between': !alignCenter,
     })}
   >
-    <div>
+    <div className=" text-sm">
       <PublishedAt date={publishedAt} className="mr-3" />
-      {contentType === 'article' && readingTime && <ReadingTime readingTime={readingTime} />}
+      {contentType === 'article' && readingTime && (
+        <CategoryLabel type="article">{readingTime.text}</CategoryLabel>
+      )}
       {contentType === 'tip' && <CategoryLabel type="tip">Tip</CategoryLabel>}
       {contentType === 'project' && <CategoryLabel type="project">Project</CategoryLabel>}
     </div>
