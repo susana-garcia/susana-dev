@@ -26,15 +26,12 @@ export interface Content {
 }
 
 export function loadContents(type?: ContentType) {
-  const contentsFolder = 'articles'
-  const contentsPath = path.resolve(process.cwd(), contentsFolder)
-  const contentsFiles = fs.readdirSync(contentsPath)
+  const articles = loadedContentOfType('article')
+  const tips = loadedContentOfType('tip')
+  const contentsFiles = [...articles, ...tips]
 
   const files = contentsFiles
-    .map(fileName => {
-      const filePath = path.join(contentsPath, fileName)
-      const fileData = matter(fs.readFileSync(filePath, 'utf8'))
-
+    .map(fileData => {
       const {
         data: { title, description, tags, publishedAt, updatedAt, type },
         content,
@@ -61,4 +58,13 @@ export function loadContents(type?: ContentType) {
   }
 
   return files
+}
+
+function loadedContentOfType(type: ContentType) {
+  const contentsPath = path.resolve(process.cwd(), 'contents', type)
+  const contentsFiles = fs.readdirSync(contentsPath)
+  return contentsFiles.map(fileName => {
+    const filePath = path.join(contentsPath, fileName)
+    return matter(fs.readFileSync(filePath, 'utf8'))
+  })
 }
