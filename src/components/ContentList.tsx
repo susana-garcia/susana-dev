@@ -1,14 +1,17 @@
 import React from 'react'
 import Link from 'components/Link'
+import Container from 'components/layout/Container'
 import ContentListItem from 'components/ContentListItem'
 import { Content } from 'utils/contents'
+import clsx from 'clsx'
 
 interface ContentListProps {
+  className?: string
   contents: Content[]
 }
 
-const ContentList: React.FC<ContentListProps> = ({ contents }) => (
-  <>
+const ContentList: React.FC<ContentListProps> = ({ contents, className }) => (
+  <Container size="large" className={clsx('grid gap-4 grid-cols-2 md:grid-cols-4', className)}>
     {contents.length === 0 && (
       <p className="text-center text-sm text-gray-600 dark:text-gray-400">
         There aren't any posts yet. <br />
@@ -28,9 +31,13 @@ const ContentList: React.FC<ContentListProps> = ({ contents }) => (
       </p>
     )}
     {contents.map(content => (
-      <ContentListItem key={content.slug} content={content} />
+      <ContentListItem
+        key={content.slug}
+        content={content}
+        className={clsx('col-span-2', { 'md:col-start-2': contents.length === 1 })}
+      />
     ))}
-  </>
+  </Container>
 )
 
 export default ContentList

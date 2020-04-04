@@ -52,9 +52,7 @@ const TagPage: NextPage<TagPageProps> = ({ contents, tag }) => (
         </div>
       }
     >
-      <Container>
-        <ContentList contents={contents} />
-      </Container>
+      <ContentList contents={contents} className="mt-4" />
     </Layout>
   </>
 )

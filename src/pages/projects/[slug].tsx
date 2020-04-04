@@ -6,7 +6,9 @@ import Layout from 'components/layout/Layout'
 import Container from 'components/layout/Container'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
-import MetaInfos from 'components/MetaInfos'
+import TagList from 'components/TagList'
+import PublishedAt from 'components/PublishedAt'
+import CategoryLabel from 'components/CategoryLabel'
 import format from 'date-fns/format'
 import { Routes } from 'utils/routes'
 import { loadProjects, loadProject, ProjectMap } from 'utils/contents/projects'
@@ -49,7 +51,11 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
         subheader={
           <div className="mt-12 mb-8 text-center">
             <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-            <MetaInfos alignCenter contentType="project" publishedAt={publishedAt} tags={tags} />
+            <div className="flex justify-center text-xs ">
+              <PublishedAt date={publishedAt} className="mr-4" />
+              <CategoryLabel type="article" withLabel />
+            </div>
+            <TagList tags={tags} />
           </div>
         }
       >
