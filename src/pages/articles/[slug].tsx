@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import { loadArticles, loadArticle, ArticleMap } from 'utils/articles'
+import { loadArticles, loadArticle, ArticleMap } from 'utils/contents/articles'
 import Link from 'next/link'
 import Markdown from 'components/layout/Markdown'
 import Layout from 'components/layout/Layout'

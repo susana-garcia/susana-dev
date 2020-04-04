@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article } from 'utils/articles'
+import { Article } from 'utils/contents/articles'
 import TagList from 'components/TagList'
 import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'

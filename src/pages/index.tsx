@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextPage, GetStaticProps } from 'next'
-import { loadArticles, Article } from 'utils/articles'
+import { loadArticles, Article } from 'utils/contents/articles'
 import Layout from 'components/layout/Layout'
 import ArticleList from 'components/ArticleList'
 import Container from 'components/layout/Container'

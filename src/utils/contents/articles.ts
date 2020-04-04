@@ -1,6 +1,6 @@
 import readingTime from 'reading-time'
 import slugify from 'slugify'
-import { loadFiles } from 'utils/fileLoader'
+import { loadFiles } from 'utils/contents/fileLoader'
 
 export interface ReadingTime {
   text: string

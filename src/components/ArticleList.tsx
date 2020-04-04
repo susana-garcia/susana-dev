@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article } from 'utils/articles'
+import { Article } from 'utils/contents/articles'
 import ArticleMetaInfos from 'components/ArticleMetaInfos'
 import { Routes } from 'utils/routes'
 import NextLink from 'next/link'
