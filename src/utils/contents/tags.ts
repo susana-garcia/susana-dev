@@ -1,12 +1,15 @@
-import { loadArticles } from 'utils/contents/articles'
+import { loadContents } from 'utils/contents'
+
+export type Tip = string
 
 export function loadTags() {
-  return loadArticles()
+  const tips: Tip[] = loadContents()
     .map(post => post.tags)
     .flat()
     .filter((tag, index, tags) => tags.indexOf(tag) == index)
+  return tips
 }
 
-export function loadTagArticles(tag: string) {
-  return loadArticles().filter(article => article.tags.includes(tag))
+export function loadContentsForTag(tag: string) {
+  return loadContents().filter(({ tags }) => tags.includes(tag))
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiCoffee } from 'react-icons/fi'
+import { IoMdPaper } from 'react-icons/io'
 import clsx from 'clsx'
 import { ReadingTime as ReadingTimeType } from 'utils/contents/articles'
 
@@ -10,7 +10,7 @@ interface ReadingTimeProps {
 
 const ReadingTime: React.FC<ReadingTimeProps> = ({ readingTime, className }) => (
   <span className={clsx('text-xs', className)}>
-    <FiCoffee className="mr-1" />
+    <IoMdPaper className="mr-1" />
     {readingTime.text}
   </span>
 )

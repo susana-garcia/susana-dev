@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import { loadArticles, loadArticle, ArticleMap } from 'utils/contents/articles'
+import { loadTips, loadTip, TipMap } from 'utils/contents/tips'
 import Link from 'next/link'
 import Markdown from 'components/layout/Markdown'
 import Layout from 'components/layout/Layout'
@@ -12,22 +12,22 @@ import format from 'date-fns/format'
 import { Routes } from 'utils/routes'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: loadArticles().map(({ slug }) => Routes.article(slug).as),
+  paths: loadTips().map(({ slug }) => Routes.tip(slug).as),
   fallback: false,
 })
 
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params as { slug: string }
 
-  const articleMap = loadArticle(slug)
+  const tipMap = loadTip(slug)
 
   return {
-    props: articleMap,
+    props: tipMap,
   }
 }
 
-const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
-  const { slug, description, title, publishedAt, updatedAt, content, tags, readingTime } = article
+const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
+  const { slug, description, title, publishedAt, updatedAt, content, tags } = tip
 
   return (
     <>
@@ -37,7 +37,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
         openGraph={{
           title,
           description: description,
-          url: `${process.env.SITE_URL}${Routes.article(slug).as}`,
+          url: `${process.env.SITE_URL}${Routes.tip(slug).as}`,
           type: 'article',
           article: {
             publishedTime: publishedAt,
@@ -49,22 +49,17 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
         subheader={
           <div className="mt-12 mb-8">
             <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-            <MetaInfos
-              contentType="article"
-              publishedAt={publishedAt}
-              tags={tags}
-              readingTime={readingTime}
-            />
+            <MetaInfos contentType="tip" publishedAt={publishedAt} tags={tags} />
           </div>
         }
       >
         <Container>
-          {publishedAt !== updatedAt && (
-            <p className="mb-8 text-xs text-gray-500">
-              Edited at {format(new Date(updatedAt), 'MMM d, yyyy')}
-            </p>
-          )}
-          <article>
+          <article className="bg-white dark:bg-gray-975 border border-gray-100 dark:border-gray-900 shadow p-6 rounded">
+            {publishedAt !== updatedAt && (
+              <p className="mb-8 text-xs text-gray-500">
+                Edited at {format(new Date(updatedAt), 'MMM d, yyyy')}
+              </p>
+            )}
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
             {(prev || next) && (
@@ -98,4 +93,4 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
   )
 }
 
-export default ArticlePage
+export default TipsPage

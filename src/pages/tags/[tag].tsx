@@ -1,28 +1,29 @@
 import React from 'react'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import { loadTags, loadTagArticles } from 'utils/contents/tags'
-import { Article } from 'utils/contents/articles'
+import { loadTags, loadContentsForTag } from 'utils/contents/tags'
+import { Content } from 'utils/contents'
 import Layout from 'components/layout/Layout'
 import TagList from 'components/TagList'
-import ArticleList from 'components/ArticleList'
+import ContentList from 'components/ContentList'
 import Container from 'components/layout/Container'
 import { FiHash } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
+import { Routes } from 'utils/routes'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: loadTags().map(tag => `/tags/${tag}`),
+  paths: loadTags().map(tag => Routes.tag(tag).as),
   fallback: false,
 })
 
 export const getStaticProps: GetStaticProps = async context => {
   const { tag } = context.params as { tag: string }
 
-  const articles = loadTagArticles(tag)
+  const contents = loadContentsForTag(tag)
   const tags = loadTags()
 
   return {
     props: {
-      articles,
+      contents,
       tags: tags.filter(t => t !== tag),
       tag,
     },
@@ -32,10 +33,10 @@ export const getStaticProps: GetStaticProps = async context => {
 type TagPageProps = {
   tag: string
   tags: string[]
-  articles: Article[]
+  contents: Content[]
 }
 
-const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
+const TagPage: NextPage<TagPageProps> = ({ contents, tag, tags }) => (
   <>
     <NextSeo title={`Tag #${tag}`} />
     <Layout
@@ -52,7 +53,7 @@ const TagPage: NextPage<TagPageProps> = ({ articles, tag, tags }) => (
       }
     >
       <Container>
-        <ArticleList articles={articles} />
+        <ContentList contents={contents} />
       </Container>
     </Layout>
   </>
