@@ -18,7 +18,7 @@ interface ArticlesPageProps {
 
 const ArticlesPage: NextPage<ArticlesPageProps> = ({ articles }) => (
   <>
-    <NextSeo title={process.env.SITE_DESCRIPTION} />
+    <NextSeo title="articles" />
     <Layout subheader={<h1 className="my-12 text-4xl font-black  text-center">Articles</h1>}>
       <Container className="mt-4">
         <ContentList contents={articles} />

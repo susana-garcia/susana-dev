@@ -18,7 +18,7 @@ interface TagsPageProps {
 
 const TagsPage: NextPage<TagsPageProps> = ({ tips }) => (
   <>
-    <NextSeo title={process.env.SITE_DESCRIPTION} />
+    <NextSeo title="Tips" />
     <Layout subheader={<h1 className="my-12 text-4xl font-black  text-center">Quick Tips</h1>}>
       <Container className="mt-4">
         <ContentList contents={tips} />
