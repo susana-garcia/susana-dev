@@ -23,7 +23,7 @@ I started to talk to friends about my ideas. Very soon I figured out, that it is
 
 # Unfinished Projects
 
-With the feedback of my friends and some google search sessions, I could prioritise my ideas. So the next step was to actually built them.
+With the feedback of my friends and some google search sessions, I could priorities my ideas. So the next step was to actually built them.
 
 As I’m a developer, I could start coding right away. After some long night and countless bugs, I actually had 90% of the idea done but It was not ready yet. I didn’t had the skills of a Designer, Social Media Expert and others. Very soon I lost my interest in that project and started another one where I could actually use my own skills.
 

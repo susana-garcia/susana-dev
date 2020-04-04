@@ -1,6 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 import { FiHash } from 'react-icons/fi'
+import { Routes } from 'utils/routes'
+import NextLink from 'next/link'
+import Link from 'components/Link'
 
 interface TagListProps {
   tags: string[]
@@ -10,15 +12,12 @@ const TagList: React.FC<TagListProps> = ({ tags }) => (
   <ul className="-mx-1">
     {tags.map(tag => (
       <li key={tag} className="inline">
-        <Link href={{ pathname: '/tags', query: { tag } }} as={`/tags/${tag}`}>
-          <a
-            className="text-xs hover:bg-primary hover:text-white hover:no-underline italic px-1 rounded-sm whitespace-no-wrap"
-            title={tag}
-          >
+        <NextLink {...Routes.tag(tag)} passHref>
+          <Link title={tag} className="text-xs whitespace-no-wrap">
             <FiHash />
             {tag}
-          </a>
-        </Link>
+          </Link>
+        </NextLink>
       </li>
     ))}
   </ul>

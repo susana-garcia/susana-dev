@@ -2,6 +2,7 @@ import React from 'react'
 import { FiRss, FiGithub, FiTwitter } from 'react-icons/fi'
 import Container from 'components/layout/Container'
 import Newsletter from 'components/Newsletter'
+import Link from 'components/Link'
 
 const Footer = () => {
   return (
@@ -17,32 +18,32 @@ const Footer = () => {
         </div>
         <div className="col-span-2 sm:col-auto">
           <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">More</h4>
-          <ul>
-            <li className="">
-              <a
+          <ul className="-ml-2">
+            <li>
+              <Link
                 className="text-sm"
                 href={`https://twitter.com/${process.env.TWITTER_USERNAME}`}
                 title="Twitter account"
               >
                 <FiTwitter className="mr-1" />
                 Twitter
-              </a>
+              </Link>
             </li>
-            <li className="">
-              <a
+            <li>
+              <Link
                 className="text-sm"
                 href={`https://github.com/${process.env.GITHUB_USERNAME}`}
                 title="Github account"
               >
                 <FiGithub className="mr-1" />
                 GitHub
-              </a>
+              </Link>
             </li>
-            <li className="">
-              <a className="text-sm" title="RSS" href="/rss.xml">
+            <li>
+              <Link className="text-sm" title="RSS" href="/rss.xml">
                 <FiRss className="mr-1" />
                 RSS feed
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -29,7 +29,7 @@ Another important thing is, what for you might be a pretty good idea, others wou
 
 That’s why we’ve built [Pitchcard.io](https://www.pitchcard.io/) to get quick feedback. We’ve picked this name because of the elevator pitch.
 
-> [“\[..\] the idea that it should be possible to deliver the summary in the time span of an elevator ride, or approximately thirty seconds \[..\]”.](https://en.wikipedia.org/wiki/Elevator_pitch)
+> “\[..\] the idea that it should be possible to deliver the summary in the time span of an elevator ride, or approximately thirty seconds \[..\]”
 
 ## How it works
 

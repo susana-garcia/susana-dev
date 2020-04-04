@@ -1,8 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import Link from 'components/Link'
 import dynamic from 'next/dynamic'
 import Container from 'components/layout/Container'
 import clsx from 'clsx'
+import { Routes } from 'utils/routes'
 
 const DarkModeToggle = dynamic(() => import('components/DarkModeToggle'), {
   ssr: false,
@@ -17,17 +19,11 @@ const Header: React.FC = ({ children }) => (
   >
     <Container size="fluid" grid className="h-12 grid-cols-2 py-0 items-center">
       <div>
-        <Link href="/">
-          <a
-            title="Back home"
-            className="font-black text-black dark:text-white hover:text-primary hover:no-underline flex"
-          >
-            <div>Lai</div>
-            <div className="text-primary">B</div>
-            <div className="underline border-primary">lo</div>
-            <div className="text-primary">g</div>
-          </a>
-        </Link>
+        <NextLink {...Routes.home()}>
+          <Link title="Back home" className="font-black text-black dark:text-white">
+            Lailo
+          </Link>
+        </NextLink>
       </div>
       <div className="text-right">
         <DarkModeToggle />
