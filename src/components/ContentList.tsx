@@ -67,6 +67,8 @@ function linkDataForType(
       return Routes.article(slug)
     case 'tip':
       return Routes.tip(slug)
+    case 'project':
+      return Routes.project(slug)
     default:
       return Routes.home()
   }

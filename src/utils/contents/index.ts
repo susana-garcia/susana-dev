@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import slugify from 'slugify'
 import readingTime from 'reading-time'
 
-export type ContentType = 'article' | 'tip'
+export type ContentType = 'article' | 'tip' | 'project'
 
 export interface ReadingTime {
   text: string
@@ -28,7 +28,8 @@ export interface Content {
 export function loadContents(type?: ContentType) {
   const articles = loadedContentOfType('article')
   const tips = loadedContentOfType('tip')
-  const contentsFiles = [...articles, ...tips]
+  const projects = loadedContentOfType('project')
+  const contentsFiles = [...articles, ...tips, ...projects]
 
   const files = contentsFiles
     .map(fileData => {

@@ -19,6 +19,14 @@ export const Routes = {
     href: `/tips`,
     as: `/tips`,
   }),
+  project: (slug: string) => ({
+    href: `/projects/[slug]`,
+    as: `/projects/${slug}`,
+  }),
+  projects: () => ({
+    href: `/projects`,
+    as: `/projects`,
+  }),
   tag: (tag: string) => ({
     href: `/tags/[tag]`,
     as: `/tags/${tag}`,

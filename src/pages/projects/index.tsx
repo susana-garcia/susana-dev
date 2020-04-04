@@ -4,24 +4,24 @@ import Layout from 'components/layout/Layout'
 import ContentList from 'components/ContentList'
 import Container from 'components/layout/Container'
 import { NextSeo } from 'next-seo'
-import { Article, loadArticles } from 'utils/contents/articles'
+import { loadProjects, Project } from 'utils/contents/projects'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = loadArticles()
+  const projects = loadProjects()
 
-  return { props: { articles } }
+  return { props: { projects } }
 }
 
 interface ArticlesPageProps {
-  articles: Article[]
+  projects: Project[]
 }
 
-const ArticlesPage: NextPage<ArticlesPageProps> = ({ articles }) => (
+const ArticlesPage: NextPage<ArticlesPageProps> = ({ projects }) => (
   <>
-    <NextSeo title="Articles" />
-    <Layout subheader={<h1 className="my-12 text-4xl font-black  text-center">Articles</h1>}>
+    <NextSeo title="Projects" />
+    <Layout subheader={<h1 className="my-12 text-4xl font-black  text-center">Projects</h1>}>
       <Container className="mt-4">
-        <ContentList contents={articles} />
+        <ContentList contents={projects} />
       </Container>
     </Layout>
   </>

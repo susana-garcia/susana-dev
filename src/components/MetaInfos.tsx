@@ -2,7 +2,7 @@ import React from 'react'
 import TagList from 'components/TagList'
 import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'
-import TipLabel from 'components/TipLabel'
+import CategoryLabel from 'components/CategoryLabel'
 import { ReadingTime as ReadingTimeType } from 'utils/contents/articles'
 import { ContentType } from 'utils/contents'
 import clsx from 'clsx'
@@ -30,7 +30,8 @@ const MetaInfos: React.FC<MetaInfosProps> = ({
     <div>
       <PublishedAt date={publishedAt} className="mr-3" />
       {contentType === 'article' && readingTime && <ReadingTime readingTime={readingTime} />}
-      {contentType === 'tip' && <TipLabel />}
+      {contentType === 'tip' && <CategoryLabel type="tip">Tip</CategoryLabel>}
+      {contentType === 'project' && <CategoryLabel type="project">Project</CategoryLabel>}
     </div>
     <div className={clsx({ 'sm:text-right': !alignCenter })}>
       <TagList tags={tags} />

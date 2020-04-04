@@ -16,9 +16,7 @@ export interface ReadingTime {
 }
 
 export function loadArticles() {
-  const articles: Article[] = loadContents('article').sort((a, b) =>
-    b.publishedAt.localeCompare(a.publishedAt)
-  )
+  const articles: Article[] = loadContents('article')
   return articles
 }
 

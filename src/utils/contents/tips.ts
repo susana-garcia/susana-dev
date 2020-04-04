@@ -9,7 +9,7 @@ export interface TipMap {
 }
 
 export function loadTips() {
-  const tips: Tip[] = loadContents('tip').sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+  const tips: Tip[] = loadContents('tip')
   return tips
 }
 

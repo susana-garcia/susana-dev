@@ -46,7 +46,7 @@ const Header: React.FC = ({ children }) => {
             <li className="mr-1">
               <NextLink {...Routes.tips()} passHref>
                 <Link
-                  title="Quick Tags"
+                  title="All Tips"
                   className={clsx('text-sm', {
                     'bg-primary text-white': pathname === Routes.tips().as,
                   })}
@@ -56,14 +56,14 @@ const Header: React.FC = ({ children }) => {
               </NextLink>
             </li>
             <li className="mr-1">
-              <NextLink {...Routes.tags()} passHref>
+              <NextLink {...Routes.projects()} passHref>
                 <Link
-                  title="Quick Tags"
+                  title="All Projects"
                   className={clsx('text-sm', {
-                    'bg-primary text-white': pathname === Routes.tags().as,
+                    'bg-primary text-white': pathname === Routes.projects().as,
                   })}
                 >
-                  Tags
+                  Projects
                 </Link>
               </NextLink>
             </li>

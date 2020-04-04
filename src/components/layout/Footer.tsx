@@ -1,13 +1,11 @@
 import React from 'react'
 import Container from 'components/layout/Container'
 import Newsletter from 'components/Newsletter'
+import TypeLabel from 'components/CategoryLabel'
 import NextLink from 'next/link'
 import Link from 'components/Link'
 import { Routes } from 'utils/routes'
-import { FiRss, FiGithub, FiTwitter, FiHash } from 'react-icons/fi'
-import { GoLightBulb } from 'react-icons/go'
-import { IoMdPaper } from 'react-icons/io'
-
+import { FiRss, FiGithub, FiTwitter } from 'react-icons/fi'
 const Footer = () => {
   return (
     <footer className="py-8">
@@ -57,24 +55,28 @@ const Footer = () => {
               <li>
                 <NextLink {...Routes.articles()} passHref>
                   <Link title="All Articles" className="text-sm">
-                    <IoMdPaper className="mr-1" />
-                    Articles
+                    <TypeLabel type="article">Articles</TypeLabel>
                   </Link>
                 </NextLink>
               </li>
               <li>
                 <NextLink {...Routes.tips()} passHref>
                   <Link title="Quick Tags" className="text-sm">
-                    <GoLightBulb className="mr-1" />
-                    Quick Tips
+                    <TypeLabel type="tip">Tips</TypeLabel>
+                  </Link>
+                </NextLink>
+              </li>
+              <li>
+                <NextLink {...Routes.projects()} passHref>
+                  <Link title="All Projects" className="text-sm">
+                    <TypeLabel type="project">Projects</TypeLabel>
                   </Link>
                 </NextLink>
               </li>
               <li>
                 <NextLink {...Routes.tags()} passHref>
                   <Link title="All Tags" className="text-sm">
-                    <FiHash className="mr-1" />
-                    All Tags
+                    <TypeLabel type="tag">Tags</TypeLabel>
                   </Link>
                 </NextLink>
               </li>
