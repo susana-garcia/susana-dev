@@ -1,13 +1,13 @@
 import { loadContents } from 'utils/contents'
 
-export type Tip = string
+export type Tag = string
 
 export function loadTags() {
-  const tips: Tip[] = loadContents()
+  const tags: Tag[] = loadContents()
     .map(post => post.tags)
     .flat()
     .filter((tag, index, tags) => tags.indexOf(tag) == index)
-  return tips
+  return tags
 }
 
 export function loadContentsForTag(tag: string) {
