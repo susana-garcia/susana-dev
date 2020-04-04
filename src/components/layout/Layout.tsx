@@ -5,10 +5,16 @@ import Footer from 'components/layout/Footer'
 
 interface LayoutProps {
   centered?: boolean
+  withoutNewsletter?: boolean
   subheader?: React.ReactElement
 }
 
-const Layout: React.FC<LayoutProps> = ({ centered = false, subheader, children }) => (
+const Layout: React.FC<LayoutProps> = ({
+  centered = false,
+  withoutNewsletter = false,
+  subheader,
+  children,
+}) => (
   <>
     <div className="min-h-screen flex flex-col">
       <Header>{subheader}</Header>
@@ -19,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ centered = false, subheader, children }
       >
         {children}
       </main>
-      <Footer />
+      <Footer withoutNewsletter={withoutNewsletter} />
     </div>
   </>
 )

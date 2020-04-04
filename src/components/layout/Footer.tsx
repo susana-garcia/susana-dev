@@ -6,11 +6,16 @@ import NextLink from 'next/link'
 import Link from 'components/Link'
 import { Routes } from 'utils/routes'
 import { FiRss, FiGithub, FiTwitter } from 'react-icons/fi'
-const Footer = () => {
+
+interface FooterProps {
+  withoutNewsletter?: boolean
+}
+
+const Footer: React.FC<FooterProps> = ({ withoutNewsletter = false }) => {
   return (
     <footer className="py-8">
       <Container>
-        <Newsletter className="mb-12" />
+        {!withoutNewsletter && <Newsletter className="mb-12" />}
         <div className="grid gap-6 grid-cols-3 sm:grid-cols-4">
           <div className="col-span-3 md:col-span-2">
             <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">About</h4>

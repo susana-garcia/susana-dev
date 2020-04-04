@@ -24,7 +24,7 @@ interface IndexPageProps {
 const IndexPage: NextPage<IndexPageProps> = ({ contents }) => (
   <>
     <NextSeo title={process.env.SITE_DESCRIPTION} />
-    <Layout subheader={<Bio />}>
+    <Layout withoutNewsletter subheader={<Bio />}>
       <ContentList contents={contents} className="mt-4" />
     </Layout>
   </>

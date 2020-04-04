@@ -12,13 +12,13 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
   return (
     <div
       className={clsx(
-        'p-4 md:p-6 text-center',
-        'bg-white dark:bg-gray-900 rounded border-gray-200 shadow overflow-hidden',
+        'flex flex-col items-center justify-center',
+        'p-4 py-8 rounded bg-white dark:bg-gray-900 shadow',
         className
       )}
     >
-      <h3 className="font-black text-lg">Join My Newsletter</h3>
-      <p className="text-gray-700">Get new content directly to your - Don't miss out.</p>
+      <h3 className="font-black text-lg">Do you want more?</h3>
+      <p className="text-gray-700">Join my newsletter and be the first to be notified.</p>
       <TinyLetter list={process.env.TINY_LETTER_ID} className="mt-3">
         <input
           className="border border-primary px-2 py-1 rounded-tl rounded-bl bg-transparent w-40"
@@ -28,7 +28,7 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
         <input
           className="bg-primary border border-primary py-1 px-2 text-white rounded-tr rounded-br"
           type="submit"
-          value="Subscribe"
+          value="Join Now"
         />
       </TinyLetter>
     </div>

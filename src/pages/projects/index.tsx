@@ -18,7 +18,10 @@ interface ArticlesPageProps {
 const ArticlesPage: NextPage<ArticlesPageProps> = ({ projects }) => (
   <>
     <NextSeo title="Projects" />
-    <Layout subheader={<h1 className="my-12 text-4xl font-black  text-center">Projects</h1>}>
+    <Layout
+      withoutNewsletter
+      subheader={<h1 className="my-12 text-4xl font-black  text-center">Projects</h1>}
+    >
       <ContentList contents={projects} className="mt-4" />
     </Layout>
   </>

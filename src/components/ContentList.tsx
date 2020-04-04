@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'components/Link'
 import Container from 'components/layout/Container'
 import ContentListItem from 'components/ContentListItem'
+import Newsletter from 'components/Newsletter'
 import { Content } from 'utils/contents'
 import clsx from 'clsx'
 
@@ -31,12 +32,9 @@ const ContentList: React.FC<ContentListProps> = ({ contents, className }) => (
       </p>
     )}
     {contents.map(content => (
-      <ContentListItem
-        key={content.slug}
-        content={content}
-        className={clsx('col-span-2', { 'md:col-start-2': contents.length === 1 })}
-      />
+      <ContentListItem key={content.slug} content={content} className={clsx('col-span-2')} />
     ))}
+    <Newsletter className="col-span-2" />
   </Container>
 )
 

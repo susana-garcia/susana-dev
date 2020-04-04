@@ -22,7 +22,10 @@ interface TagsPageProps {
 const TagsPage: NextPage<TagsPageProps> = ({ tags }) => (
   <>
     <NextSeo title="Tags" />
-    <Layout subheader={<h1 className="my-12 text-4xl font-black  text-center">Tags</h1>}>
+    <Layout
+      withoutNewsletter
+      subheader={<h1 className="my-12 text-4xl font-black  text-center">Tags</h1>}
+    >
       <Container>
         <ul className="overflow-x-hidden py-2">
           {tags.map(tag => (
