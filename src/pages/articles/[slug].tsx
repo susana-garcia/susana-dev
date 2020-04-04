@@ -47,9 +47,10 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
       />
       <Layout
         subheader={
-          <div className="mt-12 mb-8">
+          <div className="mt-12 mb-8 text-center">
             <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
             <MetaInfos
+              alignCenter
               contentType="article"
               publishedAt={publishedAt}
               tags={tags}

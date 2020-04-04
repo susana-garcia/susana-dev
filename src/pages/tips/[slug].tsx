@@ -47,9 +47,9 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
       />
       <Layout
         subheader={
-          <div className="mt-12 mb-8">
+          <div className="mt-12 mb-8 text-center">
             <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-            <MetaInfos contentType="tip" publishedAt={publishedAt} tags={tags} />
+            <MetaInfos alignCenter contentType="tip" publishedAt={publishedAt} tags={tags} />
           </div>
         }
       >

@@ -9,7 +9,7 @@ interface TagListProps {
 }
 
 const TagList: React.FC<TagListProps> = ({ tags }) => (
-  <ul className="-mx-1">
+  <ul className="-mx-2">
     {tags.map(tag => (
       <li key={tag} className="inline">
         <NextLink {...Routes.tag(tag)} passHref>

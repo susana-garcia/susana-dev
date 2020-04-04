@@ -5,22 +5,34 @@ import PublishedAt from 'components/PublishedAt'
 import TipLabel from 'components/TipLabel'
 import { ReadingTime as ReadingTimeType } from 'utils/contents/articles'
 import { ContentType } from 'utils/contents'
+import clsx from 'clsx'
 
 interface MetaInfosProps {
   contentType: ContentType
   publishedAt: string
   tags: string[]
   readingTime?: ReadingTimeType
+  alignCenter?: boolean
 }
 
-const MetaInfos: React.FC<MetaInfosProps> = ({ contentType, publishedAt, tags, readingTime }) => (
-  <div className="text-gray-800 dark:text-gray-200 flex flex-col sm:flex-row sm:justify-between">
+const MetaInfos: React.FC<MetaInfosProps> = ({
+  contentType,
+  publishedAt,
+  tags,
+  readingTime,
+  alignCenter = false,
+}) => (
+  <div
+    className={clsx('text-gray-800 dark:text-gray-200', 'flex flex-col', {
+      'sm:flex-row sm:justify-between': !alignCenter,
+    })}
+  >
     <div>
       <PublishedAt date={publishedAt} className="mr-3" />
       {contentType === 'article' && readingTime && <ReadingTime readingTime={readingTime} />}
       {contentType === 'tip' && <TipLabel />}
     </div>
-    <div className="sm:text-right">
+    <div className={clsx({ 'sm:text-right': !alignCenter })}>
       <TagList tags={tags} />
     </div>
   </div>
