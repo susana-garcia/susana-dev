@@ -1,7 +1,8 @@
 {
-  "name": "lailo.ch",
+  "name": "susanagarcia.ch",
   "version": "1.0.0",
-  "description": "Lailo's blog",
+  "description": "Susana's blog",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",

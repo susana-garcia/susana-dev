@@ -18,9 +18,9 @@ module.exports = {
       },
       colors: {
         primary: {
-          lighter: colors.blue[500],
-          default: colors.blue[600],
-          dark: colors.blue[700],
+          lighter: colors.green[500],
+          default: colors.green[600],
+          dark: colors.green[700],
         },
         gray: {
           ...colors.gray,

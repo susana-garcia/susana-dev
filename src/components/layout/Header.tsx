@@ -21,7 +21,7 @@ const Header: React.FC = ({ children }) => (
       <div>
         <NextLink {...Routes.home()}>
           <Link title="Back home" className="font-black text-black dark:text-white">
-            Lailo
+            Susana's <span className="font-thin ml-1">Place</span>
           </Link>
         </NextLink>
       </div>

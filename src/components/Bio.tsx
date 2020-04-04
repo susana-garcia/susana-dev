@@ -16,11 +16,9 @@ const Bio: React.FC<BioProps> = ({ className }) => (
       </div>
       <div className="text-lg font-bold mb-2">👋 I'm {process.env.AUTHORS_NAME}</div>
       <p className="font-light text-gray-700 dark:text-gray-300 max-w-md mx-auto">
-        Passionate about simplicity in{' '}
-        <span className=" font-mono font-thin bg-gray-800 p-1 text-gray-200 text-xs italic rounded-sm border-l-4 border-primary">
-          code
-        </span>{' '}
-        and <span className="font-serif font-bold underline">design</span>.
+        I'm a Senior Software Engineer with 10+ years of experience in backend development. My
+        interest lies on developing API in Golang, Elixir and others. Besides that I'm diving into
+        Machine Learning.
       </p>
       <div className="mt-3">
         <Link

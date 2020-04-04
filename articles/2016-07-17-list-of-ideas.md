@@ -7,7 +7,7 @@ publishedAt: '2016-07-17T09:14:05.215Z'
 updatedAt: '2016-07-17T09:14:05.215Z'
 ---
 
-<small>Co-Written by [Susana Garcia](https://susana.dev)</small>
+<small>Co-Written by [Lailo](https://lailo.ch)</small>
 
 This is a story of my huge list of ideas and a folder full of unfinished projects. I fought it with [**Pitchcard.io**](https://www.pitchcard.io)**.**
 

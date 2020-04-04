@@ -7,7 +7,7 @@ publishedAt: '2016-05-08T07:07:37.915Z'
 updatedAt: '2016-05-08T07:07:37.915Z'
 ---
 
-<small>Co-Written by [Susana Garcia](https://susana.dev)</small>
+<small>Co-Written by [Lailo](https://lailo.ch)</small>
 
 Since the iPhone released and the following AppStore boom, a lot of people around us began to have amazing ideas: “Hey, I have a really cool idea for a new app!”. Every single one of them thought, they had the next billion dollar idea.
 

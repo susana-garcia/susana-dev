@@ -1,4 +1,4 @@
-# Lailo's Blog
+# Susana's Blog
 
 This is my personal blog based on Next.js and Markdown, styled with TailwindCSS and exported to a Static-Site-Generation (SSG) website.
 
@@ -46,7 +46,3 @@ To execute all tests, run `npm run test`.
 ### Build
 
 To build the project, run `npm run build` followed by `npm run export`. NextJS command line tool will first build the project and then export it as static files into the `/out` folder.
-
-## Questions
-
-If you have any questions, you can create an issue here on GitHub or ping me on Twitter [@lailo_ch](https://twitter.com/lailo-ch).
