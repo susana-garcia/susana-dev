@@ -15,6 +15,7 @@ const Link = React.forwardRef<LinkRef, LinkProps>((props, ref) => {
         'rounded-full px-2 py-1',
         'hover:bg-primary hover:text-white',
         'cursor-pointer hover:no-underline',
+        'transition ease-in-out duration-200',
         className
       )}
     >
