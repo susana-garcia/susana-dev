@@ -7,9 +7,17 @@ export const Routes = {
     href: `/articles/[slug]`,
     as: `/articles/${slug}`,
   }),
+  articles: () => ({
+    href: `/articles`,
+    as: `/articles`,
+  }),
   tip: (slug: string) => ({
     href: `/tips/[slug]`,
     as: `/tips/${slug}`,
+  }),
+  tips: () => ({
+    href: `/tips`,
+    as: `/tips`,
   }),
   tag: (tag: string) => ({
     href: `/tags/[tag]`,
