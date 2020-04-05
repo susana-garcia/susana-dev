@@ -4,10 +4,11 @@ import marked from 'marked'
 import hljs from 'highlight.js'
 import { loadTags } from 'utils/contents/tags'
 import { Content } from './contents'
+import linkForContentType from 'utils/linkForContentType'
 
 const RSS_PATH = 'public/rss.xml'
 
-export function generateRSS(articles: Content[]) {
+export function generateRSS(contents: Content[]) {
   const tags = loadTags()
   const year = new Date().getFullYear()
 
@@ -25,17 +26,17 @@ export function generateRSS(articles: Content[]) {
     site_url: process.env.SITE_URL,
   })
 
-  articles.forEach(article => {
+  contents.forEach(item => {
     feed.item({
-      title: article.title,
-      description: marked(article.content, {
+      title: item.title,
+      description: marked(item.content, {
         highlight: (code, lang) => hljs.highlight(lang, code).value,
       }),
-      url: `${process.env.SITE_URL}/articles/${article.slug}`,
-      guid: article.slug,
-      categories: article.tags,
+      url: `${process.env.SITE_URL}${linkForContentType(item.type, item.slug)}`,
+      guid: item.slug,
+      categories: item.tags,
       author: process.env.SITE_LOCALE,
-      date: article.publishedAt,
+      date: item.publishedAt,
     })
   })
 

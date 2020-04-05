@@ -3,9 +3,9 @@ import CategoryLabel from 'components/CategoryLabel'
 import TagList from 'components/TagList'
 import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'
-import { Routes } from 'utils/routes'
+import linkForContentType from 'utils/linkForContentType'
 import NextLink from 'next/link'
-import { Content, ContentType } from 'utils/contents'
+import { Content } from 'utils/contents'
 import clsx from 'clsx'
 
 interface ContentListItemProps {
@@ -43,7 +43,7 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
       </div>
     </div>
     <header className="mb-2">
-      <NextLink {...linkDataForType(content.type, content.slug)}>
+      <NextLink {...linkForContentType(content.type, content.slug)}>
         <a title={content.title} className="text-3xl font-black leading-tight">
           {content.title}
         </a>
@@ -55,24 +55,5 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
     <TagList tags={content.tags} short />
   </article>
 )
-
-function linkDataForType(
-  type: ContentType,
-  slug: string
-): {
-  href: string
-  as: string
-} {
-  switch (type) {
-    case 'article':
-      return Routes.article(slug)
-    case 'tip':
-      return Routes.tip(slug)
-    case 'project':
-      return Routes.project(slug)
-    default:
-      return Routes.home()
-  }
-}
 
 export default ContentListItem
