@@ -9,9 +9,9 @@ import { NextSeo } from 'next-seo'
 import TagList from 'components/TagList'
 import PublishedAt from 'components/PublishedAt'
 import CategoryLabel from 'components/CategoryLabel'
-import format from 'date-fns/format'
 import { Routes } from 'utils/routes'
 import { loadProjects, loadProject, ProjectMap } from 'utils/contents/projects'
+import UpdatedAt from 'components/UpdatedAt'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadProjects().map(({ slug }) => Routes.project(slug).as),
@@ -56,15 +56,11 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
               <CategoryLabel type="article" withLabel />
             </div>
             <TagList tags={tags} />
+            <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
           </div>
         }
       >
         <Container>
-          {publishedAt !== updatedAt && (
-            <p className="mb-8 text-xs text-gray-500">
-              Edited at {format(new Date(updatedAt), 'MMM d, yyyy')}
-            </p>
-          )}
           <article>
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />

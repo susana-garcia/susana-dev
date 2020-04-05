@@ -10,7 +10,7 @@ import { NextSeo } from 'next-seo'
 import TagList from 'components/TagList'
 import PublishedAt from 'components/PublishedAt'
 import CategoryLabel from 'components/CategoryLabel'
-import format from 'date-fns/format'
+import UpdatedAt from 'components/UpdatedAt'
 import { Routes } from 'utils/routes'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
@@ -56,16 +56,12 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
               <CategoryLabel type="article" withLabel />
             </div>
             <TagList tags={tags} />
+            <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
           </div>
         }
       >
         <Container>
           <article className="bg-white dark:bg-gray-975 border border-gray-100 dark:border-gray-900 shadow p-6 rounded">
-            {publishedAt !== updatedAt && (
-              <p className="mb-8 text-xs text-gray-500">
-                Edited at {format(new Date(updatedAt), 'MMM d, yyyy')}
-              </p>
-            )}
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
             {(prev || next) && (

@@ -11,7 +11,7 @@ import TagList from 'components/TagList'
 import ReadingTime from 'components/ReadingTime'
 import PublishedAt from 'components/PublishedAt'
 import CategoryLabel from 'components/CategoryLabel'
-import format from 'date-fns/format'
+import UpdatedAt from 'components/UpdatedAt'
 import { Routes } from 'utils/routes'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
@@ -58,15 +58,11 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
               <CategoryLabel type="article" withLabel />
             </div>
             <TagList tags={tags} />
+            <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
           </div>
         }
       >
         <Container>
-          {publishedAt !== updatedAt && (
-            <p className="mb-8 text-xs text-gray-500">
-              Edited at {format(new Date(updatedAt), 'MMM d, yyyy')}
-            </p>
-          )}
           <article>
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
