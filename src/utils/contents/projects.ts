@@ -1,6 +1,9 @@
 import { loadContents, Content } from 'utils/contents'
 
-export type Project = Content
+export interface Project extends Content {
+  image: string
+  url: string
+}
 
 export interface ProjectMap {
   project: Project
@@ -9,8 +12,13 @@ export interface ProjectMap {
 }
 
 export function loadProjects() {
-  const articles: Project[] = loadContents('project')
-  return articles
+  const projectsContent = loadContents('project')
+  const projects: Project[] = projectsContent.map(content => ({
+    ...content,
+    image: content.data.image,
+    url: content.data.url,
+  }))
+  return projects
 }
 
 export function loadProject(slug: string) {

@@ -22,7 +22,11 @@ export interface Content {
   tags: string[]
   publishedAt: string
   updatedAt: string
-  readingTime?: ReadingTime
+  readingTime: ReadingTime
+  data: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any
+  }
 }
 
 export function loadContents(type?: ContentType) {
@@ -53,6 +57,7 @@ export function loadContents(type?: ContentType) {
         publishedAt,
         updatedAt,
         readingTime: readingTime(content),
+        data: fileData.data,
       }
 
       return contentFile
