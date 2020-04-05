@@ -65,7 +65,7 @@ const Footer: React.FC<FooterProps> = ({ withoutNewsletter = false }) => {
             </ul>
           </div>
           <div className="col-span-1">
-            <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">Sitemap</h4>
+            <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">Content</h4>
             <ul className="-ml-2">
               <li>
                 <NextLink {...Routes.articles()} passHref>
