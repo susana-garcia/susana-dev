@@ -47,23 +47,26 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
           },
         }}
       />
-      <Layout
-        subheader={
-          <div className="mt-12 mb-8 text-center">
-            <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-            <div className="flex justify-center text-xs">
-              <PublishedAt date={publishedAt} className="mr-4" />
-              <CategoryLabel type="article" withLabel />
-            </div>
-            <TagList tags={tags} />
-            <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
-          </div>
-        }
-      >
+      <Layout>
         <Container>
-          <article className="bg-white dark:bg-gray-975 border border-gray-100 dark:border-gray-900 shadow p-6 rounded">
-            <h1 className="hidden">{title}</h1>
-            <Markdown content={content} />
+          <article>
+            <div className="bg-white dark:bg-gray-975 border border-gray-100 dark:border-gray-900 shadow-md rounded-lg overflow-hidden">
+              <header className="px-6 py-12 text-center bg-primary text-white">
+                <CategoryLabel type="tip" withLabel className="mb-6 block" />
+                <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
+              </header>
+              <div className="px-6 py-2 flex flex-col md:flex-row items-center md:justify-between">
+                <TagList tags={tags} />
+                <div className="text-xs text-gray-500">
+                  <PublishedAt date={publishedAt} />
+                  <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} className="ml-2" />
+                </div>
+              </div>
+              <div className="p-6 -mt-6">
+                <h1 className="hidden">{title}</h1>
+                <Markdown content={content} />
+              </div>
+            </div>
             {(prev || next) && (
               <footer className="mt-16 grid grid-cols-2 font-bold">
                 <div>
