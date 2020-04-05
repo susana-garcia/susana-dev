@@ -37,7 +37,7 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
             type={content.type}
             withLabel
             className={clsx(
-              'inline-block px-4 py-2 rounded-bl-lg rounded-br-lg',
+              'inline-block px-4 py-2 rounded-bl-lg rounded-br-md',
               'bg-primary text-white'
             )}
           />

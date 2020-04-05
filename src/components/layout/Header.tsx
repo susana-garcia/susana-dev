@@ -1,6 +1,5 @@
 import React from 'react'
 import NextLink from 'next/link'
-import Link from 'components/Link'
 import dynamic from 'next/dynamic'
 import Container from 'components/layout/Container'
 import clsx from 'clsx'
@@ -14,6 +13,24 @@ const DarkModeToggle = dynamic(() => import('components/DarkModeToggle'), {
 const Header: React.FC = ({ children }) => {
   const { pathname } = useRouter()
 
+  const classNameForPath = (categoryPath: string) => {
+    const isActive = pathname === categoryPath
+    return clsx(
+      'block text',
+      'p-2 pt-10',
+      'rounded-bl-md rounded-br-md',
+      'hover:no-underline',
+      'transition ease-in-out duration-200',
+      {
+        'hover:bg-primary hover:text-white': !isActive,
+      },
+      {
+        'bg-primary': isActive,
+        'text-white hover:text-white': isActive,
+      }
+    )
+  }
+
   return (
     <header
       className={clsx({
@@ -23,48 +40,36 @@ const Header: React.FC = ({ children }) => {
     >
       <Container size="large" grid className="h-12 py-0">
         <div className="flex items-center">
-          <div>
+          <div className="mr-3">
             <NextLink {...Routes.home()}>
-              <Link title="Back home" className={clsx('font-black text-black dark:text-white')}>
+              <a
+                title="Back home"
+                className={clsx('font-black text-black dark:text-white hover:text-primary italic')}
+              >
                 Lailo
-              </Link>
+              </a>
             </NextLink>
           </div>
-          <ul className="flex mr-auto">
+          <ul className="flex mr-auto -mt-8">
             <li className="mr-1">
-              <NextLink {...Routes.articles()} passHref>
-                <Link
-                  title="All Articles"
-                  className={clsx('text-sm', {
-                    'bg-primary text-white': pathname === Routes.articles().as,
-                  })}
-                >
+              <NextLink {...Routes.articles()}>
+                <a title="All Articles" className={classNameForPath(Routes.articles().as)}>
                   Articles
-                </Link>
+                </a>
               </NextLink>
             </li>
             <li className="mr-1">
-              <NextLink {...Routes.tips()} passHref>
-                <Link
-                  title="All Tips"
-                  className={clsx('text-sm', {
-                    'bg-primary text-white': pathname === Routes.tips().as,
-                  })}
-                >
+              <NextLink {...Routes.tips()}>
+                <a title="All Tips" className={classNameForPath(Routes.tips().as)}>
                   Tips
-                </Link>
+                </a>
               </NextLink>
             </li>
             <li className="mr-1">
-              <NextLink {...Routes.projects()} passHref>
-                <Link
-                  title="All Projects"
-                  className={clsx('text-sm', {
-                    'bg-primary text-white': pathname === Routes.projects().as,
-                  })}
-                >
+              <NextLink {...Routes.projects()}>
+                <a title="All Projects" className={classNameForPath(Routes.projects().as)}>
                   Projects
-                </Link>
+                </a>
               </NextLink>
             </li>
           </ul>
