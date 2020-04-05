@@ -1,14 +1,9 @@
 import React from 'react'
 import NextLink from 'next/link'
-import dynamic from 'next/dynamic'
 import Container from 'components/layout/Container'
 import clsx from 'clsx'
 import { Routes } from 'utils/routes'
 import { useRouter } from 'next/router'
-
-const DarkModeToggle = dynamic(() => import('components/DarkModeToggle'), {
-  ssr: false,
-})
 
 const Header: React.FC = ({ children }) => {
   const { pathname } = useRouter()
@@ -45,7 +40,7 @@ const Header: React.FC = ({ children }) => {
               </a>
             </NextLink>
           </div>
-          <ul className="flex mr-auto -mt-8">
+          <ul className="flex ml-auto -mt-8">
             <li className="mr-1">
               <NextLink {...Routes.articles()}>
                 <a title="All Articles" className={classNameForPath(Routes.articles().as)}>
@@ -68,9 +63,6 @@ const Header: React.FC = ({ children }) => {
               </NextLink>
             </li>
           </ul>
-          <div>
-            <DarkModeToggle />
-          </div>
         </div>
       </Container>
       {children && <div className="py-8 sm:py-12 md:py-16">{children}</div>}
