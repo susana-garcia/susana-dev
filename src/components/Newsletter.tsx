@@ -12,8 +12,8 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
 
   return (
     <Card className={clsx('flex flex-col items-center justify-center', className)}>
-      <h3 className="font-black text-lg">Do you want more?</h3>
-      <p className="text-gray-700">Join my newsletter and be the first to be notified.</p>
+      <h3 className="font-black text-lg">Don't miss out.</h3>
+      <p className="text-gray-700">Join my newsletter and stay up-to-date.</p>
       <TinyLetter list={process.env.TINY_LETTER_ID} className="mt-3">
         <input
           className="border border-primary px-2 py-1 rounded-tl rounded-bl bg-transparent w-40"
