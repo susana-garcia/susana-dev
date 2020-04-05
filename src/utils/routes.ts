@@ -35,4 +35,8 @@ export const Routes = {
     href: `/tags`,
     as: `/tags`,
   }),
+  about: () => ({
+    href: `/about`,
+    as: `/about`,
+  }),
 }

@@ -62,6 +62,13 @@ const Header: React.FC = ({ children }) => {
                 </a>
               </NextLink>
             </li>
+            <li>
+              <NextLink {...Routes.about()}>
+                <a title="About" className={classNameForPath(Routes.about().as)}>
+                  About
+                </a>
+              </NextLink>
+            </li>
           </ul>
         </div>
       </Container>

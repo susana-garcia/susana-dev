@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
 import Container from 'components/layout/Container'
 import Link from 'components/Link'
+import Avatar from 'components/Avatar'
 
 interface BioProps {
   className?: string
@@ -11,9 +12,7 @@ interface BioProps {
 const Bio: React.FC<BioProps> = ({ className }) => (
   <aside className={clsx(className)}>
     <Container className="text-center">
-      <div className="min-h-24 min-w-24 mb-4">
-        <img className="inline h-24 w-24 rounded-full" src={process.env.PROFILE_IMAGE} />
-      </div>
+      <Avatar size="small" />
       <div className="text-lg font-bold mb-2">👋 I'm {process.env.AUTHORS_NAME}</div>
       <p className="font-light text-gray-700 dark:text-gray-300 max-w-md mx-auto">
         Passionate about simplicity in{' '}

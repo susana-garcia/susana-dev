@@ -5,7 +5,7 @@ import TypeLabel from 'components/CategoryLabel'
 import NextLink from 'next/link'
 import Link from 'components/Link'
 import { Routes } from 'utils/routes'
-import { FiRss, FiGithub, FiTwitter } from 'react-icons/fi'
+import { FiRss, FiGithub, FiTwitter, FiHash, FiUser } from 'react-icons/fi'
 import dynamic from 'next/dynamic'
 
 const DarkModeToggle = dynamic(() => import('components/DarkModeToggle'), {
@@ -96,7 +96,16 @@ const Footer: React.FC<FooterProps> = ({ withoutNewsletter = false }) => {
               <li>
                 <NextLink {...Routes.tags()} passHref>
                   <Link title="All Tags" className="text-sm">
-                    <TypeLabel type="tag">All Tags</TypeLabel>
+                    <FiHash className="mr-1" />
+                    All Tags
+                  </Link>
+                </NextLink>
+              </li>
+              <li>
+                <NextLink {...Routes.about()} passHref>
+                  <Link title="About Lailo" className="text-sm">
+                    <FiUser className="mr-1" />
+                    About
                   </Link>
                 </NextLink>
               </li>
