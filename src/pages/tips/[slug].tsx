@@ -11,6 +11,7 @@ import PublishedAt from 'components/PublishedAt'
 import CategoryLabel from 'components/CategoryLabel'
 import UpdatedAt from 'components/UpdatedAt'
 import { Routes } from 'utils/routes'
+import Card from 'components/Card'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTips().map(({ slug }) => Routes.tip(slug).as),
@@ -49,23 +50,23 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
       <Layout>
         <Container>
           <article>
-            <div className="bg-white dark:bg-gray-975 border border-gray-100 dark:border-gray-900 shadow-md rounded-lg overflow-hidden">
-              <header className="px-6 py-12 text-center bg-primary text-white">
+            <Card className="rounded-lg">
+              <header className="py-12 text-center bg-primary text-white rounded-md">
                 <CategoryLabel type="tip" withLabel className="mb-6 block" />
                 <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
               </header>
-              <div className="px-6 py-2 flex flex-col md:flex-row items-center md:justify-between">
+              <div className="py-2 flex flex-col md:flex-row items-center md:justify-between">
                 <TagList tags={tags} />
                 <div className="text-xs text-gray-500">
                   <PublishedAt date={publishedAt} />
                   <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} className="ml-2" />
                 </div>
               </div>
-              <div className="p-6 -mt-6">
+              <div className="-mt-6">
                 <h1 className="hidden">{title}</h1>
                 <Markdown content={content} />
               </div>
-            </div>
+            </Card>
             <ContentFooterNav prev={prev} next={next} />
           </article>
         </Container>

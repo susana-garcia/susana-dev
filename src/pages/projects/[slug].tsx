@@ -13,6 +13,7 @@ import CategoryLabel from 'components/CategoryLabel'
 import { Routes } from 'utils/routes'
 import { loadProjects, loadProject, ProjectMap } from 'utils/contents/projects'
 import UpdatedAt from 'components/UpdatedAt'
+import Card from 'components/Card'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadProjects().map(({ slug }) => Routes.project(slug).as),
@@ -54,9 +55,9 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
             size="large"
             className="grid gap-6 grid-cols-1 md:grid-cols-2 items-center mb-12"
           >
-            <div className="bg-white dark:bg-black border border-gray-300 dark:border-gray-900 shadow-lg w-full rounded-lg overflow-hidden">
+            <Card noPadding className="shadow-lg rounded-lg overflow-hidden min-h-48">
               <img src={image} />
-            </div>
+            </Card>
             <header>
               <div className="mb-1 text-xs">
                 <CategoryLabel type="project" withLabel className="mr-4" />

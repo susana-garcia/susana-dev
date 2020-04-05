@@ -1,6 +1,7 @@
 import React from 'react'
 import { TinyLetter } from 'react-tinyletter'
 import clsx from 'clsx'
+import Card from 'components/Card'
 
 interface NewsletterProps {
   className?: string
@@ -10,13 +11,7 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
   if (!process.env.TINY_LETTER_ID) return null
 
   return (
-    <div
-      className={clsx(
-        'flex flex-col items-center justify-center',
-        'p-4 py-8 rounded bg-white dark:bg-gray-900 shadow',
-        className
-      )}
-    >
+    <Card className={clsx('flex flex-col items-center justify-center', className)}>
       <h3 className="font-black text-lg">Do you want more?</h3>
       <p className="text-gray-700">Join my newsletter and be the first to be notified.</p>
       <TinyLetter list={process.env.TINY_LETTER_ID} className="mt-3">
@@ -31,7 +26,7 @@ const Newsletter: React.FC<NewsletterProps> = ({ className }) => {
           value="Join Now"
         />
       </TinyLetter>
-    </div>
+    </Card>
   )
 }
 export default Newsletter
