@@ -21,7 +21,7 @@ const Header: React.FC = ({ children }) => {
         'dark:bg-gray-900 dark:border-gray-800': children,
       })}
     >
-      <Container size="fluid" grid className="h-12 py-0">
+      <Container size="large" grid className="h-12 py-0">
         <div className="flex items-center">
           <div>
             <NextLink {...Routes.home()}>
