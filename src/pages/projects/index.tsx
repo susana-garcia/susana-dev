@@ -1,6 +1,7 @@
 import React from 'react'
 import { NextPage, GetStaticProps } from 'next'
 import Layout from 'components/layout/Layout'
+import Subheader from 'components/layout/Subheader'
 import ContentList from 'components/ContentList'
 import { NextSeo } from 'next-seo'
 import { loadProjects, Project } from 'utils/contents/projects'
@@ -20,9 +21,14 @@ const ArticlesPage: NextPage<ArticlesPageProps> = ({ projects }) => (
     <NextSeo title="Projects" />
     <Layout
       withoutNewsletter
-      subheader={<h1 className="my-12 text-4xl font-black  text-center">Projects</h1>}
+      subheader={
+        <Subheader
+          title="Projects"
+          description="Personal projects I'm working on or I've worked on in the past."
+        />
+      }
     >
-      <ContentList contents={projects} className="mt-4" />
+      <ContentList contents={projects} />
     </Layout>
   </>
 )

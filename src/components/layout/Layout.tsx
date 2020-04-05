@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({
     <div className="min-h-screen flex flex-col">
       <Header>{subheader}</Header>
       <main
-        className={clsx('flex-grow py-8', {
+        className={clsx('flex-grow', {
           'flex flex-col items-center justify-center': centered,
         })}
       >

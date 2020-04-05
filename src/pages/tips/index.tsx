@@ -4,10 +4,10 @@ import Layout from 'components/layout/Layout'
 import ContentList from 'components/ContentList'
 import { NextSeo } from 'next-seo'
 import { Tip, loadTips } from 'utils/contents/tips'
+import Subheader from 'components/layout/Subheader'
 
 export const getStaticProps: GetStaticProps = async () => {
   const tips = loadTips()
-
   return { props: { tips } }
 }
 
@@ -20,7 +20,12 @@ const TagsPage: NextPage<TagsPageProps> = ({ tips }) => (
     <NextSeo title="Tips" />
     <Layout
       withoutNewsletter
-      subheader={<h1 className="my-12 text-4xl font-black text-center">Tips</h1>}
+      subheader={
+        <Subheader
+          title="Tips"
+          description="Quick and helpful tips which to make your workflow and life easier."
+        />
+      }
     >
       <ContentList contents={tips} className="mt-4" />
     </Layout>

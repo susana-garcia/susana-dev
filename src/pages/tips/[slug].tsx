@@ -48,10 +48,10 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
         }}
       />
       <Layout>
-        <Container>
+        <Container className="mt-4 md:mt-8">
           <article>
-            <Card className="rounded-lg">
-              <header className="py-12 text-center bg-primary text-white rounded-md">
+            <Card className="rounded-lg dark:bg-gray-950 dark:border-gray-900">
+              <header className="py-12 text-center bg-gray-200 dark:bg-gray-900 rounded">
                 <CategoryLabel type="tip" withLabel className="mb-6 block" />
                 <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
               </header>
@@ -62,7 +62,7 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
                   <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} className="ml-2" />
                 </div>
               </div>
-              <div className="-mt-6">
+              <div>
                 <h1 className="hidden">{title}</h1>
                 <Markdown content={content} />
               </div>

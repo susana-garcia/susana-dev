@@ -4,6 +4,7 @@ import Layout from 'components/layout/Layout'
 import ContentList from 'components/ContentList'
 import { NextSeo } from 'next-seo'
 import { Article, loadArticles } from 'utils/contents/articles'
+import Subheader from 'components/layout/Subheader'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = loadArticles()
@@ -20,7 +21,9 @@ const ArticlesPage: NextPage<ArticlesPageProps> = ({ articles }) => (
     <NextSeo title="Articles" />
     <Layout
       withoutNewsletter
-      subheader={<h1 className="my-12 text-4xl font-black  text-center">Articles</h1>}
+      subheader={
+        <Subheader title="Articles" description="Thoughts and experiences about code and design." />
+      }
     >
       <ContentList contents={articles} className="mt-4" />
     </Layout>

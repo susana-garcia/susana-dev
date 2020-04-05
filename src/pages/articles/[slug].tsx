@@ -12,6 +12,7 @@ import PublishedAt from 'components/PublishedAt'
 import CategoryLabel from 'components/CategoryLabel'
 import UpdatedAt from 'components/UpdatedAt'
 import { Routes } from 'utils/routes'
+import Subheader from 'components/layout/Subheader'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadArticles().map(({ slug }) => Routes.article(slug).as),
@@ -49,16 +50,17 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
       />
       <Layout
         subheader={
-          <div className="mt-12 mb-8 text-center">
-            <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-            <div className="flex justify-center text-xs ">
-              <PublishedAt date={publishedAt} className="mr-4" />
-              <ReadingTime readingTime={readingTime.text} className="mr-4" />
-              <CategoryLabel type="article" withLabel />
+          <Subheader title={title}>
+            <div className="text-center">
+              <div className="flex justify-center text-xs ">
+                <PublishedAt date={publishedAt} className="mr-4" />
+                <ReadingTime readingTime={readingTime.text} className="mr-4" />
+                <CategoryLabel type="article" withLabel />
+              </div>
+              <TagList tags={tags} />
+              <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
             </div>
-            <TagList tags={tags} />
-            <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
-          </div>
+          </Subheader>
         }
       >
         <Container>

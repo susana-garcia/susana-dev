@@ -8,6 +8,7 @@ import { Routes } from 'utils/routes'
 import NextLink from 'next/link'
 import Link from 'components/Link'
 import { FiHash } from 'react-icons/fi'
+import Subheader from 'components/layout/Subheader'
 
 export const getStaticProps: GetStaticProps = async () => {
   const tags = loadTags()
@@ -24,12 +25,12 @@ const TagsPage: NextPage<TagsPageProps> = ({ tags }) => (
     <NextSeo title="Tags" />
     <Layout
       withoutNewsletter
-      subheader={<h1 className="my-12 text-4xl font-black  text-center">Tags</h1>}
+      subheader={<Subheader title="Tags" description="Tags overview from all content types." />}
     >
       <Container>
-        <ul className="overflow-x-hidden py-2">
+        <ul className="overflow-x-hidden py-2 text-center">
           {tags.map(tag => (
-            <ul key={tag} className="inline-block mb-4 mr-4">
+            <ul key={tag} className="inline-block mb-4 mr-2">
               <NextLink {...Routes.tag(tag)} passHref>
                 <Link title={tag} className="text-lg border border-primary">
                   <FiHash />

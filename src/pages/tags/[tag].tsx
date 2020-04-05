@@ -4,11 +4,11 @@ import { loadTags, loadContentsForTag } from 'utils/contents/tags'
 import { Content } from 'utils/contents'
 import Layout from 'components/layout/Layout'
 import ContentList from 'components/ContentList'
-import { FiHash } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
 import { Routes } from 'utils/routes'
 import NextLink from 'next/link'
 import Link from 'components/Link'
+import Subheader from 'components/layout/Subheader'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTags().map(tag => Routes.tag(tag).as),
@@ -35,21 +35,17 @@ type TagPageProps = {
 
 const TagPage: NextPage<TagPageProps> = ({ contents, tag }) => (
   <>
-    <NextSeo title={`Tag #${tag}`} />
+    <NextSeo title={`Tag: #${tag}`} />
     <Layout
       withoutNewsletter
       subheader={
-        <div className="mt-12 mb-8 text-center">
-          <h1 className="col-span-2 text-4xl font-black">
-            <FiHash />
-            {tag}
-          </h1>
-          <div className="text-xs text-white hover:text-gray-200">
-            <NextLink {...Routes.tags()} passHref>
-              <Link title="All Tags">All Tags</Link>
-            </NextLink>
-          </div>
-        </div>
+        <Subheader title={`#${tag}`} description={`Content for tag #${tag}`}>
+          <NextLink {...Routes.tags()} passHref>
+            <Link title="All Tags" className="text-xs">
+              More Tags
+            </Link>
+          </NextLink>
+        </Subheader>
       }
     >
       <ContentList contents={contents} className="mt-4" />

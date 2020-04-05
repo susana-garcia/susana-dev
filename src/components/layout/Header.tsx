@@ -32,12 +32,7 @@ const Header: React.FC = ({ children }) => {
   }
 
   return (
-    <header
-      className={clsx({
-        'bg-white border-b border-gray-300': children,
-        'dark:bg-gray-900 dark:border-gray-800': children,
-      })}
-    >
+    <header>
       <Container size="large" grid className="h-12 py-0">
         <div className="flex items-center">
           <div className="mr-3">
@@ -78,7 +73,7 @@ const Header: React.FC = ({ children }) => {
           </div>
         </div>
       </Container>
-      {children && <Container>{children}</Container>}
+      {children && <div className="py-8 sm:py-12 md:py-16">{children}</div>}
     </header>
   )
 }

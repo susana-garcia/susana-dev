@@ -53,7 +53,7 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
         <article>
           <Container
             size="large"
-            className="grid gap-6 grid-cols-1 md:grid-cols-2 items-center mb-12"
+            className="grid gap-6 grid-cols-1 md:grid-cols-2 items-center my-4 md:my-8"
           >
             <Card noPadding className="shadow-lg rounded-lg overflow-hidden min-h-48">
               <img src={image} />
@@ -82,6 +82,7 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
             </header>
           </Container>
           <Container>
+            <hr className="mb-6 md:hidden border-gray-500 dark:border-gray-700" />
             <h1 className="hidden">{title}</h1>
             <Markdown content={content} />
             <ContentFooterNav prev={prev} next={next} />
