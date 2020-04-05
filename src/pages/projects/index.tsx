@@ -24,7 +24,7 @@ const ArticlesPage: NextPage<ArticlesPageProps> = ({ projects }) => (
       subheader={
         <Subheader
           title="Projects"
-          description="Personal projects I'm working on or I've worked on in the past."
+          description="Personal projects I'm currently working on or I have in the past."
         />
       }
     >

@@ -21,10 +21,7 @@ const TagsPage: NextPage<TagsPageProps> = ({ tips }) => (
     <Layout
       withoutNewsletter
       subheader={
-        <Subheader
-          title="Tips"
-          description="Quick and helpful tips which to make your workflow and life easier."
-        />
+        <Subheader title="Tips" description="Quick and helpful tips to improve your workflow." />
       }
     >
       <ContentList contents={tips} className="mt-4" />
