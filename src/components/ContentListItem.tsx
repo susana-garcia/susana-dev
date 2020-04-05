@@ -21,16 +21,25 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
       'p-4 rounded bg-white dark:bg-gray-900 shadow hover:shadow-xl',
       'transform hover:-translate-y-1',
       'transition ease-in-out duration-75',
+      'border-t-2',
+      'border-primary-dark',
       className
     )}
   >
-    <div className="flex justify-between mb-4 text-xs">
+    <div className="-my-4 flex items-center justify-between mb-4 text-xs">
       <PublishedAt date={content.publishedAt} />
       <div>
         {content.type === 'article' && (
           <ReadingTime readingTime={content.readingTime.text} className="mr-4" />
         )}
-        <CategoryLabel type={content.type} withLabel />
+        <CategoryLabel
+          type={content.type}
+          withLabel
+          className={clsx(
+            'inline-block px-4 py-2 rounded-bl-lg rounded-br-lg',
+            'bg-primary-dark text-white'
+          )}
+        />
       </div>
     </div>
     <header className="mb-2">

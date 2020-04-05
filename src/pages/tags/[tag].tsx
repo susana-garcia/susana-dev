@@ -4,7 +4,6 @@ import { loadTags, loadContentsForTag } from 'utils/contents/tags'
 import { Content } from 'utils/contents'
 import Layout from 'components/layout/Layout'
 import ContentList from 'components/ContentList'
-import Container from 'components/layout/Container'
 import { FiHash } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
 import { Routes } from 'utils/routes'
@@ -38,6 +37,7 @@ const TagPage: NextPage<TagPageProps> = ({ contents, tag }) => (
   <>
     <NextSeo title={`Tag #${tag}`} />
     <Layout
+      withoutNewsletter
       subheader={
         <div className="mt-12 mb-8 text-center">
           <h1 className="col-span-2 text-4xl font-black">
