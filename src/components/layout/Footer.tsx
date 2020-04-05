@@ -26,10 +26,10 @@ const Footer: React.FC<FooterProps> = ({ withoutNewsletter = false }) => {
       )}
 
       <Container size="large">
-        <div className="grid gap-6 grid-cols-3 sm:grid-cols-5">
-          <div className="col-span-3 md:col-span-2">
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+          <div className="col-span-2 sm:col-span-3 md:col-span-2">
             <h4 className="font-black text-gray-700 dark:text-gray-400 mb-2">About</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm md:pr-10">
               {process.env.SITE_ABOUT}
             </p>
           </div>

@@ -13,7 +13,7 @@ const nextConfig = {
     SITE_TITLE: "Lailo's Blog",
     SITE_DESCRIPTION: 'Passionate about simplicity in code and design.',
     SITE_ABOUT:
-      "I'm Lailo, a Software Engineer from Switzerland. This is my little place to share my thoughts and experiences about web and mobile development and design.",
+      "I'm Lailo, a Software Engineer from Switzerland. Here I'll share my thoughts and experiences about web/mobile development and design.",
     SITE_LOCALE: 'en',
     TWITTER_USERNAME: 'lailo_ch',
     GITHUB_USERNAME: 'lailo',
