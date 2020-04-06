@@ -41,9 +41,7 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
         >
           <PublishedAt date={content.publishedAt} />
           <div>
-            {content.type === 'article' && (
-              <ReadingTime readingTime={content.readingTime.text} className="mr-4" />
-            )}
+            <ReadingTime readingTime={content.readingTime.text} className="mr-4" />
             <CategoryLabel
               type={content.type}
               withLabel
