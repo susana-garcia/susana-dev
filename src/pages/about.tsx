@@ -24,15 +24,15 @@ const AboutPage: NextPage = () => (
         </p>
         <p className="mb-4">
           After my studies late 2012, I joined startup after startup. I mainly focused on building
-          MVPs from simple ideas and increasing customer base with growth hacking strategies.
+          MVPs from scratch and increasing customer base with growth hacking strategies.
         </p>
         <p className="mb-4">
           Since 2013, I work mostly remotely from all around the world. I learned a lot about
-          working with and leading a remote team.
+          working with and leading remote teams.
         </p>
         <p className="mb-4">
           My current focus is on simplicity in code and design. While some people over engineer, I
-          prefer to start with minimal features.
+          prefer to start with minimal feature set.
         </p>
       </Container>
       <Container size="large" className="my-12 grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -47,7 +47,7 @@ const AboutPage: NextPage = () => (
           sinceYear={2008}
           now="Currently working React, TailwindCSS and Typescript, and also keeping an eye on Svelte
           and RedwoodJS."
-          past="Started developing web applications in 2010. First only static websites with HTML, CSS and
+          past="Started developing web applications in 2010. First, only static websites with HTML, CSS and
             JavaScript, switched quickly to Ruby on Rails and Python Django. Then started using React in
             2014 and VueJS in 2017."
         />
@@ -55,9 +55,9 @@ const AboutPage: NextPage = () => (
           title="Mobile"
           sinceYear={2010}
           now="Currently developing games and apps with SwiftUI, and learning to build apps for watchOS, macOS and iPadOS."
-          past="I started learning Objective-C when the AppStore was introduced. Later I used 
+          past="I started learning Objective-C shortly after the AppStore was introduced. Later I used 
           Swift as my primary programming language. I also worked on cross platform projects using
-          Sencha Touch, Icon and React Native."
+          Sencha Touch, Ionic and React Native."
         />
         <SkillCard
           title="API"
@@ -65,7 +65,7 @@ const AboutPage: NextPage = () => (
           now="Currently using with NodeJS and Prisma to develop GraphQL APIs and learning Golang.
           I'm also keeping an eye on Swift its Vapor web framework."
           past="Started developing REST APIs in 2012 with Ruby on Rails, switched to Python Django in 2013 and using Node
-          since 2015. Since 2017, I started developing GraphQL APIs with NodeJS and
+          since 2015. In 2017, I started developing GraphQL APIs with NodeJS and
           Apollo GraphQL."
         />
         <SkillCard
@@ -75,7 +75,7 @@ const AboutPage: NextPage = () => (
           of tools like Sketch, Zeplin and TailwindCSS."
           past="I started focusing on design when I started developing mobile apps. I always tried get the best user 
           interface with the least amount of interactions. I took this design passion from mobile into web development with the 
-          mobile first development strategy."
+          mobile first strategy."
         />
       </Container>
       <Container className="mb-20 text-center">
