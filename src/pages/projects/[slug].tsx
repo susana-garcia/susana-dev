@@ -43,6 +43,14 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
           title,
           description: description,
           url: `${process.env.SITE_URL}${Routes.project(slug).as}`,
+          images: [
+            {
+              url: `${process.env.SITE_URL}${image}`,
+              width: 480,
+              height: 300,
+              alt: `${title} logo`,
+            },
+          ],
           type: 'article',
           article: {
             publishedTime: publishedAt,
