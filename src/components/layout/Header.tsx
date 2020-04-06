@@ -4,6 +4,7 @@ import Container from 'components/layout/Container'
 import clsx from 'clsx'
 import { Routes } from 'utils/routes'
 import { useRouter } from 'next/router'
+import LailoLogoSVG from 'assets/svg/lailo-logo.svg'
 
 const Header: React.FC = ({ children }) => {
   const { pathname } = useRouter()
@@ -36,7 +37,7 @@ const Header: React.FC = ({ children }) => {
                 title="Back home"
                 className={clsx('font-black text-black dark:text-white hover:text-primary')}
               >
-                Lailo
+                <LailoLogoSVG className="h-6 w-10" />
               </a>
             </NextLink>
           </div>
