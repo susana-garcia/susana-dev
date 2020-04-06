@@ -4,6 +4,8 @@ import { FiTwitter, FiGithub } from 'react-icons/fi'
 import Container from 'components/layout/Container'
 import Link from 'components/Link'
 import Avatar from 'components/Avatar'
+import NextLink from 'next/link'
+import { Routes } from 'utils/routes'
 
 interface BioProps {
   className?: string
@@ -12,7 +14,11 @@ interface BioProps {
 const Bio: React.FC<BioProps> = ({ className }) => (
   <aside className={clsx(className)}>
     <Container className="text-center">
-      <Avatar size="small" />
+      <NextLink {...Routes.about()}>
+        <a title="About">
+          <Avatar size="small" />
+        </a>
+      </NextLink>
       <div className="text-lg font-bold mb-2">👋 I'm {process.env.AUTHORS_NAME}</div>
       <p className="font-light text-gray-700 dark:text-gray-300 max-w-md mx-auto">
         Passionate about simplicity in{' '}
