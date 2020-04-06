@@ -14,6 +14,7 @@ import { Routes } from 'utils/routes'
 import { loadProjects, loadProject, ProjectMap } from 'utils/contents/projects'
 import UpdatedAt from 'components/UpdatedAt'
 import Card from 'components/Card'
+import DownloadFromAppStoreSVG from 'assets/svg/download-from-app-store.svg'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadProjects().map(({ slug }) => Routes.project(slug).as),
@@ -67,18 +68,33 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
               <h1 className="text-5xl font-black leading-tight mb-1">{title}</h1>
               <p className="text-lg text-gray-700 dark:text-gray-400">{description}</p>
               <TagList tags={tags} />
-              <div className="mt-4">
-                <Link
-                  href={url}
-                  title={title}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="border border-primary text-lg"
-                >
-                  <FiArrowUpRight className="mr-1" />
-                  Visit Project
-                </Link>
-              </div>
+              {tags.includes('web') && (
+                <div className="mt-4">
+                  <Link
+                    href={url}
+                    title={title}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="border border-primary text-lg"
+                  >
+                    <FiArrowUpRight className="mr-1" />
+                    Visit Project
+                  </Link>
+                </div>
+              )}
+              {tags.includes('ios') && (
+                <div className="mt-4">
+                  <a
+                    href={url}
+                    title={title}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className=""
+                  >
+                    <DownloadFromAppStoreSVG />
+                  </a>
+                </div>
+              )}
             </header>
           </Container>
           <Container>
