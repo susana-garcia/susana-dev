@@ -14,48 +14,60 @@ interface ContentListItemProps {
   content: Content
 }
 
-const ContentListItem: React.FC<ContentListItemProps> = ({ content, className }) => (
-  <article className={clsx(className)}>
-    <Card
-      className={clsx(
-        'flex flex-col',
-        'hover:shadow-xl',
-        'transform hover:-translate-y-1',
-        'transition ease-in-out duration-75',
-        'border-t-2',
-        'border-t-primary-dark',
-        'h-full'
-      )}
-    >
-      <div className="-m-4 md:-m-6 px-4 md:px-6 pb-8 flex items-center justify-between text-xs border-t-2 border-primary">
-        <PublishedAt date={content.publishedAt} />
-        <div>
-          {content.type === 'article' && (
-            <ReadingTime readingTime={content.readingTime.text} className="mr-4" />
+const ContentListItem: React.FC<ContentListItemProps> = ({ content, className }) => {
+  const isPublished = !!content.publishedAt
+
+  console.log(content)
+
+  return (
+    <article className={clsx(className)}>
+      <Card
+        className={clsx(
+          'flex flex-col',
+          'hover:shadow-xl',
+          'transform hover:-translate-y-1',
+          'transition ease-in-out duration-75',
+          'h-full'
+        )}
+      >
+        <div
+          className={clsx(
+            '-m-4 md:-m-6 px-4 md:px-6 pb-8 flex items-center justify-between text-xs border-t-2',
+            {
+              'border-primary': isPublished,
+              'border-gray-500': !isPublished,
+            }
           )}
-          <CategoryLabel
-            type={content.type}
-            withLabel
-            className={clsx(
-              'inline-block px-4 py-2 rounded-bl-lg rounded-br-md',
-              'bg-primary text-white'
+        >
+          <PublishedAt date={content.publishedAt} />
+          <div>
+            {content.type === 'article' && (
+              <ReadingTime readingTime={content.readingTime.text} className="mr-4" />
             )}
-          />
+            <CategoryLabel
+              type={content.type}
+              withLabel
+              className={clsx('inline-block px-4 py-2 rounded-bl-lg rounded-br-md', 'text-white', {
+                'bg-primary': isPublished,
+                'bg-gray-500': !isPublished,
+              })}
+            />
+          </div>
         </div>
-      </div>
-      <header className="mb-2">
-        <NextLink {...linkForContentType(content.type, content.slug)}>
-          <a title={content.title} className="text-3xl font-black leading-tight">
-            {content.title}
-          </a>
-        </NextLink>
-      </header>
-      <p className="flex-grow text-lg font-light text-gray-700 dark:text-gray-300 mb-2">
-        {content.description}
-      </p>
-      <TagList tags={content.tags} short className="-mb-2" />
-    </Card>
-  </article>
-)
+        <header className="mb-2">
+          <NextLink {...linkForContentType(content.type, content.slug)}>
+            <a title={content.title} className="text-3xl font-black leading-tight">
+              {content.title}
+            </a>
+          </NextLink>
+        </header>
+        <p className="flex-grow text-lg font-light text-gray-700 dark:text-gray-300 mb-2">
+          {content.description}
+        </p>
+        <TagList tags={content.tags} short className="-mb-2" />
+      </Card>
+    </article>
+  )
+}
 
 export default ContentListItem
