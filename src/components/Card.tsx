@@ -11,7 +11,7 @@ const Card: React.FC<CardProps> = ({ className, noPadding = false, children }) =
     className={clsx(
       'rounded',
       'bg-white dark:bg-gray-900',
-      'border border-gray-100 dark:border-gray-900',
+      'border border-gray-100 dark:border-gray-800',
       'shadow',
       'overflow-hidden',
       {
