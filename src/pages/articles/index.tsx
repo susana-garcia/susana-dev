@@ -25,7 +25,7 @@ const ArticlesPage: NextPage<ArticlesPageProps> = ({ articles }) => (
         <Subheader title="Articles" description="Thoughts and experiences about code and design." />
       }
     >
-      <ContentList contents={articles} className="mt-4" />
+      <ContentList contents={articles} />
     </Layout>
   </>
 )

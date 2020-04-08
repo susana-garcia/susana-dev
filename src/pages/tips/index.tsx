@@ -24,7 +24,7 @@ const TagsPage: NextPage<TagsPageProps> = ({ tips }) => (
         <Subheader title="Tips" description="Quick and helpful tips to improve your workflow." />
       }
     >
-      <ContentList contents={tips} className="mt-4" />
+      <ContentList contents={tips} />
     </Layout>
   </>
 )
