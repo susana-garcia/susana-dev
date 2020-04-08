@@ -2,7 +2,9 @@ import { loadContents, Content } from 'utils/contents'
 
 export interface Project extends Content {
   image: string
-  url: string
+  websiteUrl?: string
+  testFlightUrl?: string
+  appStoreUrl?: string
 }
 
 export interface ProjectMap {
@@ -13,11 +15,18 @@ export interface ProjectMap {
 
 export function loadProjects() {
   const projectsContent = loadContents('project')
-  const projects: Project[] = projectsContent.map(content => ({
-    ...content,
-    image: content.data.image,
-    url: content.data.url,
-  }))
+  const projects: Project[] = projectsContent.map(content => {
+    const project: Project = {
+      ...content,
+      image: content.data.image,
+    }
+
+    if (content.data.websiteUrl) project.websiteUrl = content.data.websiteUrl
+    if (content.data.testFlightUrl) project.testFlightUrl = content.data.testFlightUrl
+    if (content.data.appStoreUrl) project.appStoreUrl = content.data.appStoreUrl
+
+    return project
+  })
   return projects
 }
 

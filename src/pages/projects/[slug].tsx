@@ -32,7 +32,19 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
-  const { slug, description, title, publishedAt, updatedAt, content, tags, image, url } = project
+  const {
+    slug,
+    description,
+    title,
+    publishedAt,
+    updatedAt,
+    content,
+    tags,
+    image,
+    appStoreUrl,
+    testFlightUrl,
+    websiteUrl,
+  } = project
 
   return (
     <>
@@ -76,11 +88,11 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
               <h1 className="text-5xl font-black leading-tight mb-1">{title}</h1>
               <p className="text-lg text-gray-700 dark:text-gray-400">{description}</p>
               <TagList tags={tags} />
-              {tags.includes('web') && (
+              {websiteUrl && (
                 <div className="mt-4">
                   <Link
-                    href={url}
-                    title={title}
+                    href={websiteUrl}
+                    title="Project Website"
                     rel="noopener noreferrer"
                     target="_blank"
                     className="border border-primary text-lg"
@@ -90,17 +102,31 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
                   </Link>
                 </div>
               )}
-              {tags.includes('ios') && (
+              {appStoreUrl && (
                 <div className="mt-4">
                   <a
-                    href={url}
-                    title={title}
+                    href={appStoreUrl}
+                    title="App Store"
                     rel="noopener noreferrer"
                     target="_blank"
                     className=""
                   >
                     <DownloadFromAppStoreSVG />
                   </a>
+                </div>
+              )}
+              {testFlightUrl && (
+                <div className="mt-4">
+                  <Link
+                    href={testFlightUrl}
+                    title="Beta Testing"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="border border-primary text-lg"
+                  >
+                    <FiArrowUpRight className="mr-1" />
+                    Beta Testing
+                  </Link>
                 </div>
               )}
             </header>
