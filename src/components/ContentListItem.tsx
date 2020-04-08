@@ -33,7 +33,6 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
         >
           <PublishedAt date={content.publishedAt} />
           <div>
-            <ReadingTime readingTime={content.readingTime.text} className="mr-4" />
             <CategoryLabel
               type={content.type}
               withLabel
@@ -56,7 +55,10 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
         <p className="flex-grow text-lg font-light text-gray-700 dark:text-gray-300 mb-2">
           {content.description}
         </p>
-        <TagList tags={content.tags} short className="-mb-2" />
+        <div className="-mb-2 flex items-center justify-between">
+          <TagList tags={content.tags} short />
+          <ReadingTime readingTime={content.readingTime.text} className="text-xs text-gray-600" />
+        </div>
       </Card>
     </article>
   )
