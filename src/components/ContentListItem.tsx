@@ -15,10 +15,6 @@ interface ContentListItemProps {
 }
 
 const ContentListItem: React.FC<ContentListItemProps> = ({ content, className }) => {
-  const isPublished = !!content.publishedAt
-
-  console.log(content)
-
   return (
     <article className={clsx(className)}>
       <Card
@@ -32,11 +28,7 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
       >
         <div
           className={clsx(
-            '-m-4 md:-m-6 px-4 md:px-6 pb-8 flex items-center justify-between text-xs border-t-2',
-            {
-              'border-primary': isPublished,
-              'border-gray-500': !isPublished,
-            }
+            '-m-4 md:-m-6 px-4 md:px-6 pb-8 flex items-center justify-between text-xs'
           )}
         >
           <PublishedAt date={content.publishedAt} />
@@ -45,10 +37,12 @@ const ContentListItem: React.FC<ContentListItemProps> = ({ content, className })
             <CategoryLabel
               type={content.type}
               withLabel
-              className={clsx('inline-block px-4 py-2 rounded-bl-lg rounded-br-md', 'text-white', {
-                'bg-primary': isPublished,
-                'bg-gray-500': !isPublished,
-              })}
+              className={clsx(
+                'inline-block px-4 py-2 rounded-bl-lg rounded-br-md',
+                'bg-gray-100 dark:bg-gray-800',
+                'text-gray-600',
+                'shadow-xs'
+              )}
             />
           </div>
         </div>
