@@ -19,9 +19,10 @@ class Document extends NextDocument {
             title={process.env.SITE_TITLE}
             href="/rss.xml"
           />
-          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=v1" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=v1" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=v1" />
+          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=v2" />
+          <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=v2" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=v2" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=v2" />
         </Head>
         <body className="max-w-screen overflow-hidden bg-gray-100 dark:bg-gray-950 transition duration-500 ease-in-out">
           <script
