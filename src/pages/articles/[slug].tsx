@@ -44,6 +44,8 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
           type: 'article',
           article: {
             publishedTime: publishedAt,
+            modifiedTime: updatedAt,
+            authors: ['lailo'],
             tags: tags,
           },
         }}

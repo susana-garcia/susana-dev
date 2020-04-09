@@ -43,6 +43,8 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
           type: 'article',
           article: {
             publishedTime: publishedAt,
+            modifiedTime: updatedAt,
+            authors: ['lailo'],
             tags: tags,
           },
         }}

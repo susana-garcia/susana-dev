@@ -35,7 +35,7 @@ type TagPageProps = {
 
 const TagPage: NextPage<TagPageProps> = ({ contents, tag }) => (
   <>
-    <NextSeo title={`Tag: #${tag}`} />
+    <NextSeo title={`Tag: ${tag}`} description={`Contents found for tag ${tag}`} />
     <Layout
       withoutNewsletter
       subheader={
