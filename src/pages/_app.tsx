@@ -32,10 +32,10 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
         description: process.env.SITE_DESCRIPTION,
         images: [
           {
-            url: process.env.PROFILE_IMAGE,
-            width: 256,
-            height: 256,
-            alt: 'Profile Image',
+            url: `${process.env.SITE_URL}/social-sharing.jpg?v=1`,
+            width: 1024,
+            height: 1024,
+            alt: 'Lailo Logo',
           },
         ],
         // eslint-disable-next-line @typescript-eslint/camelcase
