@@ -1,4 +1,4 @@
-# Lailo's Blog
+# Lailo's Personal Website
 
 This is my personal blog based on Next.js and Markdown, styled with TailwindCSS and exported to a Static-Site-Generation (SSG) website.
 

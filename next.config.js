@@ -10,7 +10,7 @@ const nextConfig = {
     PROFILE_IMAGE: 'https://www.gravatar.com/avatar/a2d6b99998cc640643196c2ebc7e94b6',
     AUTHORS_NAME: 'Lailo',
     SITE_NAME: 'Lailo',
-    SITE_TITLE: "Lailo's Blog",
+    SITE_TITLE: 'Lailo',
     SITE_DESCRIPTION: 'Passionate about simplicity in code and design.',
     SITE_ABOUT:
       "I'm Lailo, a Software Engineer from Switzerland. I share my thoughts and experiences related to code and design.",

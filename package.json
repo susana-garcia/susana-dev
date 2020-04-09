@@ -1,7 +1,7 @@
 {
   "name": "lailo.ch",
   "version": "1.0.0",
-  "description": "Lailo's blog",
+  "description": "Lailo's Personal Website",
   "scripts": {
     "dev": "next",
     "build": "next build",
