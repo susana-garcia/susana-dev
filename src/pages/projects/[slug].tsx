@@ -85,7 +85,7 @@ const ProjectPage: NextPage<ProjectMap> = ({ project, prev, next }) => {
               <div className="mb-1 text-xs">
                 <CategoryLabel type="project" withLabel className="mr-4" />
                 <PublishedAt date={publishedAt} />
-                <UpdatedAt publishedAt={publishedAt} className="ml-4" updatedAt={updatedAt} />
+                <UpdatedAt className="ml-4" updatedAt={updatedAt} />
               </div>
               <h1 className="text-5xl font-black leading-tight mb-1">{title}</h1>
               <p className="text-lg text-gray-700 dark:text-gray-400">{description}</p>

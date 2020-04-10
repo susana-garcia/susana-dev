@@ -61,7 +61,7 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
                 <TagList tags={tags} />
                 <div className="text-xs text-gray-500">
                   <PublishedAt date={publishedAt} />
-                  <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} className="ml-2" />
+                  <UpdatedAt updatedAt={updatedAt} className="ml-2" />
                 </div>
               </div>
               <div>

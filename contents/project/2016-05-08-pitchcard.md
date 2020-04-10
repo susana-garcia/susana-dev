@@ -5,7 +5,7 @@ websiteUrl: 'https://www.pitchcard.io'
 image: '/contents/project/pitchcard.jpg?v1'
 tags: ['pitch', 'idea', 'web']
 publishedAt: '2016-05-08T07:07:37.915Z'
-updatedAt: '2016-05-08T07:07:37.915Z'
+updatedAt:
 ---
 
 <small>Co-Written by [Susana Garcia](https://susana.dev)</small>

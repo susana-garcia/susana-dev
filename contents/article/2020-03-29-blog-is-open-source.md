@@ -27,7 +27,6 @@ It's important that you keep the meta data at the top of the file.
 title: 'This Blog Is Open Source'
 description: 'Use this blog to ....'
 tags: ['open-source', 'web', 'react', 'nextjs', 'tailwind-css']
-type: 'article'
 publishedAt: '2020-03-29T19:14:12.215Z'
 updatedAt: '2020-03-29T19:14:12.215Z'
 ---

@@ -21,7 +21,7 @@ export interface Content {
   type: ContentType
   tags: string[]
   publishedAt: string
-  updatedAt: string
+  updatedAt?: string
   readingTime: ReadingTime
   data: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -55,7 +55,7 @@ export function loadContents(type?: ContentType) {
         type,
         tags,
         publishedAt,
-        updatedAt,
+        updatedAt: updatedAt ? updatedAt : null,
         readingTime: readingTime(content),
         data: fileData.data,
       }

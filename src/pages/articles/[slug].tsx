@@ -60,7 +60,7 @@ const ArticlePage: NextPage<ArticleMap> = ({ article, prev, next }) => {
                 <CategoryLabel type="article" withLabel />
               </div>
               <TagList tags={tags} />
-              <UpdatedAt publishedAt={publishedAt} updatedAt={updatedAt} />
+              <UpdatedAt updatedAt={updatedAt} />
             </div>
           </Subheader>
         }
