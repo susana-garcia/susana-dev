@@ -35,7 +35,10 @@ const Header: React.FC = ({ children }) => {
             <NextLink {...Routes.home()}>
               <a
                 title="Back home"
-                className={clsx('font-black text-black dark:text-white hover:text-primary')}
+                className={clsx(
+                  'font-black text-black dark:text-white hover:text-primary',
+                  'transition ease-in-out duration-200'
+                )}
               >
                 <LailoLogoSVG className="h-6 w-10" />
               </a>
