@@ -12,7 +12,10 @@ interface ContentListProps {
 }
 
 const ContentList: React.FC<ContentListProps> = ({ contents, className }) => (
-  <Container size="large" className={clsx('grid gap-4 grid-cols-2 md:grid-cols-4', className)}>
+  <Container
+    size="large"
+    className={clsx('grid gap-6 grid-cols-2 md:grid-cols-4 grid-flow-row-dense', className)}
+  >
     {contents.length === 0 && (
       <p className="text-center text-sm text-gray-600 dark:text-gray-400">
         There aren't any posts yet. <br />
@@ -32,9 +35,13 @@ const ContentList: React.FC<ContentListProps> = ({ contents, className }) => (
       </p>
     )}
     {contents.map(content => (
-      <ContentListItem key={content.slug} content={content} className={clsx('col-span-2')} />
+      <ContentListItem
+        key={content.slug}
+        content={content}
+        className={clsx('col-span-2', { 'md:row-span-2': content.image })}
+      />
     ))}
-    <Newsletter className="col-span-2" />
+    <Newsletter className="col-span-2 h-56" />
   </Container>
 )
 

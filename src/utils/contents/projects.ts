@@ -1,7 +1,6 @@
 import { loadContents, Content } from 'utils/contents'
 
 export interface Project extends Content {
-  image: string
   websiteUrl?: string
   testFlightUrl?: string
   appStoreUrl?: string
@@ -18,7 +17,6 @@ export function loadProjects() {
   const projects: Project[] = projectsContent.map(content => {
     const project: Project = {
       ...content,
-      image: content.data.image,
     }
 
     if (content.data.websiteUrl) project.websiteUrl = content.data.websiteUrl

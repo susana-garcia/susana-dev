@@ -7,15 +7,12 @@ module.exports = {
       center: true,
     },
     extend: {
-      maxWidth: {
-        screen: '100vw',
-      },
-      minWidth: {
-        '24': '6rem',
-      },
-      minHeight: {
-        '24': '6rem',
-        '48': '12rem',
+      maxWidth: theme => theme('spacing'),
+      minWidth: theme => theme('spacing'),
+      maxHeight: theme => theme('spacing'),
+      minHeight: theme => theme('spacing'),
+      height: {
+        '82': '18rem',
       },
       colors: {
         primary: {

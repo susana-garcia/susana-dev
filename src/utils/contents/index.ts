@@ -23,6 +23,7 @@ export interface Content {
   publishedAt: string
   updatedAt?: string
   readingTime: ReadingTime
+  image?: string
   data: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any
@@ -43,7 +44,7 @@ export function loadContents(type?: ContentType) {
   const files = contentsFiles
     .map(fileData => {
       const {
-        data: { title, description, tags, publishedAt, updatedAt, type },
+        data: { title, description, tags, publishedAt, updatedAt, type, image },
         content,
       } = fileData
 
@@ -55,6 +56,7 @@ export function loadContents(type?: ContentType) {
         type,
         tags,
         publishedAt,
+        image: image ? image : null,
         updatedAt: updatedAt ? updatedAt : null,
         readingTime: readingTime(content),
         data: fileData.data,
