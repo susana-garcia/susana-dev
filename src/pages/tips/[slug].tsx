@@ -50,7 +50,7 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
         }}
       />
       <Layout>
-        <Container className="mt-4 md:mt-8">
+        <Container className="mt-4 md:mt-8" size="medium">
           <article>
             <Card className="rounded-lg dark:bg-gray-950 dark:border-gray-900">
               <header className="py-12 text-center bg-gray-200 dark:bg-gray-900 rounded">
