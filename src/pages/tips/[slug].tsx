@@ -53,17 +53,18 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
         <Container className="mt-4 md:mt-8" size="medium">
           <article>
             <Card className="rounded-lg dark:bg-gray-950 dark:border-gray-900">
-              <header className="py-12 text-center bg-gray-200 dark:bg-gray-900 rounded">
-                <CategoryLabel type="tip" withLabel className="mb-6 block" />
-                <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-              </header>
-              <div className="py-2 flex flex-col md:flex-row items-center md:justify-between">
+              <div className="py-2 flex flex-col md:flex-row items-center md:justify-between mb-2">
                 <TagList tags={tags} />
                 <div className="text-xs text-gray-500">
                   <PublishedAt date={publishedAt} />
                   <UpdatedAt updatedAt={updatedAt} className="ml-2" />
                 </div>
               </div>
+              <header className="py-12 text-center bg-gray-200 dark:bg-gray-900 rounded mb-6">
+                <CategoryLabel type="tip" withLabel className="mb-6 block" />
+                <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
+              </header>
+
               <div>
                 <h1 className="hidden">{title}</h1>
                 <Markdown content={content} />
