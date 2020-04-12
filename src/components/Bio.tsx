@@ -21,7 +21,7 @@ const Bio: React.FC<BioProps> = ({ className }) => (
       </NextLink>
       <div className="text-lg font-bold mb-2">👋 I'm {process.env.AUTHORS_NAME}</div>
       <p className="font-light text-gray-700 dark:text-gray-300 max-w-md mx-auto">
-        I write about APIs (Golang and Elixir) and machine learning.{' '}
+        I write about APIs (Golang and Elixir), Kubernetes and machine learning.{' '}
         <NextLink {...Routes.about()}>
           <a title="About">More about me.</a>
         </NextLink>
