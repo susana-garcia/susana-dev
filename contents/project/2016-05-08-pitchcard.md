@@ -1,10 +1,11 @@
 ---
-title: 'This Is Why We Have Built Pitchcard'
-description: 'Since the iPhone released and the following AppStore boom, a lot of people around us began to have amazing ideas: "Hey, I have a app idea".'
+title: 'Pitchcard'
+description: 'Since the iPhone released and the following AppStore boom, a lot of people began to tell us: "Hey, I have an app idea...".'
+websiteUrl: 'https://www.pitchcard.io'
+image: '/contents/project/pitchcard.jpg?v1'
 tags: ['pitch', 'idea', 'web']
-type: 'article'
 publishedAt: '2016-05-08T07:07:37.915Z'
-updatedAt: '2016-05-08T07:07:37.915Z'
+updatedAt:
 ---
 
 <small>Co-Written by [Lailo](https://lailo.ch)</small>

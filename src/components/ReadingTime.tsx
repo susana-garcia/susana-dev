@@ -1,17 +1,16 @@
 import React from 'react'
-import { FiCoffee } from 'react-icons/fi'
+import { AiOutlineClockCircle } from 'react-icons/ai'
 import clsx from 'clsx'
-import { ReadingTime as ReadingTimeType } from 'utils/articles'
 
 interface ReadingTimeProps {
-  readingTime: ReadingTimeType
+  readingTime: string
   className?: string
 }
 
 const ReadingTime: React.FC<ReadingTimeProps> = ({ readingTime, className }) => (
-  <span className={clsx('text-xs', className)}>
-    <FiCoffee className="mr-1" />
-    {readingTime.text}
+  <span className={clsx(className)}>
+    <AiOutlineClockCircle className="mr-1" />
+    {readingTime}
   </span>
 )
 

@@ -30,14 +30,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
         url: process.env.SITE_URL,
         title: process.env.SITE_TITLE,
         description: process.env.SITE_DESCRIPTION,
-        images: [
-          {
-            url: process.env.PROFILE_IMAGE,
-            width: 256,
-            height: 256,
-            alt: 'Profile Image',
-          },
-        ],
         // eslint-disable-next-line @typescript-eslint/camelcase
         site_name: process.env.SITE_NAME,
         locale: process.env.SITE_LOCALE,

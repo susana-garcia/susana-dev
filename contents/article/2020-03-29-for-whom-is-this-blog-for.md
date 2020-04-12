@@ -2,9 +2,8 @@
 title: 'For Whom Is This Blog For?'
 description: "Learn about this blog and if it's for you."
 tags: ['blog', 'ml', 'code', 'api']
-type: 'article'
 publishedAt: '2020-03-29T07:07:37.915Z'
-updatedAt: '2020-04-04T14:25:37.915Z'
+updatedAt: 
 ---
 
 ## What I will be posting

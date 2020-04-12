@@ -1,34 +1,31 @@
 import React from 'react'
 import { NextPage, GetStaticProps } from 'next'
-import { loadArticles, Article } from 'utils/articles'
+import { loadContents, Content } from 'utils/contents'
 import Layout from 'components/layout/Layout'
-import ArticleList from 'components/ArticleList'
-import Container from 'components/layout/Container'
+import ContentList from 'components/ContentList'
 import Bio from 'components/Bio'
 import { generateRSS } from 'utils/generateRSS'
 import { NextSeo } from 'next-seo'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = loadArticles()
+  const contents = loadContents()
 
   if (process.env.GENERATE_RSS) {
-    generateRSS(articles)
+    generateRSS(contents)
   }
 
-  return { props: { articles } }
+  return { props: { contents } }
 }
 
 interface IndexPageProps {
-  articles: Article[]
+  contents: Content[]
 }
 
-const IndexPage: NextPage<IndexPageProps> = ({ articles }) => (
+const IndexPage: NextPage<IndexPageProps> = ({ contents }) => (
   <>
     <NextSeo title={process.env.SITE_DESCRIPTION} />
-    <Layout subheader={<Bio />}>
-      <Container className="mt-4">
-        <ArticleList articles={articles} />
-      </Container>
+    <Layout withoutNewsletter subheader={<Bio />}>
+      <ContentList contents={contents} />
     </Layout>
   </>
 )

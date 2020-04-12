@@ -21,8 +21,8 @@ const Container: React.FC<ContainerProps> = ({
         'grid gap-4': grid,
       },
       {
-        'max-w-2xl': size === 'base',
-        'max-w-5xl': size === 'large',
+        'max-w-lg md:max-w-2xl': size === 'base',
+        'max-w-lg md:max-w-5xl': size === 'large',
         'max-w-full': size === 'fluid',
       },
       className
