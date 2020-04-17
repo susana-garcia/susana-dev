@@ -80,6 +80,14 @@
       @apply text-gray-200;
       @apply text-base not-italic;
     }
+    #tip& {
+      @apply -mx-4;
+      @screen md {
+        @apply -mx-6;
+      }
+      @apply rounded-none;
+      @apply px-6;
+    }
   }
 
   blockquote {
