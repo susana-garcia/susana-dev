@@ -11,7 +11,7 @@ const nextConfig = {
     PROFILE_IMAGE: 'https://gravatar.com/avatar/c52150b29ff2a60612bc0993de6b1732?s=256',
     SITE_NAME: 'Susana',
     SITE_TITLE: "Susana's Blog",
-    SITE_DESCRIPTION: 'Passionate about simplicity in code and design.',
+    SITE_DESCRIPTION: 'Passionate about learning and coding.',
     SITE_ABOUT:
       "I'm Susana, a Senior Software Engineer and this is the place where I share content related to backend development using different languages, machine learning and more.",
     SITE_LOCALE: 'en',
