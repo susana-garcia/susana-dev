@@ -3,10 +3,8 @@ title: 'How to Use Secrets in Kubernetes'
 description: 'Learn how to use Secrets in Kubernetes with some examples.'
 tags: ['code', 'kubernetes', 'k8s', 'secret']
 publishedAt: '2020-04-18T10:10:10.915Z'
-updatedAt:
+updatedAt: '2020-04-18T11:27:10.915Z'
 ---
-
-# Secrets in Kubernetes
 
 Kubernetes Secrets let you store and manage sensitive information like as passwords, OAuth tokens, ssh keys, etc. 
 

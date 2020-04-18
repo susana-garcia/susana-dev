@@ -3,10 +3,8 @@ title: 'For Whom Is This Blog For?'
 description: "Learn about this blog and if it's for you."
 tags: ['blog', 'ml', 'code', 'api']
 publishedAt: '2020-03-29T07:07:37.915Z'
-updatedAt: 
+updatedAt: '2020-04-18T11:18:10.915Z'
 ---
-
-## What I will be posting
 
 As developers, we are learning new things every day.
 
