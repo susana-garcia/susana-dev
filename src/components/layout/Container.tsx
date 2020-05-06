@@ -4,7 +4,7 @@ import clsx from 'clsx'
 interface ContainerProps {
   className?: string
   grid?: boolean
-  size?: 'base' | 'fluid' | 'large'
+  size?: 'base' | 'medium' | 'large' | 'fluid'
 }
 
 const Container: React.FC<ContainerProps> = ({
@@ -22,6 +22,7 @@ const Container: React.FC<ContainerProps> = ({
       },
       {
         'max-w-lg md:max-w-2xl': size === 'base',
+        'max-w-lg md:max-w-3xl': size === 'medium',
         'max-w-lg md:max-w-5xl': size === 'large',
         'max-w-full': size === 'fluid',
       },

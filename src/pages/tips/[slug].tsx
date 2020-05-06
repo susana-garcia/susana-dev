@@ -12,6 +12,7 @@ import CategoryLabel from 'components/CategoryLabel'
 import UpdatedAt from 'components/UpdatedAt'
 import { Routes } from 'utils/routes'
 import Card from 'components/Card'
+import clsx from 'clsx'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: loadTips().map(({ slug }) => Routes.tip(slug).as),
@@ -50,23 +51,29 @@ const TipsPage: NextPage<TipMap> = ({ tip, prev, next }) => {
         }}
       />
       <Layout>
-        <Container className="mt-4 md:mt-8">
-          <article>
-            <Card className="rounded-lg dark:bg-gray-950 dark:border-gray-900">
-              <header className="py-12 text-center bg-gray-200 dark:bg-gray-900 rounded">
-                <CategoryLabel type="tip" withLabel className="mb-6 block" />
-                <h1 className="text-5xl font-black leading-tight mb-2">{title}</h1>
-              </header>
-              <div className="py-2 flex flex-col md:flex-row items-center md:justify-between">
-                <TagList tags={tags} />
-                <div className="text-xs text-gray-500">
-                  <PublishedAt date={publishedAt} />
-                  <UpdatedAt updatedAt={updatedAt} className="ml-2" />
+        <Container className="mt-4 md:mt-8" size="medium">
+          <article id="tip-container">
+            <Card className="border-none md:border rounded-lg dark:bg-gray-975">
+              <header
+                className={clsx(
+                  'p-4 md:p-6 mb-6 -mt-4 -mx-4 md:-mt-6 md:-mx-6',
+                  'text-center bg-gray-100 dark:bg-gray-900',
+                  'border-b border-gray-300 dark:border-gray-900'
+                )}
+              >
+                <div className="flex flex-col md:flex-row items-center md:justify-between">
+                  <TagList tags={tags} />
+                  <div className="text-xs text-gray-700 dark:text-gray-600">
+                    <PublishedAt date={publishedAt} />
+                    <UpdatedAt updatedAt={updatedAt} className="ml-2" />
+                  </div>
                 </div>
-              </div>
+                <CategoryLabel type="tip" withLabel className="mt-12 mb-6 block" />
+                <h1 className="text-5xl font-black leading-tight mb-12">{title}</h1>
+              </header>
               <div>
                 <h1 className="hidden">{title}</h1>
-                <Markdown content={content} />
+                <Markdown content={content} contentType="tip" />
               </div>
             </Card>
             <ContentFooterNav prev={prev} next={next} />
