@@ -2,8 +2,9 @@
 title: 'How to Use ConfigMaps in Kubernetes'
 description: 'Learn how to use ConfigMaps in Kubernetes with some examples.'
 tags: ['code', 'kubernetes', 'k8s', 'configmap']
+image: 'https://boxboat.com/2018/07/05/gitops-kubernetes-rolling-update-configmap-secret-change/kube-configmap-secret-deployment.png'
 publishedAt: '2020-04-13T11:11:11.915Z'
-updatedAt: '2020-04-18T11:21:10.915Z'
+updatedAt: '2020-05-09T14:56:10.915Z'
 ---
 
 When starting to use a new technology, one of the first questions to answer is how to manage your application's configuration. In the Kubernetes world, that answer is ConfigMaps.
